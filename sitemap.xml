@@ -28,6 +28,13 @@
   </url>
 
   
+  <url>
+    <loc>http://example.com/tags/%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2022-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
 </urlset>

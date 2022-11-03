@@ -8,9 +8,15 @@
       <link href="/posts/32400.html"/>
       <url>/posts/32400.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="迭代源代码"><a href="#迭代源代码" class="headerlink" title="迭代源代码"></a>迭代源代码</h1><h2 id="输入一个数字-从高到低输出它"><a href="#输入一个数字-从高到低输出它" class="headerlink" title="输入一个数字,从高到低输出它"></a>输入一个数字,从高到低输出它</h2><p>#include &lt;stdio.h&gt;<br>void f(int n);<br>int main()<br>{<br>    int n;<br>    scanf(“%d”,&amp;n);<br>    f(n);<br>    return 0;<br>}<br>void f(int n){<br>    if(n&lt;&#x3D;9){<br>        printf(“%d “,n);<br>    }<br>    else{<br>        f(n&#x2F;10);<br>        printf(“%d “,n%10);<br>    }<br>}</p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 学习 </tag>
+            
+        </tags>
       
     </entry>
     
