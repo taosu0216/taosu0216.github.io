@@ -6,7 +6,7 @@
   <link href="https://taosu0216.github.io/atom.xml" rel="self"/>
   
   <link href="https://taosu0216.github.io/"/>
-  <updated>2022-11-05T02:18:51.352Z</updated>
+  <updated>2022-11-05T14:22:24.788Z</updated>
   <id>https://taosu0216.github.io/</id>
   
   <author>
@@ -17,11 +17,57 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>心动信号</title>
+    <link href="https://taosu0216.github.io/posts/61532.html"/>
+    <id>https://taosu0216.github.io/posts/61532.html</id>
+    <published>2022-11-05T14:13:52.000Z</published>
+    <updated>2022-11-05T14:22:24.788Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="B-amp-C"><a href="#B-amp-C" class="headerlink" title="B&amp;C"></a>B&amp;C</h1><h2 id="始从小学，相知于初中，历事无数未能分开我们，曾经希望拥抱你的背影，现在想要伴你同行"><a href="#始从小学，相知于初中，历事无数未能分开我们，曾经希望拥抱你的背影，现在想要伴你同行" class="headerlink" title="始从小学，相知于初中，历事无数未能分开我们，曾经希望拥抱你的背影，现在想要伴你同行"></a>始从小学，相知于初中，历事无数未能分开我们，曾经希望拥抱你的背影，现在想要伴你同行</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;B-amp-C&quot;&gt;&lt;a href=&quot;#B-amp-C&quot; class=&quot;headerlink&quot; title=&quot;B&amp;amp;C&quot;&gt;&lt;/a&gt;B&amp;amp;C&lt;/h1&gt;&lt;h2 id=&quot;始从小学，相知于初中，历事无数未能分开我们，曾经希望拥抱你的背影，现在想要伴你同行&quot;&gt;&lt;a</summary>
+      
+    
+    
+    
+    
+    <category term="恋爱" scheme="https://taosu0216.github.io/tags/%E6%81%8B%E7%88%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C语法(指针)</title>
+    <link href="https://taosu0216.github.io/posts/27937.html"/>
+    <id>https://taosu0216.github.io/posts/27937.html</id>
+    <published>2022-11-05T12:52:46.000Z</published>
+    <updated>2022-11-05T13:50:57.189Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="初识指针"><a href="#初识指针" class="headerlink" title="初识指针"></a>初识指针</h1><h2 id="每遇到一个指针-先问问这个指针的类型是什么？指针指的类型是什么？该指针指向了哪里？"><a href="#每遇到一个指针-先问问这个指针的类型是什么？指针指的类型是什么？该指针指向了哪里？" class="headerlink" title="每遇到一个指针,先问问这个指针的类型是什么？指针指的类型是什么？该指针指向了哪里？"></a>每遇到一个指针,先问问这个指针的类型是什么？指针指的类型是什么？该指针指向了哪里？</h2><p>image.png<br><a href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20221105214604.png">https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20221105214604.png</a><br><a href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20221105214642.png">https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20221105214642.png</a><br>指针是用来存放<strong>地址</strong>的变量,</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;初识指针&quot;&gt;&lt;a href=&quot;#初识指针&quot; class=&quot;headerlink&quot; title=&quot;初识指针&quot;&gt;&lt;/a&gt;初识指针&lt;/h1&gt;&lt;h2 id=&quot;每遇到一个指针-先问问这个指针的类型是什么？指针指的类型是什么？该指针指向了哪里？&quot;&gt;&lt;a href=&quot;#每遇到一</summary>
+      
+    
+    
+    
+    <category term="学习" scheme="https://taosu0216.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学习" scheme="https://taosu0216.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>蓝桥笔记</title>
     <link href="https://taosu0216.github.io/posts/9612.html"/>
     <id>https://taosu0216.github.io/posts/9612.html</id>
     <published>2022-11-05T02:13:34.000Z</published>
-    <updated>2022-11-05T02:18:51.352Z</updated>
+    <updated>2022-11-05T10:25:58.810Z</updated>
     
     <content type="html"><![CDATA[<h1 id="2022-11-5"><a href="#2022-11-5" class="headerlink" title="2022-11-5"></a>2022-11-5</h1><h2 id="1-题目描述-输出两行，第一行包含一个英文字母，表示单词中出现得最多的字母是哪个。如果有多个字母出现的次数相等，输出字典序最小的那个。第二行包含一个整数，表示出现得最多的那个字母在单词中出现的次数。"><a href="#1-题目描述-输出两行，第一行包含一个英文字母，表示单词中出现得最多的字母是哪个。如果有多个字母出现的次数相等，输出字典序最小的那个。第二行包含一个整数，表示出现得最多的那个字母在单词中出现的次数。" class="headerlink" title="1.题目描述:输出两行，第一行包含一个英文字母，表示单词中出现得最多的字母是哪个。如果有多个字母出现的次数相等，输出字典序最小的那个。第二行包含一个整数，表示出现得最多的那个字母在单词中出现的次数。"></a>1.题目描述:输出两行，第一行包含一个英文字母，表示单词中出现得最多的字母是哪个。如果有多个字母出现的次数相等，输出字典序最小的那个。第二行包含一个整数，表示出现得最多的那个字母在单词中出现的次数。</h2><h3 id="input-lanqiao-print-a-2"><a href="#input-lanqiao-print-a-2" class="headerlink" title="input:lanqiao  print:a  2"></a>input:lanqiao  print:a  2</h3><h3 id="input-longlonglongistoolong-print-o-6"><a href="#input-longlonglongistoolong-print-o-6" class="headerlink" title="input:longlonglongistoolong  print:o  6"></a>input:longlonglongistoolong  print:o  6</h3><h4 id=""><a href="#" class="headerlink" title=""></a></h4>]]></content>
     
@@ -33,6 +79,10 @@
     
     
     
+    <category term="学习" scheme="https://taosu0216.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="学习" scheme="https://taosu0216.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -41,7 +91,7 @@
     <link href="https://taosu0216.github.io/posts/32400.html"/>
     <id>https://taosu0216.github.io/posts/32400.html</id>
     <published>2022-11-03T10:09:26.000Z</published>
-    <updated>2022-11-05T06:23:03.355Z</updated>
+    <updated>2022-11-05T10:26:04.871Z</updated>
     
     <content type="html"><![CDATA[<h1 id="迭代源代码"><a href="#迭代源代码" class="headerlink" title="迭代源代码"></a>迭代源代码</h1><h2 id="输入一个数字-从高到低输出它"><a href="#输入一个数字-从高到低输出它" class="headerlink" title="输入一个数字,从高到低输出它"></a>输入一个数字,从高到低输出它</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">void f(int n); </span><br><span class="line">int main()</span><br><span class="line">&#123;   </span><br><span class="line">&amp;ensp; int n;</span><br><span class="line">scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">f(n);</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br><span class="line">void f(int n)&#123;</span><br><span class="line">if(n&lt;=9)&#123;</span><br><span class="line">printf(&quot;%d &quot;,n);</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">f(n/10);</span><br><span class="line">printf(&quot;%d &quot;,n%10);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="输入一串字母并统计其个数"><a href="#输入一串字母并统计其个数" class="headerlink" title="输入一串字母并统计其个数"></a>输入一串字母并统计其个数</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">char i;</span><br><span class="line">int count=0;</span><br><span class="line">while((i=getchar())!=&#x27;\n&#x27;)&#123;</span><br><span class="line">    count++;</span><br><span class="line">&#125; </span><br><span class="line">printf(&quot;%d&quot;,count);</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -52,6 +102,8 @@
       
     
     
+    
+    <category term="学习" scheme="https://taosu0216.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
     <category term="学习" scheme="https://taosu0216.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
