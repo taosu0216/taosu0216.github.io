@@ -2,7 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://fata.taosu0216.cn/posts/61532.html</loc>
+    <loc>https://fata.taosu0216.cn/posts/2802.html</loc>
+    
+    <lastmod>2022-11-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fata.taosu0216.cn/posts/27937.html</loc>
+    
+    <lastmod>2022-11-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fata.taosu0216.cn/posts/32400.html</loc>
     
     <lastmod>2022-11-25</lastmod>
     
@@ -12,6 +30,15 @@
   
   <url>
     <loc>https://fata.taosu0216.cn/posts/45241.html</loc>
+    
+    <lastmod>2022-11-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fata.taosu0216.cn/posts/61532.html</loc>
     
     <lastmod>2022-11-25</lastmod>
     
@@ -38,36 +65,9 @@
   </url>
   
   <url>
-    <loc>https://fata.taosu0216.cn/posts/2802.html</loc>
-    
-    <lastmod>2022-11-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fata.taosu0216.cn/posts/27937.html</loc>
-    
-    <lastmod>2022-11-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fata.taosu0216.cn/posts/32400.html</loc>
-    
-    <lastmod>2022-11-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://fata.taosu0216.cn/posts/9612.html</loc>
     
-    <lastmod>2022-11-15</lastmod>
+    <lastmod>2022-11-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -106,14 +106,14 @@
   </url>
   
   <url>
-    <loc>https://fata.taosu0216.cn/tags/%E6%97%A5%E5%B8%B8/</loc>
+    <loc>https://fata.taosu0216.cn/tags/%E6%9D%82%E8%B0%88/</loc>
     <lastmod>2022-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://fata.taosu0216.cn/tags/%E6%9D%82%E8%B0%88/</loc>
+    <loc>https://fata.taosu0216.cn/tags/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2022-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
