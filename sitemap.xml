@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://fata.taosu0216.cn/posts/43432.html</loc>
+    
+    <lastmod>2022-12-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://fata.taosu0216.cn/posts/58308.html</loc>
     
     <lastmod>2022-12-15</lastmod>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>https://fata.taosu0216.cn/posts/722.html</loc>
-    
-    <lastmod>2022-12-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fata.taosu0216.cn/posts/43432.html</loc>
     
     <lastmod>2022-12-15</lastmod>
     
@@ -126,14 +126,14 @@
   </url>
   
   <url>
-    <loc>https://fata.taosu0216.cn/tags/love/</loc>
+    <loc>https://fata.taosu0216.cn/tags/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2022-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://fata.taosu0216.cn/tags/%E6%97%A5%E5%B8%B8/</loc>
+    <loc>https://fata.taosu0216.cn/tags/love/</loc>
     <lastmod>2022-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -156,14 +156,14 @@
   </url>
   
   <url>
-    <loc>https://fata.taosu0216.cn/categories/Love/</loc>
+    <loc>https://fata.taosu0216.cn/categories/%E6%9D%82%E8%B0%88/</loc>
     <lastmod>2022-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://fata.taosu0216.cn/categories/%E6%9D%82%E8%B0%88/</loc>
+    <loc>https://fata.taosu0216.cn/categories/Love/</loc>
     <lastmod>2022-12-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
