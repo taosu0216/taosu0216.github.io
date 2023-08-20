@@ -18,26 +18,21 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="虚拟机及系统虚拟机及扩展虚拟机工作原理 虚拟化层:在物理主机之上添加一层软件抽象层,虚拟出一套计算机硬件平台,包括CPU、内存、存储、网络等组件。 Guest OS:在虚拟的硬件平台上安装客户操作系统(Guest OS),对客户操作系统来说,它认为自己在运行于一台独立的物理计算机上。 虚拟机监控器(Hypervisor):负责创建、运行和管理虚拟机,它通过软件模拟物理硬件来运行和控制虚拟机。常见的">
+    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:type" content="article">
-<meta property="og:title" content="虚拟机">
-<meta property="og:url" content="https://blog.yblue.top/2023/08/20/%E8%99%9A%E6%8B%9F%E6%9C%BA/index.html">
+<meta property="og:title" content="Hello World">
+<meta property="og:url" content="https://blog.yblue.top/2023/08/20/hello-world/index.html">
 <meta property="og:site_name" content="Taosu&#96;Home">
-<meta property="og:description" content="虚拟机及系统虚拟机及扩展虚拟机工作原理 虚拟化层:在物理主机之上添加一层软件抽象层,虚拟出一套计算机硬件平台,包括CPU、内存、存储、网络等组件。 Guest OS:在虚拟的硬件平台上安装客户操作系统(Guest OS),对客户操作系统来说,它认为自己在运行于一台独立的物理计算机上。 虚拟机监控器(Hypervisor):负责创建、运行和管理虚拟机,它通过软件模拟物理硬件来运行和控制虚拟机。常见的">
+<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230507192013.png">
-<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230507192055.png">
-<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230507192301.png">
-<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230507192821.png">
-<meta property="article:published_time" content="2023-08-20T12:25:40.000Z">
-<meta property="article:modified_time" content="2023-08-20T12:26:02.167Z">
+<meta property="article:published_time" content="2023-08-20T06:40:14.153Z">
+<meta property="article:modified_time" content="2023-08-20T06:40:14.153Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230507192013.png">
   
   
   
-  <title>虚拟机 - Taosu`Home</title>
+  <title>Hello World - Taosu`Home</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -191,7 +186,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="虚拟机"></span>
+            <span id="subtitle" data-typed-text="Hello World"></span>
           
         </div>
 
@@ -202,7 +197,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-20 20:25" pubdate>
+        <time datetime="2023-08-20 14:40" pubdate>
           August 20, 2023 pm
         </time>
       </span>
@@ -214,7 +209,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k words
+          367 words
         
       </span>
     
@@ -225,7 +220,7 @@
         
         
         
-          11 mins
+          4 mins
         
       </span>
     
@@ -262,68 +257,24 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">虚拟机</h1>
+            <h1 id="seo-header">Hello World</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="虚拟机及系统"><a href="#虚拟机及系统" class="headerlink" title="虚拟机及系统"></a>虚拟机及系统</h1><h2 id="虚拟机及扩展"><a href="#虚拟机及扩展" class="headerlink" title="虚拟机及扩展"></a>虚拟机及扩展</h2><h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><h4 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h4><ol>
-<li>虚拟化层:在物理主机之上添加一层软件抽象层,虚拟出一套计算机硬件平台,包括CPU、内存、存储、网络等组件。</li>
-<li>Guest OS:在虚拟的硬件平台上安装客户操作系统(Guest OS),对客户操作系统来说,它认为自己在运行于一台独立的物理计算机上。</li>
-<li>虚拟机监控器(Hypervisor):负责创建、运行和管理虚拟机,它通过软件模拟物理硬件来运行和控制虚拟机。常见的虚拟机监控器有VMWare、VirtualBox、KVM等。</li>
-<li>物理主机(Host):提供计算、存储和网络等物理资源,用于运行虚拟机监控器和客户操作系统。</li>
-</ol>
-<h4 id="特性及优点"><a href="#特性及优点" class="headerlink" title="特性及优点"></a>特性及优点</h4><ol>
-<li>运行多系统:可以在一台物理主机上同时运行多个操作系统,如Windows、Linux等。</li>
-<li>隔离性:每个虚拟机之间相互隔离,如安全漏洞影响只限于单个虚拟机内。</li>
-<li>容易备份:可以很容易为整个虚拟机创建备份或快照。</li>
-<li>用于软件测试:可以用来测试不同的软件和操作系统,避免在真实环境中造成影响。</li>
-</ol>
-<h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p><a target="_blank" rel="noopener" href="https://customerconnect.vmware.com/cn/downloads/details?downloadGroup=WKST-PLAYER-1625&productId=1039&rPId=98562">https://customerconnect.vmware.com/cn/downloads/details?downloadGroup=WKST-PLAYER-1625&amp;productId=1039&amp;rPId=98562</a><br>产品密钥(16版本):</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ZF3R0</span>-FHED2-M80TY-<span class="hljs-number">8</span>QYGC-NPKYF<br><span class="hljs-attribute">YF390</span>-<span class="hljs-number">0</span>HF8P-M81RQ-<span class="hljs-number">2</span>DXQE-M2UT6<br><span class="hljs-attribute">ZF71R</span>-DMX85-<span class="hljs-number">08</span>DQY-<span class="hljs-number">8</span>YMNC-PPHV8<br></code></pre></td></tr></table></figure>
+                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
 
-<p>17版本及秘钥:<br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1-x9RRblQnboROXDTateq4g?pwd=cguo">https://pan.baidu.com/s/1-x9RRblQnboROXDTateq4g?pwd=cguo</a><br>提取码：cguo</p>
-<h4 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h4><h5 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h5><p>Docker是一个开源的应用容器引擎</p>
-<ol>
-<li>隔离机制:虚拟机通过hypervisor在硬件层面实现资源隔离,Docker使用Linux内核的容器技术(namespace和cgroups)在操作系统层面实现隔离。Docker更轻量,资源开销更小。</li>
-<li>镜像机制:Docker通过分层的镜像机制实现应用环境的快速构建和部署,镜像体积更小,更轻量。虚拟机需要安装完整操作系统。</li>
-<li>启动速度:Docker镜像启动可以在秒级完成,虚拟机需要分钟级的启动时间。这使得Docker更适合微服务架构。</li>
-</ol>
-<h5 id="k8s-Kubernetes"><a href="#k8s-Kubernetes" class="headerlink" title="k8s(Kubernetes)"></a>k8s(Kubernetes)</h5><p>很多个docker在运行,k8s是他们的集成管理器</p>
-<h2 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h2><ul>
-<li><p>Windows   大家都在用的</p>
-</li>
-<li><p>Mac   大家都在用的</p>
-</li>
-<li><p>Linux</p>
-</li>
-<li><ul>
-<li><p>Red Hat系(企业,服务器多用)</p>
-</li>
-<li><ul>
-<li>Red Hat</li>
-<li>CentOS</li>
-<li>Fedora</li>
-</ul>
-</li>
-<li><p>Debian系(个人开发用)</p>
-</li>
-<li><ul>
-<li>Ubuntu</li>
-<li>Debian</li>
-</ul>
-</li>
-<li><p>高度定制化的发行版本</p>
-</li>
-<li><ul>
-<li>kali</li>
-<li>Arch(注重简洁、定制性和最新软件,适合有一定Linux经验的用户)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="安装win10"><a href="#安装win10" class="headerlink" title="安装win10"></a>安装win10</h1><h2 id="安装iso"><a href="#安装iso" class="headerlink" title="安装iso"></a>安装iso</h2><p><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230507191613.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a><br>选择典型,下一步<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230507191827.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a><br>选择win10的镜像,下一步<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230507192013.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230507192013.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>选择专业版,下一步<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230507192055.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230507192055.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>取名随便,下一步<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230507192301.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230507192301.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>改为单个文件,容量看自己需求,下一步自定义硬件设置<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230507192739.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230507192821.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230507192821.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>内存4g,处理器2内核2</p>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
                 
               </div>
@@ -331,27 +282,6 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
-  
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/CS%E5%9F%BA%E7%A1%80/" class="category-chain-item">CS基础</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
   
   
 </div>
@@ -362,8 +292,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>虚拟机</div>
-      <div>https://blog.yblue.top/2023/08/20/虚拟机/</div>
+      <div>Hello World</div>
+      <div>https://blog.yblue.top/2023/08/20/hello-world/</div>
     </div>
     <div class="license-meta">
       
@@ -402,21 +332,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/20/thm/" title="thm">
+                      <a href="/2023/08/20/Ubuntu-docker-op/" title="Ubuntu+docker+op">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">thm</span>
+                        <span class="hidden-mobile">Ubuntu+docker+op</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
-                    
-                      <a href="/2023/08/20/%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B02/" title="安全笔记2">
-                        <span class="hidden-mobile">安全笔记2</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
                     
                   </article>
                 </div>
