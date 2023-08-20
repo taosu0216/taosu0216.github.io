@@ -1,0 +1,857 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/coffee.svg">
+  <link rel="icon" href="/img/coffee.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="go语法基础初始化在需要编写go的目录(假设是go_code),在go_code下 1go mod init go_code(目录名)  会在go_code目录下生成一个go.mod的初始化文件,在go_code目录下再创建一个目录.在该目录里编写代码 位与进制1234二进制    BIN 0 , 1, 10八进制    OCT 0,1,2,3,4,5,6,7,10(一零,不是十)十进制    D">
+<meta property="og:type" content="article">
+<meta property="og:title" content="go基础语法">
+<meta property="og:url" content="https://blog.yblue.top/2023/08/20/go%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html">
+<meta property="og:site_name" content="Taosu&#96;Home">
+<meta property="og:description" content="go语法基础初始化在需要编写go的目录(假设是go_code),在go_code下 1go mod init go_code(目录名)  会在go_code目录下生成一个go.mod的初始化文件,在go_code目录下再创建一个目录.在该目录里编写代码 位与进制1234二进制    BIN 0 , 1, 10八进制    OCT 0,1,2,3,4,5,6,7,10(一零,不是十)十进制    D">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230803203526.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230804181310.png">
+<meta property="article:published_time" content="2023-08-20T12:33:23.000Z">
+<meta property="article:modified_time" content="2023-08-20T12:33:51.530Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230803203526.png">
+  
+  
+  
+  <title>go基础语法 - Taosu`Home</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"blog.yblue.top","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Taosu ` Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230820163416.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="go基础语法"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-08-20 20:33" pubdate>
+          August 20, 2023 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          13k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          111 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">go基础语法</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="go语法基础"><a href="#go语法基础" class="headerlink" title="go语法基础"></a>go语法基础</h1><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>在需要编写go的目录(假设是go_code),在go_code下</p>
+<figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs isbl"><span class="hljs-variable">go</span> <span class="hljs-variable">mod</span> <span class="hljs-variable">init</span> <span class="hljs-function"><span class="hljs-title">go_code</span>(目录名)</span><br></code></pre></td></tr></table></figure>
+
+<p>会在go_code目录下生成一个go.mod的初始化文件,在go_code目录下再创建一个目录.在该目录里编写代码</p>
+<h2 id="位与进制"><a href="#位与进制" class="headerlink" title="位与进制"></a>位与进制</h2><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs dns">二进制    BIN <span class="hljs-number">0</span> , <span class="hljs-number">1</span>, <span class="hljs-number">10</span><br>八进制    OCT <span class="hljs-number">0,1,2,3</span>,<span class="hljs-number">4,5,6,7</span>,<span class="hljs-number">10</span>(一零,不是十)<br>十进制    DEC <br>十六进制  HEX  <span class="hljs-number">0,1,2,3</span>,<span class="hljs-number">4,5,6,7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-keyword">A</span>,B,C,D,E,F,<span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">位:(内存地址的宽度)</span><br><span class="hljs-section">BYTE:  8位   一个字节</span><br><span class="hljs-section">WORD:  16位</span><br><span class="hljs-section">DWORD: 32位</span><br><span class="hljs-section">QWORD: 64位</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main              <span class="hljs-comment">//引入包</span><br><br><span class="hljs-keyword">import</span> fmt                <span class="hljs-comment">//引入fmt的库,在go中导入了什么库,就必须使用,否则报错</span><br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    fmt.Println(<span class="hljs-string">&quot;hello world&quot;</span>)         <span class="hljs-comment">//不需要分号</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><br><span class="hljs-keyword">import</span> fmt<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-keyword">var</span> num <span class="hljs-type">int</span> = <span class="hljs-number">5</span>            <span class="hljs-comment">//var跟php类似的意思,赋值号必须有空格</span><br>    fmt.Println(num)           <span class="hljs-comment">//创建了num的变量就必须使用,否则报错</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">//初始化</span><br><span class="hljs-keyword">var</span> a <span class="hljs-type">int</span> = <span class="hljs-number">5</span><br><span class="hljs-comment">//默认值(0)</span><br><span class="hljs-keyword">var</span> b <span class="hljs-type">int</span><br><span class="hljs-comment">//自动化推导(auto)</span><br>c := <span class="hljs-number">10</span><br><span class="hljs-comment">//多变量定义</span><br><span class="hljs-keyword">var</span> d,e <span class="hljs-type">int</span><br>d = <span class="hljs-number">20</span><br>e = <span class="hljs-number">30</span><br><span class="hljs-comment">//多变量定义</span><br><span class="hljs-keyword">var</span>(<br>	f <span class="hljs-type">int</span> = <span class="hljs-number">2</span><br>    g <span class="hljs-type">int</span> = <span class="hljs-number">3</span><br>)<br><br><span class="hljs-comment">//在定义过变量之后i,要改变值直接改就可以</span><br>a = <span class="hljs-number">6</span>   <span class="hljs-comment">//a原本是5</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th>复合类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int</td>
+<td>array</td>
+</tr>
+<tr>
+<td>folat</td>
+<td>slice</td>
+</tr>
+<tr>
+<td>string</td>
+<td>map</td>
+</tr>
+<tr>
+<td>bool</td>
+<td>struct</td>
+</tr>
+<tr>
+<td></td>
+<td>pointer</td>
+</tr>
+<tr>
+<td></td>
+<td>function</td>
+</tr>
+<tr>
+<td></td>
+<td>chan</td>
+</tr>
+</tbody></table>
+<p>按照特性来分</p>
+<table>
+<thead>
+<tr>
+<th>值类型</th>
+<th align="center">引用类型(传递地址,多变量指向同一内存地址)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int</td>
+<td align="center">slice</td>
+</tr>
+<tr>
+<td>float</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>string</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>bool</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td>struct</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h3 id="深浅拷贝"><a href="#深浅拷贝" class="headerlink" title="深浅拷贝"></a>深浅拷贝</h3><p>深拷贝是把数据都复制一份在传递,被传递的跟原有数据已经没关系了</p>
+<p>浅拷贝是传址,一个改变另一个也改变</p>
+<h2 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h2><table>
+<thead>
+<tr>
+<th>有符号整型</th>
+<th>无符号整型</th>
+<th>字符(ASCII)</th>
+<th>字符(unicode)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int (默认64bit)</td>
+<td>uint</td>
+<td>byte</td>
+<td>rune</td>
+</tr>
+<tr>
+<td>int8 (8bit)</td>
+<td>uint8</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int16 (16bit)</td>
+<td>uint16</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int32 (32bit)</td>
+<td>uint32</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>int64 (64bit)</td>
+<td>uint64</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>符号位是从左往右数第一位(有符号整型),0是正数,1是负数,所以int8是-128到127</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dns">如果求的数是负数,那么则要求该数对应的补码,即把所有数取反(<span class="hljs-number">0换1,1换0</span>)那么本来最大的<span class="hljs-number">127(0111</span> <span class="hljs-number">1111</span>)就变成了(<span class="hljs-number">1000 0000</span>)的-<span class="hljs-number">128</span><br></code></pre></td></tr></table></figure>
+
+<p>int16是-32768到32767,uint16是0到65535</p>
+<p>ASCII可以等于成uint8</p>
+<p>在go中的unicode版本是UTF-32,4字节,32bit</p>
+<h2 id="浮点"><a href="#浮点" class="headerlink" title="浮点"></a>浮点</h2><p>float32 4字节</p>
+<p>float64 8字节</p>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><h3 id="数值类型转换"><a href="#数值类型转换" class="headerlink" title="数值类型转换"></a>数值类型转换</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">var</span> numa <span class="hljs-type">int64</span> = <span class="hljs-number">12138</span><br><span class="hljs-keyword">var</span> numb <span class="hljs-type">int8</span> = <span class="hljs-type">int8</span>(numa)<br>fmt.Println(numb)          <span class="hljs-comment">//106</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">var</span> numa <span class="hljs-type">int64</span> = <span class="hljs-number">12138</span><br><span class="hljs-keyword">var</span> numb <span class="hljs-type">int8</span> = <span class="hljs-type">int8</span>(numa)<br><span class="hljs-keyword">var</span> numc <span class="hljs-type">int32</span> =<span class="hljs-type">int32</span>(numb)<br><span class="hljs-keyword">var</span> str <span class="hljs-type">string</span> = fmt.Sprintf(<span class="hljs-string">&quot;%d %d %d&quot;</span>,numa,numb,numc)<br><span class="hljs-comment">//fmt.Sprintf是吧其它类型的值转化成字符串的专用函数</span><br><span class="hljs-comment">//输出12138 106 106</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><br><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span><br><br><span class="hljs-keyword">const</span> (<br>	numA = <span class="hljs-number">11</span><br>	numB = <span class="hljs-number">22</span><br>)<br><br><span class="hljs-keyword">const</span> (<br>	a = <span class="hljs-number">1</span>                  <span class="hljs-comment">//在前一个常量定义后,如果后一个常量未被定义,则跟前一个常量相等</span><br>	b<br>	c = <span class="hljs-number">33</span><br>	d<br>)<br><br><span class="hljs-keyword">const</span> (<br>	numC = <span class="hljs-literal">iota</span>            <span class="hljs-comment">//自带的枚举量,会从0开始计数</span><br>	numD<br>	numE<br>	numF<br>)<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>	<span class="hljs-keyword">const</span> pi = <span class="hljs-number">3.1415</span>      <span class="hljs-comment">//既可以定义在main函数内也可以在外部定义</span><br>	<span class="hljs-comment">//3.1415</span><br>	fmt.Println(pi)<br>	<span class="hljs-comment">//11 22</span><br>	fmt.Println(numA, numB)<br>	<span class="hljs-comment">//1 1 33 33</span><br>	fmt.Println(a, b, c, d)<br>	<span class="hljs-comment">//0 1 2 3 </span><br>	fmt.Println(numC, numD, numE, numF)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="关系与逻辑运算"><a href="#关系与逻辑运算" class="headerlink" title="关系与逻辑运算"></a>关系与逻辑运算</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs go">fmt.Println((<span class="hljs-number">1</span>&gt;<span class="hljs-number">2</span>))     <span class="hljs-comment">//输出false</span><br>&amp;&amp;  <span class="hljs-comment">//左右两侧均为真则结果为真</span><br>||  <span class="hljs-comment">//或</span><br>!   <span class="hljs-comment">//非</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><h3 id="与运算-按位与"><a href="#与运算-按位与" class="headerlink" title="与运算(按位与)"></a>与运算(按位与)</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">var</span> h <span class="hljs-type">int</span> = <span class="hljs-number">189</span>         <span class="hljs-comment">//128+32+16+8+4+1    1011 1101</span><br><span class="hljs-keyword">var</span> i <span class="hljs-type">int</span> = <span class="hljs-number">245</span>         <span class="hljs-comment">//128+64+32+16+4+1   1111 0101</span><br><span class="hljs-keyword">var</span> m <span class="hljs-type">int</span> = h &amp; i<br>fmt.Println(m)          <span class="hljs-comment">//181                1011 0101</span><br></code></pre></td></tr></table></figure>
+
+<p>位一样的变为1,不一样的为0</p>
+<p><code>&amp;</code></p>
+<h3 id="或运算-按位或"><a href="#或运算-按位或" class="headerlink" title="或运算(按位或)"></a>或运算(按位或)</h3><p>都是0为0,其余为1</p>
+<p><code>|</code></p>
+<h3 id="异或运算"><a href="#异或运算" class="headerlink" title="异或运算"></a>异或运算</h3><p>两位一样则为0,不一样则为1</p>
+<p><code>^</code></p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="左移运算符"><a href="#左移运算符" class="headerlink" title="左移运算符 &lt;&lt;"></a>左移运算符 &lt;&lt;</h3><p>高位抛弃,低位补零</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">var</span> h <span class="hljs-type">int</span> = <span class="hljs-number">189</span>         <span class="hljs-comment">//1011 1101</span><br><span class="hljs-keyword">var</span> j <span class="hljs-type">int</span> = h &lt;&lt; <span class="hljs-number">3</span>      <span class="hljs-comment">//1011110 1000   -&gt;    1110 1000 </span><br>fmt.Println(j)          <span class="hljs-comment">//232</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="右移运算符"><a href="#右移运算符" class="headerlink" title="右移运算符 &gt;&gt;"></a>右移运算符 &gt;&gt;</h3><p>符号位是什么就补什么</p>
+<p>int默认是64位,正数的符号位是0,则右移之后原来的位置补0</p>
+<h2 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h2><h3 id="if"><a href="#if" class="headerlink" title="if"></a>if</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">var</span> flag <span class="hljs-type">int</span><br>	fmt.Scanf(<span class="hljs-string">&quot;%d&quot;</span>, &amp;flag)<br>	<span class="hljs-keyword">if</span> flag == <span class="hljs-number">10</span> &#123;               <span class="hljs-comment">//go的if中没有()</span><br>		fmt.Println(<span class="hljs-string">&quot;yes&quot;</span>)<br>	&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> flag &gt;= <span class="hljs-number">11</span> &amp;&amp; flag &lt;= <span class="hljs-number">20</span> &#123;<br>		fmt.Println(<span class="hljs-number">15</span>)<br>	&#125; <span class="hljs-keyword">else</span> &#123;<br>		fmt.Println(<span class="hljs-number">21</span>)<br>	&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">switch</span> flag &#123;<br><span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:                         <span class="hljs-comment">//如果flag是1</span><br>	fmt.Println(<span class="hljs-number">1</span>)<br><span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:<br>	fmt.Println(<span class="hljs-number">2</span>)<br><span class="hljs-keyword">case</span> <span class="hljs-number">3</span>, <span class="hljs-number">4</span>:                     <span class="hljs-comment">//如果flag是3或4</span><br>	fmt.Println(<span class="hljs-string">&quot;3 | 4&quot;</span>)<br><span class="hljs-keyword">default</span>:<br>	fmt.Println(<span class="hljs-string">&quot;大于4&quot;</span>)        <span class="hljs-comment">//else</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">for</span> i:=<span class="hljs-number">1</span>; i&lt;=<span class="hljs-number">10</span>; i+=<span class="hljs-number">4</span>&#123;<br>	fmt.Println(i)<br>&#125;<br><br><span class="hljs-keyword">for</span> x := <span class="hljs-number">1</span>; x &lt;= <span class="hljs-number">9</span>; x++ &#123;<br>	<span class="hljs-keyword">for</span> y := <span class="hljs-number">1</span>; y &lt;= x; y++ &#123;<br>		fmt.Printf(<span class="hljs-string">&quot;%d*%d=%d&quot;</span>, y, y, y * y)<br>	&#125;<br>	fmt.Println()<br>&#125;<br><br><span class="hljs-comment">//这种主要用于循环数组和字符串等</span><br><span class="hljs-keyword">var</span> str <span class="hljs-type">string</span> = <span class="hljs-string">&quot;abcdefg&quot;</span><br><span class="hljs-keyword">for</span> index, value := <span class="hljs-keyword">range</span> str &#123;<br>	fmt.Printf(<span class="hljs-string">&quot;%d %c&quot;</span>, index, value)<br>	fmt.Println()<br>&#125;<br><span class="hljs-comment">//index和value不是默认的,只是两个接收内容的变量,也可以用占位符_替代,名字是什么都可以,比如inde和valu</span><br><span class="hljs-comment">//for _,_ := range 变量名&#123;&#125;</span><br><span class="hljs-comment">//如果只想获得index,后面的可以不写,占位符也不用写,但如果指向获得后面的,则前面的必须写占位符</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">//continue</span><br><span class="hljs-keyword">for</span> i:= <span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">10</span>;i++&#123;<br>    <span class="hljs-keyword">if</span> i==<span class="hljs-number">5</span>&#123;<br>		<span class="hljs-keyword">continue</span>	<br>    &#125;<br>    fmt.Println(i)<br>&#125;<br><span class="hljs-comment">//结果是1 2 3 4 6 7 8 9 10</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">//break</span><br><span class="hljs-keyword">for</span> i:= <span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">10</span>;i++&#123;<br>    <span class="hljs-keyword">if</span> i==<span class="hljs-number">5</span>&#123;<br>		<span class="hljs-keyword">break</span>	<br>    &#125;<br>    fmt.Println(i)<br>&#125;<br><span class="hljs-comment">//结果是1 2 3 4</span><br><span class="hljs-comment">//如果是嵌套循环,则</span><br><span class="hljs-keyword">for</span> x := <span class="hljs-number">1</span>; x &lt;= <span class="hljs-number">2</span>; x++ &#123;<br>		<span class="hljs-keyword">for</span> i := <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; i++ &#123;<br>			<span class="hljs-keyword">if</span> i == <span class="hljs-number">5</span> &#123;<br>				<span class="hljs-keyword">break</span><br>			&#125;<br>			fmt.Println(i)<br>		&#125;<br>&#125;<br><span class="hljs-comment">//结果是1 2 3 4 1 2 3 4,只跳出一层循环</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="指针和数组"><a href="#指针和数组" class="headerlink" title="指针和数组"></a>指针和数组</h2><h3 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">var</span> num * <span class="hljs-type">int</span> = <span class="hljs-literal">nil</span>       <span class="hljs-comment">//初始化一个空指针,nil就是null的意思</span><br><span class="hljs-keyword">var</span> numa <span class="hljs-type">int</span> = <span class="hljs-number">123</span><br>num = &amp;numa<br>fmt.Println(num)      <span class="hljs-comment">//输出0xc0000a6058</span><br>fmt.Pritln(*num)      <span class="hljs-comment">//输出123</span><br>*num = <span class="hljs-number">234</span><br>fmt.Println(*num, numa)  <span class="hljs-comment">//输出234 234</span><br></code></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">//空指针</span><br>	<span class="hljs-keyword">var</span> n *<span class="hljs-type">int</span> = <span class="hljs-literal">nil</span><br>	fmt.Println(n, *n)<br>	*n = <span class="hljs-number">500</span><br>	fmt.Println(n, *n)<br><span class="hljs-comment">//会报错</span><br><span class="hljs-comment">/*panic: runtime error: invalid memory address or nil pointer dereference</span><br><span class="hljs-comment">[signal 0xc0000005 code=0x0 addr=0x0 pc=0x9adf7c]</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">goroutine 1 [running]:</span><br><span class="hljs-comment">main.main()</span><br><span class="hljs-comment">        d:/桌面/go/first/hello.go:15 +0x15c</span><br><span class="hljs-comment">exit status 2*/</span><br><span class="hljs-comment">//报错原因是本来n是空指针,所以没有占用内存空间,不能进行直接赋值</span><br><br>	<span class="hljs-keyword">var</span> n *<span class="hljs-type">int</span> = <span class="hljs-literal">nil</span><br>	n = <span class="hljs-built_in">new</span>(<span class="hljs-type">int</span>)<br>	fmt.Println(n, *n)<br>	*n = <span class="hljs-number">500</span><br>	fmt.Println(n, *n)<br><span class="hljs-comment">//输出</span><br><span class="hljs-comment">//0xc0000160d8 0</span><br><span class="hljs-comment">//0xc0000160d8 500</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs go">	<span class="hljs-keyword">var</span> arr = [<span class="hljs-number">4</span>]<span class="hljs-type">string</span>&#123;<span class="hljs-string">&quot;apple&quot;</span>, <span class="hljs-string">&quot;orange&quot;</span>, <span class="hljs-string">&quot;pear&quot;</span>, <span class="hljs-string">&quot;banana&quot;</span>&#125;<br>	arr[<span class="hljs-number">3</span>] = <span class="hljs-string">&quot;123&quot;</span><br>	fmt.Println(arr[<span class="hljs-number">3</span>])<br><span class="hljs-comment">//结果是123</span><br><span class="hljs-comment">//可以直接打印</span><br>	fmt.Println(arr)<br><span class="hljs-comment">//打印数组</span><br>	<span class="hljs-keyword">for</span> index, value := <span class="hljs-keyword">range</span> arr &#123;<br>		fmt.Println(value, index)<br>	&#125;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">apple 0</span><br><span class="hljs-comment">orange 1</span><br><span class="hljs-comment">pear 2</span><br><span class="hljs-comment">123 3</span><br><span class="hljs-comment">*/</span><br><br><span class="hljs-comment">//多维数组</span><br>	<span class="hljs-keyword">var</span> arr = [<span class="hljs-number">3</span>][<span class="hljs-number">2</span>]<span class="hljs-type">string</span>&#123;<br>		&#123;<span class="hljs-string">&quot;11&quot;</span>, <span class="hljs-string">&quot;12&quot;</span>&#125;,      <span class="hljs-comment">//用逗号分隔</span><br>		&#123;<span class="hljs-string">&quot;21&quot;</span>, <span class="hljs-string">&quot;22&quot;</span>&#125;, <br>		&#123;<span class="hljs-string">&quot;31&quot;</span>, <span class="hljs-string">&quot;32&quot;</span>&#125;&#125;      <span class="hljs-comment">//最后一个括号一定要在同一行否则会报错</span><br>	fmt.Println(arr[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>])   <br><span class="hljs-comment">//打印多维数组</span><br><span class="hljs-keyword">for</span> _, value := <span class="hljs-keyword">range</span> arr &#123;        <span class="hljs-comment">//这里的每个value都是一个一维数组</span><br>		<span class="hljs-keyword">for</span> _, va := <span class="hljs-keyword">range</span> value &#123;<br>			fmt.Println(va)        <span class="hljs-comment">//这里的va是一个值</span><br>		&#125;<br>	&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="切片-slice"><a href="#切片-slice" class="headerlink" title="切片(slice)"></a>切片(slice)</h2><p>可以理解成可变长度的数组</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs go">s1 := []<span class="hljs-type">int</span>&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;    <span class="hljs-comment">//数组不写len,默认为切片</span><br>s1 := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>,<span class="hljs-number">2</span>,<span class="hljs-number">4</span>)  <span class="hljs-comment">//make(slice(slice就是[])/map/chan,初始时有多少个元素(len),最大有多少个元素(cap))</span><br><span class="hljs-comment">//甚至可以建立一个内部元素是map的切片   s1:=make([]map[string]string,2,6)</span><br>fmt.Println(s1)        <span class="hljs-comment">//结果是[0 0 0 0]</span><br>s1[<span class="hljs-number">1</span>] = <span class="hljs-number">5</span>              <span class="hljs-comment">//直接修改只能在初始范围内修改,想增加需要额外函数</span><br>fmt.Println(s1)        <span class="hljs-comment">//[0,5]</span><br><span class="hljs-comment">//append函数可以对切片进行增加/扩容操作</span><br>s1 = <span class="hljs-built_in">append</span>(s1, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)<br>fmt.Println(s1)      <span class="hljs-comment">//[0 5 2 3]</span><br>s1 = <span class="hljs-built_in">append</span>(s1, <span class="hljs-number">55</span>)<br>fmt.Println(s1)      <span class="hljs-comment">//本来s1最大容纳元素是5,但append函数可以自动扩容(cap翻倍),在上一步直接append(s1,2,3,55)也可以,后面新添加的元素数量没有限制</span><br>s2 := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)<br>s1 = <span class="hljs-built_in">append</span>(s1, s2...)    <span class="hljs-comment">//也可以在一个切片后直接添加一个切片,但后面的切片必须带上...</span><br>fmt.Println(s1)       <span class="hljs-comment">//[0 5 2 3 55 0]</span><br>fmt.Printf(<span class="hljs-string">&quot;%d %d&quot;</span>, <span class="hljs-built_in">len</span>(s1), <span class="hljs-built_in">cap</span>(s1))   <span class="hljs-comment">//6 8</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="切片直接引用数组"><a href="#切片直接引用数组" class="headerlink" title="切片直接引用数组"></a>切片直接引用数组</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">4</span>]<span class="hljs-type">int</span>&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>&#125;<br>fmt.Println(arr)<br>s1 := arr[:<span class="hljs-number">2</span>]<br>fmt.Printf(<span class="hljs-string">&quot;%d %d&quot;</span>, <span class="hljs-built_in">cap</span>(s1), s1)  <span class="hljs-comment">//4 [1 2]    cap默认是原数组长度</span><br>s2 := arr[:]      <span class="hljs-comment">//必须加[:],否则s2将是数组而不是切片</span><br>fmt.Println(s2)          <span class="hljs-comment">//默认是全取 [1 2 3 4]</span><br>s3 := arr[<span class="hljs-number">2</span>:<span class="hljs-number">4</span>]           <span class="hljs-comment">//左闭右开实际是第2和3个元素(0 1 2 3的顺序)</span><br>fmt.Println(s3)         <span class="hljs-comment">//[3 4]</span><br><span class="hljs-comment">//对数组的直接引用,会使切片指向数组,数组改变,切片也会改变,但当切片扩容之后,会自动指向新的数组,原数组改变,切片不再改变</span><br><span class="hljs-comment">//切片引用数组,本质是获取了数组的指针,所以切片改变,数组也会改变</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="copy函数"><a href="#copy函数" class="headerlink" title="copy函数"></a>copy函数</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs go">	s1 := []<span class="hljs-type">int</span>&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>&#125;<br>	fmt.Println(s1)<br>	s2 := []<span class="hljs-type">int</span>&#123;<span class="hljs-number">7</span>, <span class="hljs-number">8</span>&#125;<br><span class="hljs-comment">//情况1</span><br>	<span class="hljs-built_in">copy</span>(s1, s2)      <span class="hljs-comment">//s1是被赋值的(待操作),s2是进行赋值的</span><br>	fmt.Println(s1, s2)   <span class="hljs-comment">//[7 8 3 4]  [3 4]</span><br><span class="hljs-comment">//情况2</span><br>	<span class="hljs-built_in">copy</span>(s2,s1)    <span class="hljs-comment">//s1长度大于s2时,s2会被全部修改,但不会被扩容</span><br>	fmt.Println(s2) <span class="hljs-comment">//[1 2]</span><br><span class="hljs-comment">//情况3</span><br><span class="hljs-comment">//可以手动选择从哪里开始赋值</span><br>	<span class="hljs-built_in">copy</span>(s1, s2[:<span class="hljs-number">1</span>])<br>	fmt.Println(s1)    <span class="hljs-comment">//[7 2 3 4]</span><br><span class="hljs-comment">//情况4</span><br>	<span class="hljs-built_in">copy</span>(s1[<span class="hljs-number">2</span>:], s2[:<span class="hljs-number">1</span>])<br>	fmt.Println(s1)    <span class="hljs-comment">//[1 2 7 4]</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><p>就是键值对</p>
+<p>使用map过程中需要注意的几点： </p>
+<ul>
+<li>map是无序的，每次打印出来的map都会不一样，它不能通过index获取，而必须通过key获取</li>
+<li>map的长度是不固定的，也就是和slice一样，也是一种引用类型</li>
+<li>内置的len函数同样适用于map，返回map拥有的key的数量 </li>
+<li>map的key可以是所有可比较的类型，如布尔型、整数型、浮点型、复杂型、字符串型……</li>
+</ul>
+<h3 id="创建map"><a href="#创建map" class="headerlink" title="创建map"></a>创建map</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">//直接创建,当不赋值时为nil,不能直接更改</span><br><span class="hljs-keyword">var</span> map1 <span class="hljs-keyword">map</span>[<span class="hljs-type">int</span>]<span class="hljs-type">string</span>       <span class="hljs-comment">//map是类型,int是键名的变量类型,string是键值的变量类型</span><br><span class="hljs-comment">//用make创建,即使没赋值也不是nil,可以直接使用</span><br>map2 := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-type">int</span>]<span class="hljs-type">string</span>)   <span class="hljs-comment">//只有map可以这样,slice必须加len和cap,chan可以加cap也可以不加cap</span><br><span class="hljs-comment">//直接创建并赋值</span><br>map1 := <span class="hljs-keyword">map</span>[<span class="hljs-type">string</span>]<span class="hljs-type">int</span>&#123;<span class="hljs-string">&quot;html&quot;</span>: <span class="hljs-number">60</span>, <span class="hljs-string">&quot;css&quot;</span>: <span class="hljs-number">70</span>, <span class="hljs-string">&quot;js&quot;</span>: <span class="hljs-number">80</span>&#125;     <span class="hljs-comment">//中间用逗号分隔,赋值用冒号</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">//可以直接进行增加/修改键值对</span><br>map1 := <span class="hljs-keyword">map</span>[<span class="hljs-type">string</span>]<span class="hljs-type">int</span>&#123;<span class="hljs-string">&quot;html&quot;</span>: <span class="hljs-number">60</span>, <span class="hljs-string">&quot;css&quot;</span>: <span class="hljs-number">70</span>, <span class="hljs-string">&quot;js&quot;</span>: <span class="hljs-number">80</span>&#125;<br>fmt.Println(map1)    <span class="hljs-comment">//map[css:70 html:60 js:80]</span><br>map1[<span class="hljs-string">&quot;py&quot;</span>] = <span class="hljs-number">50</span><br>fmt.Println(map1)    <span class="hljs-comment">//map[css:70 html:60 js:80 py:50]</span><br><br><span class="hljs-comment">//删除需要用到delete函数</span><br><span class="hljs-built_in">delete</span>(map1,<span class="hljs-string">&quot;py&quot;</span>)  <span class="hljs-comment">//如果键名是int就不用加引号,这里是因为是字符串才加的引号</span><br>fmt.Println(map1)   <span class="hljs-comment">//map[css:70 html:60 js:80]</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="map遍历-map是无序的"><a href="#map遍历-map是无序的" class="headerlink" title="map遍历(map是无序的)"></a>map遍历(map是无序的)</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">//int:string型</span><br>	map1 := <span class="hljs-keyword">map</span>[<span class="hljs-type">int</span>]<span class="hljs-type">string</span>&#123;<span class="hljs-number">1</span>: <span class="hljs-string">&quot;太极&quot;</span>, <span class="hljs-number">2</span>: <span class="hljs-string">&quot;两仪&quot;</span>, <span class="hljs-number">3</span>: <span class="hljs-string">&quot;四象&quot;</span>, <span class="hljs-number">4</span>: <span class="hljs-string">&quot;八卦&quot;</span>&#125;<br>	keys := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>, <span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(map1))<br>	fmt.Println(keys)<br>	<span class="hljs-keyword">for</span> index := <span class="hljs-keyword">range</span> map1 &#123;<br>		keys = <span class="hljs-built_in">append</span>(keys, index)<br>	&#125;<br>	fmt.Println(keys)<br>	sort.Ints(keys)<br>	<span class="hljs-keyword">for</span> _, k := <span class="hljs-keyword">range</span> keys &#123;<br>		fmt.Println(k, map1[k])<br>	&#125;<br><span class="hljs-comment">//string:int型</span><br>	map1 := <span class="hljs-keyword">map</span>[<span class="hljs-type">string</span>]<span class="hljs-type">int</span>&#123;<span class="hljs-string">&quot;html&quot;</span>: <span class="hljs-number">60</span>, <span class="hljs-string">&quot;css&quot;</span>: <span class="hljs-number">70</span>, <span class="hljs-string">&quot;js&quot;</span>: <span class="hljs-number">80</span>&#125;<br>	<span class="hljs-keyword">for</span> k, v := <span class="hljs-keyword">range</span> map1 &#123;<br>		fmt.Println(k, v)<br>	&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>在一个函数中,如果有内层函数,则在外层函数定义的局部变量可以被内层函数不经调用直接使用,并且如果变量被内层函数使用后,在外层函数也结束后,该局部变量不会被释放(类似c的const)</p>
+<h2 id="指针-1"><a href="#指针-1" class="headerlink" title="指针"></a>指针</h2><h3 id="数组指针"><a href="#数组指针" class="headerlink" title="数组指针"></a>数组指针</h3><p>本质是指针,指向数组的地址</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">var</span> arr := [<span class="hljs-number">4</span>]<span class="hljs-type">int</span>&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>&#125;<br><span class="hljs-keyword">var</span> p *[<span class="hljs-number">4</span>]<span class="hljs-type">int</span><br>p=&amp;arr           <span class="hljs-comment">//p有自己的地址,但是p指向数组的地址</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="指针数组"><a href="#指针数组" class="headerlink" title="指针数组"></a>指针数组</h3><p>本质是数组,存储的内容是指针</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs go">a:=<span class="hljs-number">1</span><br>b:=<span class="hljs-number">2</span><br>c:=<span class="hljs-number">3</span><br>d:=<span class="hljs-number">4</span><br>arr1:=[<span class="hljs-number">4</span>]<span class="hljs-type">int</span>&#123;a,b,c,d&#125;<br>arr2:=[<span class="hljs-number">4</span>]*<span class="hljs-type">int</span>&#123;&amp;a,&amp;b,&amp;c,&amp;d&#125;<br>arr1[<span class="hljs-number">0</span>] = <span class="hljs-number">5</span><br>fmt.Println(a)   <span class="hljs-comment">//1</span><br>*arr2[<span class="hljs-number">0</span>] = <span class="hljs-number">5</span><br>fmt.Println(a)   <span class="hljs-comment">//5</span><br><span class="hljs-comment">//数组的直接赋值时深拷贝,如果时指针数组则是浅拷贝</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs elm">*[<span class="hljs-number">4</span>] <span class="hljs-keyword">type</span>  先指针再数组,所以是数组指针<br>[<span class="hljs-number">4</span>]* <span class="hljs-keyword">type</span>  先数组再指针,所以是指针数组<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230803203526.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>结构体内部是结构体的属性,而在外部创建对象,并给对象的属性赋值</p>
+<h3 id="初始化-1"><a href="#初始化-1" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>	<span class="hljs-keyword">var</span> p1 person    <span class="hljs-comment">//创建一个对象</span><br>	p1.age = <span class="hljs-number">18</span><br>	p1.name = <span class="hljs-string">&quot;小明&quot;</span><br>	p1.sex = <span class="hljs-string">&quot;m&quot;</span><br>	fmt.Println(p1)<br>    <span class="hljs-comment">//第二种定义方法</span><br>    p2 := person&#123;&#125;<br>	p2.age = <span class="hljs-number">19</span><br>	fmt.Println(p2.age)<br>    <span class="hljs-comment">//第三种定义方法</span><br>    p3 := person&#123;age: <span class="hljs-number">20</span>, sex: <span class="hljs-string">&quot;f&quot;</span>&#125;    <span class="hljs-comment">//结构体的赋值是冒号,跟map一样</span><br>	fmt.Println(p3)<br>&#125;<br><br><span class="hljs-keyword">type</span> person <span class="hljs-keyword">struct</span> &#123;   <span class="hljs-comment">//type和struct是关键字</span><br>	age  <span class="hljs-type">int</span><br>	name <span class="hljs-type">string</span><br>	sex  <span class="hljs-type">string</span><br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="结构体指针"><a href="#结构体指针" class="headerlink" title="结构体指针"></a>结构体指针</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>	<span class="hljs-keyword">var</span> p1 person<br>	p1.age = <span class="hljs-number">18</span><br>	p1.name = <span class="hljs-string">&quot;小明&quot;</span><br>	p1.sex = <span class="hljs-string">&quot;m&quot;</span><br>	<span class="hljs-keyword">var</span> p *person = &amp;p1<br>	fmt.Println(p, *p)    <span class="hljs-comment">//&amp;&#123;18 小明 m&#125; &#123;18 小明 m&#125;  第一个输出带&amp;</span><br>    p.age = <span class="hljs-number">29</span>            <span class="hljs-comment">//指针修改,则原来的也修改</span><br>	fmt.Println(p1)       <span class="hljs-comment">//&#123;29 小明 m&#125;</span><br>&#125;<br><br><span class="hljs-keyword">type</span> person <span class="hljs-keyword">struct</span> &#123;<br>	age  <span class="hljs-type">int</span><br>	name <span class="hljs-type">string</span><br>	sex  <span class="hljs-type">string</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>	w1 := worker&#123;name: <span class="hljs-string">&quot;小明&quot;</span>, age: <span class="hljs-number">19</span>, sex: <span class="hljs-string">&quot;m&quot;</span>&#125;<br>	w1.work()  <span class="hljs-comment">//小明 在工作</span><br>	w2 := &amp;worker&#123;name: <span class="hljs-string">&quot;小明&quot;</span>, age: <span class="hljs-number">19</span>, sex: <span class="hljs-string">&quot;m&quot;</span>&#125;    <span class="hljs-comment">//&amp;是取地址,这里是w2是结构体指针</span><br>	w2.work()  <span class="hljs-comment">//小明 在工作</span><br>&#125;<br><br><span class="hljs-keyword">type</span> worker <span class="hljs-keyword">struct</span> &#123;<br>	name <span class="hljs-type">string</span><br>	age  <span class="hljs-type">int</span><br>	sex  <span class="hljs-type">string</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(w worker)</span></span> work() &#123;        <span class="hljs-comment">//这里建立一个局部的结构体变量的对象用于进行操作 这里是空格不是逗号,work()是方法名</span><br>	fmt.Println(w.name, <span class="hljs-string">&quot;在工作&quot;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="模拟继承性"><a href="#模拟继承性" class="headerlink" title="模拟继承性"></a>模拟继承性</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><br><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span><br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>	<span class="hljs-comment">//创建pers父类对象</span><br>	p1 := pers&#123;name: <span class="hljs-string">&quot;小明&quot;</span>, age: <span class="hljs-number">18</span>&#125;<br>	fmt.Println(p1.name, p1.age)<br>	p1.eat()<br>	<span class="hljs-comment">//创建子类对象</span><br>	s1 := stu&#123;pers&#123;name: <span class="hljs-string">&quot;小光&quot;</span>, age: <span class="hljs-number">19</span>&#125;, <span class="hljs-string">&quot;qdyz&quot;</span>&#125; <span class="hljs-comment">//   pers的结构体嵌套是匿名字段,所以后面的school也只能用匿名字段的方法赋值</span><br>	fmt.Println(s1.school)<br>	<span class="hljs-comment">//子类对象调用父类方法</span><br>	s1.eat()<br>	<span class="hljs-comment">//子类调用自定义方法,父类对象不能调用子类的方法</span><br>	s1.study()<br>&#125;<br><br><span class="hljs-comment">//父类</span><br><span class="hljs-keyword">type</span> pers <span class="hljs-keyword">struct</span> &#123;<br>	name <span class="hljs-type">string</span><br>	age  <span class="hljs-type">int</span><br>&#125;<br><br><span class="hljs-comment">//子类</span><br><span class="hljs-keyword">type</span> stu <span class="hljs-keyword">struct</span> &#123;<br>	pers   <span class="hljs-comment">//结构体嵌套,模拟继承性</span><br>	school <span class="hljs-type">string</span><br>&#125;<br><br><span class="hljs-comment">//父类方法</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(p pers)</span></span> eat() &#123;<br>	fmt.Println(<span class="hljs-string">&quot;父类方法,吃米饭&quot;</span>)<br>&#125;<br><br><span class="hljs-comment">//子类自定义方法</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s stu)</span></span> study() &#123;<br>	fmt.Println(<span class="hljs-string">&quot;子类自定义方法,在学习&quot;</span>)<br>&#125;<br><br><span class="hljs-comment">//子类重写方法</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s stu)</span></span> eat() &#123;        <span class="hljs-comment">//方法中的局部变量的名字可以一样</span><br>	fmt.Println(<span class="hljs-string">&quot;子类重写的吃饭方法&quot;</span>)<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>接口有点类似结构体的感觉,只要有别的结构体的对象调用接口,那么这些结构体都可以相当于包含在接口所在的大类里</p>
+<p>接口可以创建接口类型的变量,而且调用了接口的结构体的对象可以算作接口创建的对象</p>
+<p>但是接口创建的变量不能使用调用接口的结构体中的对象的信息</p>
+<p>接口中的内容是方法,不是具体值</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><br><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span><br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>	m1 := mouse&#123;<span class="hljs-string">&quot;原厂&quot;</span>&#125;<br>	m1.start()<br>	m1.end()<br>	u1 := uDisck&#123;<span class="hljs-string">&quot;64g&quot;</span>&#125;<br>	u1.start()<br>	u1.end()<br>	test(m1)<br>	test(u1)<br>	<span class="hljs-keyword">var</span> usb USB = m1<br>	usb.start()<br>	arr := [<span class="hljs-number">3</span>]USB&#123;m1, u1&#125;<br>	fmt.Println(arr)<br>&#125;<br><br><span class="hljs-comment">//定义接口  usb</span><br><span class="hljs-keyword">type</span> USB <span class="hljs-keyword">interface</span> &#123;<br>	start()<br>	end()<br>&#125;<br><br><span class="hljs-comment">//定义鼠标类对象</span><br><span class="hljs-keyword">type</span> mouse <span class="hljs-keyword">struct</span> &#123;<br>	name <span class="hljs-type">string</span><br>&#125;<br><br><span class="hljs-comment">//定义u盘类对象</span><br><span class="hljs-keyword">type</span> uDisck <span class="hljs-keyword">struct</span> &#123;<br>	name <span class="hljs-type">string</span><br>&#125;<br><br><span class="hljs-comment">//鼠标类对象的接口</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(m mouse)</span></span> start() &#123;<br>	fmt.Println(m.name, <span class="hljs-string">&quot;鼠标开始&quot;</span>)<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(m mouse)</span></span> end() &#123;<br>	fmt.Println(m.name, <span class="hljs-string">&quot;鼠标结束&quot;</span>)<br>&#125;<br><br><span class="hljs-comment">//u盘类对象的接口</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(u uDisck)</span></span> start() &#123;<br>	fmt.Println(u.name, <span class="hljs-string">&quot;u盘ok&quot;</span>)<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(u uDisck)</span></span> end() &#123;<br>	fmt.Println(u.name, <span class="hljs-string">&quot;可以拔出&quot;</span>)<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">test</span><span class="hljs-params">(usb USB)</span></span> &#123;<br>	usb.start()<br>	usb.end()<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="空接口"><a href="#空接口" class="headerlink" title="空接口"></a>空接口</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><br><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span><br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>	map1 := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-type">int</span>]<span class="hljs-keyword">interface</span>&#123;&#125;)<br>	map1[<span class="hljs-number">0</span>] = <span class="hljs-string">&quot;hahah&quot;</span><br>	map1[<span class="hljs-number">1</span>] = <span class="hljs-number">123</span><br>	fmt.Println(map1)<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="接口断言"><a href="#接口断言" class="headerlink" title="接口断言"></a>接口断言</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><br><span class="hljs-keyword">import</span> (<br>	<span class="hljs-string">&quot;fmt&quot;</span><br>	<span class="hljs-string">&quot;math&quot;</span><br>)<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>	s1 := sanj&#123;<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>&#125;<br>	fmt.Println(s1.area())<br>	fmt.Println(s1.peri())<br>	c1 := cir&#123;<span class="hljs-number">2</span>&#125;<br>	fmt.Println(c1.peri())<br>	fmt.Println(c1.area())<br><br>	<span class="hljs-keyword">var</span> sh1 shape = s1<br>	sh1.area()<br>	test(s1)<br>	test(c1)<br>	test(sh1)<br>	fmt.Print(<span class="hljs-string">&quot;\n&quot;</span>)<br>	fmt.Println(<span class="hljs-string">&quot;接口断言&quot;</span>)<br>	gettype(s1)<br>	gettype(c1)<br>	gettype(sh1)<br>	fmt.Println(<span class="hljs-string">&quot;另一种接口断言&quot;</span>)<br>	gete(s1)<br>	gete(c1)<br>	gete(sh1)<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">gettype</span><span class="hljs-params">(a shape)</span></span> &#123;<br>	<span class="hljs-comment">//接口断言,判断传入的数据属于哪个结构体</span><br>	<span class="hljs-comment">//判断是否属于三角类型</span><br>	<span class="hljs-keyword">if</span> v, ok := a.(sanj); ok &#123;<br>		fmt.Println(<span class="hljs-string">&quot;三角形,三边分别是&quot;</span>, v.a, v.b, v.c)<br>	&#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> va, ok := a.(cir); ok &#123;<br>		fmt.Println(<span class="hljs-string">&quot;是圆形,半径是&quot;</span>, va.r)<br>	&#125; <span class="hljs-keyword">else</span> &#123;<br>		fmt.Println(<span class="hljs-string">&quot;no&quot;</span>)<br>	&#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">gete</span><span class="hljs-params">(a shape)</span></span> &#123;<br>	<span class="hljs-keyword">switch</span> v := a.(<span class="hljs-keyword">type</span>) &#123; <span class="hljs-comment">//type是关键字,括号里面就直接写type</span><br>	<span class="hljs-keyword">case</span> sanj:<br>		fmt.Println(<span class="hljs-string">&quot;是三角,第一个边长是&quot;</span>, v.a)<br>	<span class="hljs-keyword">case</span> cir:<br>		fmt.Println(<span class="hljs-string">&quot;是圆,半径是&quot;</span>, v.r)<br>	&#125;<br>&#125;<br><br><span class="hljs-keyword">type</span> shape <span class="hljs-keyword">interface</span> &#123;<br>	peri() <span class="hljs-type">float64</span><br>	area() <span class="hljs-type">float64</span><br>&#125;<br><span class="hljs-keyword">type</span> sanj <span class="hljs-keyword">struct</span> &#123;<br>	a, b, c <span class="hljs-type">float64</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s sanj)</span></span> peri() <span class="hljs-type">float64</span> &#123;<br>	<span class="hljs-keyword">return</span> s.a + s.b + s.c<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(s sanj)</span></span> area() <span class="hljs-type">float64</span> &#123;<br>	p := s.peri() / <span class="hljs-number">2</span><br>	are := math.Sqrt(p * (p - s.a) * (p - s.b) * (p - s.c))<br>	<span class="hljs-keyword">return</span> are<br>&#125;<br><br><span class="hljs-keyword">type</span> cir <span class="hljs-keyword">struct</span> &#123;<br>	r <span class="hljs-type">float64</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(c cir)</span></span> peri() <span class="hljs-type">float64</span> &#123;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">3</span> * c.r * <span class="hljs-number">2</span><br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(c cir)</span></span> area() <span class="hljs-type">float64</span> &#123;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">3</span> * c.r * c.r<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">test</span><span class="hljs-params">(s shape)</span></span> &#123;<br>	fmt.Printf(<span class="hljs-string">&quot;面积是:%.2f,周长是%.2f&quot;</span>, s.area(), s.peri())<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="错误和异常"><a href="#错误和异常" class="headerlink" title="错误和异常"></a>错误和异常</h2><p>处理异常需要调用os包(import os)</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><br><span class="hljs-keyword">import</span> (<br>	<span class="hljs-string">&quot;fmt&quot;</span><br>	<span class="hljs-string">&quot;os&quot;</span><br>)<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>	f, err := os.Open(<span class="hljs-string">&quot;test.txt&quot;</span>)<br>	<span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;<br>		fmt.Println(<span class="hljs-string">&quot;不存在文件&quot;</span>)<br>		<span class="hljs-keyword">return</span><br>	&#125;<br>	fmt.Println(<span class="hljs-string">&quot;成功读取文件&quot;</span>, f.Name())<br>&#125;<br><span class="hljs-comment">//只打印不存在文件</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230804181310.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="函数库"><a href="#函数库" class="headerlink" title="函数库"></a>函数库</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">//sort排序(正序)  只能用于切片,不能用于数组</span><br>	arr := [<span class="hljs-number">4</span>]<span class="hljs-type">int</span>&#123;<span class="hljs-number">5</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">6</span>&#125;<br>	arr1 := arr[:]<br>	sort.Ints(arr1)<br>	fmt.Println(arr1)  <span class="hljs-comment">//1 3 5 6</span><br><span class="hljs-comment">//字符串按照首字母ascii排序</span><br>	ar := []<span class="hljs-type">string</span>&#123;<span class="hljs-string">&quot;abx&quot;</span>, <span class="hljs-string">&quot;A&quot;</span>, <span class="hljs-string">&quot;UK&quot;</span>, <span class="hljs-string">&quot;呃呃呃&quot;</span>&#125;<br>	sort.Strings(ar)<br>	fmt.Println(ar)    <span class="hljs-comment">//[A UK abx 呃呃呃]</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h2><h3 id="典中典水仙花"><a href="#典中典水仙花" class="headerlink" title="典中典水仙花"></a>典中典水仙花</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><br><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span><br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>	<span class="hljs-keyword">var</span> ge <span class="hljs-type">int</span><br>	<span class="hljs-keyword">var</span> sh <span class="hljs-type">int</span><br>	<span class="hljs-keyword">var</span> bai <span class="hljs-type">int</span><br>	<span class="hljs-keyword">for</span> i := <span class="hljs-number">100</span>; i &lt; <span class="hljs-number">1000</span>; i++ &#123;<br>		ge = i % <span class="hljs-number">10</span><br>		sh = i / <span class="hljs-number">10</span> % <span class="hljs-number">10</span><br>		bai = i / <span class="hljs-number">100</span><br>		<span class="hljs-keyword">if</span> i == ge*ge*ge+sh*sh*sh+bai*bai*bai &#123;<br>			fmt.Println(i)<br>		&#125;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="求素数"><a href="#求素数" class="headerlink" title="求素数"></a>求素数</h3><p>j要从2开始</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><br><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span><br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>	<span class="hljs-keyword">for</span> i := <span class="hljs-number">2</span>; i &lt;= <span class="hljs-number">100</span>; i++ &#123;<br>		flag := <span class="hljs-literal">true</span><br>		<span class="hljs-keyword">for</span> j := <span class="hljs-number">2</span>; j &lt; i; j++ &#123;<br>			<span class="hljs-keyword">if</span> i%j == <span class="hljs-number">0</span> &#123;<br>				flag = <span class="hljs-literal">false</span><br>				<span class="hljs-keyword">break</span><br>			&#125;<br>		&#125;<br>		<span class="hljs-keyword">if</span> flag &#123;<br>			fmt.Println(i)<br>		&#125;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/lang/" class="category-chain-item">lang</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>go基础语法</div>
+      <div>https://blog.yblue.top/2023/08/20/go基础语法/</div>
+    </div>
+    <div class="license-meta">
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>August 20, 2023</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/08/20/go%E8%BF%9B%E9%98%B6/" title="go进阶">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">go进阶</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/20/python/" title="python">
+                        <span class="hidden-mobile">python</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

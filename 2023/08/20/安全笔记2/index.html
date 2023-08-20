@@ -1,0 +1,1131 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/coffee.svg">
+  <link rel="icon" href="/img/coffee.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Day11.html(结合vscode和typora) 1. 基础架构12345678910&lt;!DOCTYPE html&gt;&lt;html&gt;	&lt;head&gt;		&lt;meta charset&#x3D;&quot;utf-8&quot;&gt;		&lt;title&gt;还是得记笔记&lt;&#x2F;title&gt;	&lt;&#x2F;head&gt;	&lt;body&gt;			&amp;lt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安全笔记2">
+<meta property="og:url" content="https://blog.yblue.top/2023/08/20/%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B02/index.html">
+<meta property="og:site_name" content="Taosu&#96;Home">
+<meta property="og:description" content="Day11.html(结合vscode和typora) 1. 基础架构12345678910&lt;!DOCTYPE html&gt;&lt;html&gt;	&lt;head&gt;		&lt;meta charset&#x3D;&quot;utf-8&quot;&gt;		&lt;title&gt;还是得记笔记&lt;&#x2F;title&gt;	&lt;&#x2F;head&gt;	&lt;body&gt;			&amp;lt">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230407153040.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230407164008.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230408222109.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230409160650.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230409170416.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411214451.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411214115.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411214834.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411215205.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411215553.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411222838.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411223133.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411234149.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412220737.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412223302.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412225558.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230413170441.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230413171142.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230414202948.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230417172159.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230417171042.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230417171118.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230418201237.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230505144059.png">
+<meta property="article:published_time" content="2023-08-20T12:25:04.000Z">
+<meta property="article:modified_time" content="2023-08-20T12:25:28.100Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230407153040.png">
+  
+  
+  
+  <title>安全笔记2 - Taosu`Home</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"blog.yblue.top","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Taosu ` Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230820163416.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="安全笔记2"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-08-20 20:25" pubdate>
+          August 20, 2023 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          14k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          119 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">安全笔记2</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h1><h2 id="1-html"><a href="#1-html" class="headerlink" title="1.html"></a>1.html</h2><p>(结合vscode和typora)</p>
+<h3 id="1-基础架构"><a href="#1-基础架构" class="headerlink" title="1. 基础架构"></a>1. 基础架构</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>还是得记笔记<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="2-常见标签"><a href="#2-常见标签" class="headerlink" title="2. 常见标签"></a>2. 常见标签</h3><table>
+<thead>
+<tr>
+<th>标签名</th>
+<th>介绍</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>meta</td>
+<td>提供页面源信息(meta-information)(给搜索引擎看的)</td>
+<td><code>&lt;meta name=&quot;author&quot; content=&quot;taosu&quot;&gt;</code></td>
+</tr>
+<tr>
+<td>link</td>
+<td>引入外部链接(这里引入的是一个css)</td>
+<td><code>&lt;link href=&#39;E:\桌面\blog\source\css\custom.css&#39;&gt;</code></td>
+</tr>
+<tr>
+<td>br</td>
+<td>换行</td>
+<td><code>&lt;/br&gt;</code></td>
+</tr>
+<tr>
+<td>hr</td>
+<td>换行线(知乎的分割线)</td>
+<td><code>&lt;/hr&gt;</code></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>文本属性标签</th>
+<th>介绍</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>b</td>
+<td>加粗</td>
+<td><code>&lt;b&gt;这是段加粗的文字&lt;/b&gt;</code></td>
+</tr>
+<tr>
+<td>i</td>
+<td>斜体</td>
+<td><code>&lt;i&gt;斜体&lt;/i&gt;</code></td>
+</tr>
+<tr>
+<td>sup</td>
+<td>上标(平方就是上标)</td>
+<td><code>2&lt;sup&gt;3&lt;/sup&gt;=8</code> 23&#x3D;8</td>
+</tr>
+<tr>
+<td>sub</td>
+<td>下标</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>del</td>
+<td>删除线</td>
+<td><code>&lt;del&gt;这段要被删除&lt;/del&gt;</code> <del>这段要被删除</del></td>
+</tr>
+<tr>
+<td>font</td>
+<td>字体属性</td>
+<td><code>&lt;font size=&quot;7&quot; color=&quot;66ccff&quot;&gt;天依蓝&lt;/font&gt; </code>天依蓝</td>
+</tr>
+<tr>
+<td>pre</td>
+<td>预留标签(在网页显示时p会自动帮你缩进,pre不会)</td>
+<td><code>&lt;pre&gt; 空格也会显示&lt;/pre&gt;</code></td>
+</tr>
+</tbody></table>
+<h3 id="3-form表单和input标签"><a href="#3-form表单和input标签" class="headerlink" title="3. form表单和input标签"></a>3. form表单和input标签</h3><p>form表单用于规定向何处以及何种方式发送表单数据<br>一般用post和get,post传的数据更安全且更多<br>action指将数据发往何处,不写时默认发给本页面<br>enctype是编码方式,这个属性只能在post使用,编码后数据更容易进行传输和接收,enctype属性有三个可用的值：</p>
+<ol>
+<li>application&#x2F;x-www-form-urlencoded：这是默认值。在发送前，所有字符都会被编码（空格会被转换为“+”号，特殊字符会被转换为ASCII HEX值）。</li>
+<li>multipart&#x2F;form-data：不对字符进行编码。当使用文件上传控件的表单时，必须使用此值</li>
+<li>text&#x2F;plain：将空格转换为“+”号，但不对特殊字符进行编码。</li>
+</ol>
+<p>type给input标签显示的样式,可以使用type&#x3D;”text”创建文本框，使用type&#x3D;”checkbox”创建复选框(就类似选性别后面的按钮,男●女○这样的)，使用type&#x3D;”radio”创建单选按钮，使用type&#x3D;”submit”创建提交按钮等<br>name是给服务器看的,比如表单输入的是密码,name就可以是password(name都是自定义的),服务器端会接收表单信息,同时建立一个名为password的变量存储提交的密码<br>id是css或js选择用的<br>value是在未输入值时,表单的输入框显示给用户看的内容<br>hidden是隐藏内容,用户在页面看不到,但是value会随着表单数据一起传到服务器,可以避免CSRF(跨站点请求)攻击<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230407152923.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="get"></a><br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230407153040.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230407153040.png" srcset="/img/loading.gif" lazyload alt="post看不见内容,比较安全"></a></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>form表单和input标签<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-comment">&lt;!--账密输入表单--&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;get&quot;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;&quot;</span> &gt;</span><br>			用户名:<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span>  <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;enter your name&quot;</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;30&quot;</span> <span class="hljs-attr">maxlength</span>=<span class="hljs-string">&quot;10&quot;</span> <span class="hljs-attr">readonly</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span><br>			密码:<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span>  <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;enter your password&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;hidden&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;token&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;123456&quot;</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;提交&quot;</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;reset&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;重置&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br>		<br>		<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">enctype</span>=<span class="hljs-string">&quot;multipart/form-data&quot;</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;file&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;选择上传的文件&quot;</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;提交&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="4-a标签-img标签-table表格"><a href="#4-a标签-img标签-table表格" class="headerlink" title="4.a标签,img标签,table表格"></a>4.a标签,img标签,table表格</h3><h4 id="a-anchor-锚"><a href="#a-anchor-锚" class="headerlink" title="a(anchor 锚)"></a>a(anchor 锚)</h4><ol>
+<li><p>self是不跳转,blank是跳转到别的页面</p>
+</li>
+<li><p>书签功能,点击即跳转到网页某处(返回页面最上方)</p>
+<p><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230407164008.png" srcset="/img/loading.gif" lazyload alt="alt是alternative text,在图片无法显示时可以方便用户了解图片内容"></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>a<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;dingbu&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://fata.taosu0216.cn&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_self&quot;</span>&gt;</span>blog<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://fata.taosu0216.cn&quot;</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;_blank&quot;</span>&gt;</span>blog<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230407134515.png&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;900&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;1300&quot;</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">&quot;封面&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#dingbu&quot;</span>&gt;</span>click to top<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="table"><a href="#table" class="headerlink" title="table"></a>table</h4><table>
+<thead>
+<tr>
+<th>name</th>
+<th>用处</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>border</td>
+<td>表格宽度(0即不显示表格框)</td>
+</tr>
+<tr>
+<td>cellpadding</td>
+<td>内容与单元格框架距离</td>
+</tr>
+<tr>
+<td>th</td>
+<td>表头</td>
+</tr>
+<tr>
+<td>tr</td>
+<td>一行</td>
+</tr>
+<tr>
+<td>td</td>
+<td>一个单元格</td>
+</tr>
+<tr>
+<td>colspan</td>
+<td>一个单元格占据几个单元格的地方(横向拼接)</td>
+</tr>
+<tr>
+<td>rowspan</td>
+<td>竖向合并单元格</td>
+</tr>
+</tbody></table>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>table<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">cellpadding</span>=<span class="hljs-string">&quot;10&quot;</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>第一列<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>第二列<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>qq<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>2412211487<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>			<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>school<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>qlu<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>				<br>			<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>job<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>coder<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>			<br>			<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">colspan</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="5-各种框和文本域"><a href="#5-各种框和文本域" class="headerlink" title="5.各种框和文本域"></a>5.各种框和文本域</h3><table>
+<thead>
+<tr>
+<th>name</th>
+<th>用处</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>filedset</td>
+<td>大边框</td>
+</tr>
+<tr>
+<td>legend</td>
+<td>描述整个边框里的内容</td>
+</tr>
+<tr>
+<td>radio (多选框)</td>
+<td>就是类似在正确选项后面打对钩的操作(只选一个)</td>
+</tr>
+<tr>
+<td>checkbox (复选框)</td>
+<td>很多个选项里选多个打对钩</td>
+</tr>
+<tr>
+<td>checked</td>
+<td>默认勾选</td>
+</tr>
+<tr>
+<td>select(选择框)</td>
+<td>就像微信选地区的那种下拉在很多选项里选一个的</td>
+</tr>
+<tr>
+<td>textarea(文本域)</td>
+<td>有点留言框的感觉</td>
+</tr>
+</tbody></table>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>选择框,复选框,单选框<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">filedset</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>个人简介<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span><br>			性别<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;sex&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>男<span class="hljs-tag">&lt;<span class="hljs-name">input</span> 					<span class="hljs-attr">type</span>=<span class="hljs-string">&quot;radio&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;sex&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>女<span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><br>			喜欢的语言<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;c&quot;</span>&gt;</span>c<br>			<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;c++&quot;</span> <span class="hljs-attr">checked</span>=<span class="hljs-string">&quot;checked&quot;</span>&gt;</span>c++<br>			<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;php&quot;</span>&gt;</span>php<span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><br>			地区<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;地区&quot;</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;北京&quot;</span>&gt;</span>北京<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;上海&quot;</span>&gt;</span>上海<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;广州&quot;</span>&gt;</span>广州<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;深圳&quot;</span>&gt;</span>深圳<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>			<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><br>			留言<span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">cols</span>=<span class="hljs-string">&quot;20&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;10&quot;</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;info&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;提交&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">filedset</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="6-基础列表和嵌入页面"><a href="#6-基础列表和嵌入页面" class="headerlink" title="6.基础列表和嵌入页面"></a>6.基础列表和嵌入页面</h3><table>
+<thead>
+<tr>
+<th>name</th>
+<th>用处</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ul</td>
+<td>无序列表(前面没有序号)</td>
+</tr>
+<tr>
+<td>ol</td>
+<td>有序列表</td>
+</tr>
+<tr>
+<td>iframe</td>
+<td>嵌入具体页面</td>
+</tr>
+<tr>
+<td>ul{list-style-image:url()}</td>
+<td>设置列表标记的图片,默认是小圆点,小方块或者数字,通过这个可以选择图片当列表标记</td>
+</tr>
+</tbody></table>
+<p>伪类:是特殊的选择器,可以用于选择特殊状态下的元素,比如a:hover {},就是鼠标悬停在a类元素上时会有不同表现</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>		a:link&#123;<br>			font-family:Lucida Handwriting;<br>		&#125;<br>		a:hover&#123;<br>			color:aqua;<br>		&#125;<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">ol</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>第1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>第2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>第3<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>第4<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>第5<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>第五个abcdefghijk<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">ol</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://fata.taosu0216.cn&quot;</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;400&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;500&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">iframe</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="Day2"><a href="#Day2" class="headerlink" title="Day2"></a>Day2</h1><h2 id="2-div和css"><a href="#2-div和css" class="headerlink" title="2.div和css"></a>2.div和css</h2><h3 id="1-选择器"><a href="#1-选择器" class="headerlink" title="1.选择器"></a>1.选择器</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css">			*&#123;</span><br><span class="language-css">				<span class="hljs-attribute">margin</span>: <span class="hljs-number">5px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">color</span>: green;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-class">.demo</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">color</span>: <span class="hljs-number">#66ccff</span>;</span><br><span class="language-css">				<span class="hljs-attribute">font-family</span>: Lucida Handwriting;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-tag">p</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">font-family</span>: Lucida Handwriting;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-id">#demo1</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">color</span>:grey;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">		</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;demo&quot;</span>&gt;</span>daily growing<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-comment">&lt;!--类似id,但能用很多次--&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;demo1&quot;</span>&gt;</span>the faster u move<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><span class="hljs-comment">&lt;!--对id进行唯一选择--&gt;</span>&gt;<br>		<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>the heavier u get<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-comment">&lt;!--对元素选择--&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="2-背景"><a href="#2-背景" class="headerlink" title="2.背景"></a>2.背景</h3><table>
+<thead>
+<tr>
+<th>background-</th>
+<th>用处</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>color</td>
+<td>颜色</td>
+</tr>
+<tr>
+<td>image</td>
+<td>图片</td>
+</tr>
+<tr>
+<td>repeat</td>
+<td>当图片不适配页面(过长或过高时,是否重复出现图片占满网页背景)</td>
+</tr>
+<tr>
+<td>size</td>
+<td>背景图片大小,cover就是全部填充,也可以是px</td>
+</tr>
+<tr>
+<td>attachment</td>
+<td>fixed就是一图流,scroll就是头图</td>
+</tr>
+</tbody></table>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs django"><span class="language-xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span><br><span class="language-xml">	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></span><br><span class="language-xml">    	<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span></span></span><br><span class="hljs-tag"><span class="language-xml">    	&lt;<span class="hljs-attr">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span><br><span class="language-xml">    	<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="language-css"><span class="language-xml">    		<span class="hljs-selector-tag">body</span>&#123;</span></span><br><span class="language-css"><span class="language-xml">				<span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/psc.jfif</span>);</span></span><br><span class="language-css"><span class="language-xml">                <span class="hljs-attribute">background-repeat</span>: no-repeat;</span></span><br><span class="language-css"><span class="language-xml">                <span class="hljs-attribute">background-size</span>: <span class="hljs-number">700px</span>;</span></span><br><span class="language-css"><span class="language-xml">                <span class="hljs-attribute">background-attachment</span>: fixed;</span></span><br><span class="language-css"><span class="language-xml">			&#125;</span></span><br><span class="language-css"><span class="language-xml">    	</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><br><span class="language-xml">	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><br><span class="language-xml">	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="language-xml">		<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>aaaaaaaaaaaaaaaaaaaaaaaa&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span></span><br><span class="language-xml">		<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>aaaaaaaaaaaaaaaaaaaaaaaa&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span></span><br><span class="language-xml">		<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>aaaaaaaaaaaaaaaaaaaaaaaa&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span></span><br><span class="language-xml">		<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>aaaaaaaaaaaaaaaaaaaaaaaa&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span></span><br><span class="language-xml">		<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>aaaaaaaaaaaaaaaaaaaaaaaa&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span></span><br><span class="language-xml">		<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>aaaaaaaaaaaaaaaaaaaaaaaa&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span></span><br><span class="language-xml">		<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>aaaaaaaaaaaaaaaaaaaaaaaa&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml">	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+
+<h3 id="3-边框"><a href="#3-边框" class="headerlink" title="3.边框"></a>3.边框</h3><table>
+<thead>
+<tr>
+<th>border</th>
+<th>用处</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>color</td>
+<td>边框颜色</td>
+</tr>
+<tr>
+<td>width</td>
+<td>边框宽度</td>
+</tr>
+<tr>
+<td>style</td>
+<td>solid是实线框,dashed是虚线框</td>
+</tr>
+<tr>
+<td>width,height</td>
+<td>整个边框的宽度,高度</td>
+</tr>
+<tr>
+<td>left,right,top,bottom</td>
+<td>单独设置上下左右边框</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>文本</th>
+<th>用处</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>text-align</td>
+<td>center 居中</td>
+</tr>
+<tr>
+<td>text-height</td>
+<td>5px 行间距</td>
+</tr>
+<tr>
+<td>text-indent</td>
+<td>首行缩进</td>
+</tr>
+<tr>
+<td>text-decoration</td>
+<td>none,underline(下滑线),overline(上划线),line-through(删除线)</td>
+</tr>
+</tbody></table>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	.div1&#123;<br>                border-color: #66ccff;<br>                border-width: 5px;<br>                border-style: dashed;<br>                width: 300px;<br>                height: 300px;<br>                border-left: groove red 10px;<br>            &#125;<br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;div1&quot;</span>&gt;</span><br>			这是边框里的内容<br>		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="4-盒子"><a href="#4-盒子" class="headerlink" title="4.盒子"></a>4.盒子</h3><p><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230408222109.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230408222109.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>margin就是页边距</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>盒子模型和padding<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css">            <span class="hljs-selector-class">.div1</span>&#123;</span><br><span class="language-css">                <span class="hljs-attribute">color</span>: red;</span><br><span class="language-css">                <span class="hljs-attribute">width</span>: <span class="hljs-number">500px</span>;</span><br><span class="language-css">                <span class="hljs-attribute">height</span>: <span class="hljs-number">500px</span>;</span><br><span class="language-css">                <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#66ccff</span>;</span><br><span class="language-css">                <span class="hljs-attribute">border-style</span>: dashed;</span><br><span class="language-css">                <span class="hljs-attribute">margin</span>: <span class="hljs-number">200px</span> <span class="hljs-number">30px</span> <span class="hljs-number">40px</span> <span class="hljs-number">500px</span>;</span><br><span class="language-css">            &#125;</span><br><span class="language-css">        </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;div1&quot;</span>&gt;</span><br>            内容<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="5-浮动"><a href="#5-浮动" class="headerlink" title="5.浮动"></a>5.浮动</h3><p>一般用于导航栏,比如博客左上角是Fata home,这是左浮动,而搜索,关于等在导航栏右侧,这就是右浮动(&amp;nbsp是空格)<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230409160650.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230409160650.png" srcset="/img/loading.gif" lazyload alt="稍微仿一下站"></a>)</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>导航栏<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css">            <span class="hljs-selector-class">.demo</span>&#123;	</span><br><span class="language-css">				<span class="hljs-attribute">float</span><span class="hljs-selector-pseudo">:left</span>;</span><br><span class="language-css">				<span class="hljs-attribute">font-family</span>:Lucida Handwriting;</span><br><span class="language-css">                <span class="hljs-attribute">font-size</span>:<span class="hljs-number">20px</span>;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-class">.demo1</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">float</span><span class="hljs-selector-pseudo">:right</span>;</span><br><span class="language-css">                <span class="hljs-attribute">font-family</span>:Comic Sans MS,<span class="hljs-string">&quot;华文中宋&quot;</span>;</span><br><span class="language-css">                <span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">            <span class="hljs-selector-tag">a</span>&#123;</span><br><span class="language-css">                <span class="hljs-attribute">color</span>:black;</span><br><span class="language-css">                <span class="hljs-attribute">text-decoration</span>: none;</span><br><span class="language-css">            &#125;</span><br><span class="language-css">            <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> &#123;</span><br><span class="language-css">                <span class="hljs-attribute">color</span>: darkgrey;</span><br><span class="language-css">            &#125;</span><br><span class="language-css">        </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;demo&quot;</span>&gt;</span><br>            Fata`Home<br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;demo1&quot;</span>&gt;</span><br>        	<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>搜索 <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span> <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>home <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-symbol">&amp;nbsp;</span> <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>category <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-symbol">&amp;nbsp;</span> <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>about<span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-symbol">&amp;nbsp;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="Day3"><a href="#Day3" class="headerlink" title="Day3"></a>Day3</h1><h2 id="1-sql"><a href="#1-sql" class="headerlink" title="1.sql"></a>1.sql</h2><p>数据库 &gt;&gt; 数据表 &gt;&gt; 记录,字段 &gt;&gt; 字段内容 (记录可以理解成行的表头,字段理解为列的表头,一个记录一般有多个字段,记录为具体的事物比如学生,列可以是名字,姓名,年龄等)<br>phpstudy2018版本,登陆密码为root<br>可以直接从phpstudy里进入命令行<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230409170416.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230409170416.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>也可以从cmd命令行窗口输入 phpstudy的mysql的bin文件所在的路径进入<code>phpstudy\PhpStudy2018\PHPTutorial\MySQL\bin&gt;mysql.exe -u root -p</code><br>因为之前进过dvwa,更改过密码,所以直接输入没有显示,这里可以挨个进入文件夹,进入到bin文件夹之后,输入<code>mysql.exe -u root -p</code>来输入密码<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230409170647.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<table>
+<thead>
+<tr>
+<th>登陆的语法</th>
+<th>用处</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-h127.0.0.1</td>
+<td>连接本地</td>
+</tr>
+<tr>
+<td>\q</td>
+<td>退出</td>
+</tr>
+<tr>
+<td><code>show databases;</code></td>
+<td>列出数据库(这一步不知道为什么一直不行,先用了一次use test以后才能用这个操作,估计还是前面搭dvwa的锅),在跟bin同文件夹下的data文件夹的内容就是数据库</td>
+</tr>
+<tr>
+<td>use mysql</td>
+<td>使用mysql数据库</td>
+</tr>
+<tr>
+<td>show tables;</td>
+<td>列出数据表</td>
+</tr>
+</tbody></table>
+<p><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230409215120.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="中间又是不知道原因的n次报错以及莫名其妙的能用了"></a><br>查询用户密码,本质是 select * from database where id &#x3D;’’<br><code>select password from user where user=&#39;root&#39;</code></p>
+<h3 id="1-基础操作"><a href="#1-基础操作" class="headerlink" title="1.基础操作"></a>1.基础操作</h3><table>
+<thead>
+<tr>
+<th>语法</th>
+<th>用处</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>create database (name);</td>
+<td>新建名为(name)的数据库<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230409215846.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a></td>
+</tr>
+<tr>
+<td>show status</td>
+<td>展示数据库状态</td>
+</tr>
+<tr>
+<td>desc user</td>
+<td>desc就是describe,描述用户状态</td>
+</tr>
+<tr>
+<td>show databases;</td>
+<td>展示所有数据库</td>
+</tr>
+<tr>
+<td>show create database (name);</td>
+<td>展示建立的数据库</td>
+</tr>
+<tr>
+<td>drop database (name);</td>
+<td>删除数据库</td>
+</tr>
+</tbody></table>
+<h3 id="2-数据表的操作"><a href="#2-数据表的操作" class="headerlink" title="2.数据表的操作"></a>2.数据表的操作</h3><p>alter<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411214451.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411214451.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>用处</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>show tables</td>
+<td>展示当前数据库的所有数据表</td>
+</tr>
+<tr>
+<td>create table (name)</td>
+<td>属性名 数据类型 约束条件</td>
+</tr>
+<tr>
+<td>drop table (name)</td>
+<td>删除表</td>
+</tr>
+<tr>
+<td>desc (table name)</td>
+<td>查看表单的信息</td>
+</tr>
+<tr>
+<td>alter table (name) rename (new name);</td>
+<td>改表的名字</td>
+</tr>
+<tr>
+<td>alter table (name) modify 属性名 数据类型;</td>
+<td>修改表中的字段的数据类型<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411213232.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a></td>
+</tr>
+<tr>
+<td>alert table (name) change (旧名字) (新名字) 数据类型;</td>
+<td>给字段改名字<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411214115.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411214115.png" srcset="/img/loading.gif" lazyload alt="img"></a></td>
+</tr>
+<tr>
+<td>alter table （name） add （字段 name） 数据类型 约束条件；</td>
+<td>增加字段<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411214834.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411214834.png" srcset="/img/loading.gif" lazyload alt="img"></a></td>
+</tr>
+<tr>
+<td>alter table （name） drop (name)</td>
+<td>删除字段<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411215205.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411215205.png" srcset="/img/loading.gif" lazyload alt="img"></a></td>
+</tr>
+<tr>
+<td>alter table (name) engine &#x3D; (name)</td>
+<td>修改引擎<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411215553.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411215553.png" srcset="/img/loading.gif" lazyload alt="img"></a></td>
+</tr>
+</tbody></table>
+<p>create table example(<br>属性名 数据类型 完整约束条件 ,<br>属性名 数据类型 完整约束条件 ,<br>属性名 数据类型 完整约束条件<br>)ENGINE&#x3D;InnoDB DEFAULT CHARSET&#x3D;utf8; (有时候utf-8,有时候utf8) 要么都用&lt;&gt;或者都用()</p>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><p>1.整数类型 : BIT; BOOL; INT; SMALL&#x2F;MEDIUM&#x2F;BIG INT<br>2.浮点 : FLOAT; DOUBLE;<br>3.字符串 : CHAR; VARCHAR; TEXT<br>4.日期 : DATE; DATETIME;</p>
+<h4 id="约束条件"><a href="#约束条件" class="headerlink" title="约束条件"></a>约束条件</h4><ol>
+<li>NOT NULL 不能存储null值</li>
+<li>AUTO_INCREMENT 自动增长</li>
+</ol>
+<h4 id="数据库引擎-可以不写-数据越大时引擎越有用-搜索速度更快"><a href="#数据库引擎-可以不写-数据越大时引擎越有用-搜索速度更快" class="headerlink" title="数据库引擎(可以不写,数据越大时引擎越有用,搜索速度更快)"></a>数据库引擎(可以不写,数据越大时引擎越有用,搜索速度更快)</h4><ol>
+<li>InnoDB 支付相关</li>
+<li>myisam 存储数据,大数据查询</li>
+</ol>
+<h3 id="3-数据-字段-的操作"><a href="#3-数据-字段-的操作" class="headerlink" title="3.数据(字段)的操作"></a>3.数据(字段)的操作</h3><p>学的真累</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>用处</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>insert into (name) <del>(字段名1,字段名2)</del> values (值1,值2) (字段名不写的话就是按顺序默认加数据)</td>
+<td>给字段添加具体数据(字段名和values都要加括号)<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411222838.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411222838.png" srcset="/img/loading.gif" lazyload alt="不加table 不加table 不加table"></a></td>
+</tr>
+<tr>
+<td>select * from (table name) (不加<code>*</code>就是具体字段名)</td>
+<td>查询数据<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411223133.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411223133.png" srcset="/img/loading.gif" lazyload alt="出现了,最开始学的select * from"></a></td>
+</tr>
+<tr>
+<td>delete * from (table name)</td>
+<td>删除表内所有数据</td>
+</tr>
+<tr>
+<td>truncate table (name)</td>
+<td>彻底删除表,如果再新加数值,id默认从1开始累加,而delete不是</td>
+</tr>
+<tr>
+<td>update (table name) set (字段name) &#x3D; () where id &#x3D; ()</td>
+<td>更改数据,是表名直接到字段的具体数据名字,中间没有字段名字<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411234149.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230411234149.png" srcset="/img/loading.gif" lazyload alt="img"></a></td>
+</tr>
+<tr>
+<td>&lt;&gt;</td>
+<td>不等于符号<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412001233.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a></td>
+</tr>
+<tr>
+<td>select distinct (name) from (table name);</td>
+<td>排除数据相同的字段,显示数据不相同的(就是一样的东西只显示一遍)<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412001233.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a></td>
+</tr>
+<tr>
+<td>select * from (table name) where (数据name) (not) between () and ();</td>
+<td>!查询在一个区间的数据<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412201126.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a></td>
+</tr>
+</tbody></table>
+<p>一个新的表<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412220030.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h4 id="1-and"><a href="#1-and" class="headerlink" title="1.and"></a>1.and</h4><p><code>select * from url where id &gt; 1 and (country = &#39;cn&#39;);</code><br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412220121.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h4 id="2-符号"><a href="#2-符号" class="headerlink" title="2.符号"></a>2.符号</h4><p><code>select * from url where id &lt;&gt; 1;</code><br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412220217.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h4 id="3-in"><a href="#3-in" class="headerlink" title="3.in"></a>3.in</h4><p><code>select * from url where id in(1);</code>()里还可以加很多,&#x3D;只能有一个,()里可以填很多数据<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412220245.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h4 id="4-like"><a href="#4-like" class="headerlink" title="4.like"></a>4.like</h4><p><code>select * from url where name like &#39;%o%&#39;</code><br>like 是模糊搜索,% 表示多个字值，<code>_ </code>下划线表示一个字符</p>
+<ol>
+<li>%o%是内容包含o</li>
+<li>%o<code>_</code> : 表示查询以o在倒数第二位的所有内容</li>
+<li>%o表示o在最后一位</li>
+<li><code>%</code>代表0个或多个字符<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412220405.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a><br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412220737.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412220737.png" srcset="/img/loading.gif" lazyload alt="img"></a></li>
+</ol>
+<h4 id="5-or"><a href="#5-or" class="headerlink" title="5.or"></a>5.or</h4><p><code>select * from url where id = 1 or country = &#39;us&#39;;</code><br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412221354.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h4 id="6-排序"><a href="#6-排序" class="headerlink" title="6.排序"></a>6.排序</h4><p><code>select * from url order by arr;</code><br>排序,默认是asc(从小到大),也可以改成desc(从大到小)<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412223302.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412223302.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h4 id="7-limit"><a href="#7-limit" class="headerlink" title="7.limit"></a>7.limit</h4><p><code>select * from url limit 2;</code><br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412225558.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230412225558.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h4 id="8-别名"><a href="#8-别名" class="headerlink" title="8.别名"></a>8.别名</h4><p><code>select name as n from url;</code><br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230413144123.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a><br><code>select concat(url,name) as ue from url;</code><br>concat是一个连接函数<br><code>select id,concat(url,name) as ue from url;</code><br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230413144833.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h4 id="9-函数"><a href="#9-函数" class="headerlink" title="9.函数"></a>9.函数</h4><p>count计数<br><code>select count(*) from url;</code> ()里的可以是任意内容<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230413152835.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a><br>sum求和<br><code>select sum(id) from url;</code>如果不是int类型的话返回0<br>avg()求平均值 min() max()<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230413153140.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h4 id="10-having"><a href="#10-having" class="headerlink" title="10.having"></a>10.having</h4><p><code>select * from url group by arr having id&gt;1;</code><br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230413162307.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h3 id="4-子查询"><a href="#4-子查询" class="headerlink" title="4.子查询"></a>4.子查询</h3><h4 id="1-where"><a href="#1-where" class="headerlink" title="1.where"></a>1.where</h4><p>把where查询的结果当做一个条件来查询<br><code>select * from url where id in (select id from url where id&gt;1);</code><br>注意子查询中select的内容和外部查询的是否能匹配上,不要出现单对多的查询结果,<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230413165510.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h4 id="2-from"><a href="#2-from" class="headerlink" title="2.from"></a>2.from</h4><p><code>select * from (select * from url where id &gt; 1)as huhu;</code>子查询查出来的是集合,集合别名是huhu<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230413170441.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230413170441.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h4 id="3-exists-有点类似布尔的感觉"><a href="#3-exists-有点类似布尔的感觉" class="headerlink" title="3.exists(有点类似布尔的感觉)"></a>3.exists(有点类似布尔的感觉)</h4><p><code>select * from url where exists (select * from url where id&gt;1);</code><br>exists()括号内的内容只要能有返回值即为1,否则判断为0<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230413171142.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230413171142.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h4 id="4-union"><a href="#4-union" class="headerlink" title="4.union"></a>4.union</h4><p><code>select * from url union select *,1,2 from new;</code>两个表一起查询,如果表的列数不一样的话,就可以在select 后面加上预设的值<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230414202948.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230414202948.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h4 id="5-内连接-左右链接"><a href="#5-内连接-左右链接" class="headerlink" title="5.内连接 左右链接"></a>5.内连接 左右链接</h4><p>1.内连接(交集)<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230417172159.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230417172159.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>a表<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230417171042.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230417171042.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>b表<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230417171118.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230417171118.png" srcset="/img/loading.gif" lazyload alt="img"></a><br><code>select * from a_user a inner join b_class b on a.class_id=b.user_id</code><br>一.<code>select * from a_user a</code>a_user 和a之间省略了as,即让a变为a_user的别名<br>二.<code>inner join b_class</code>这步是连接b表<br>三.<code>a.class_id=b.user_id</code>这步是让a.class_id中的值与b.user_id的相等的值可以被查询出来<br>2.左(右)连接<br><code>SELECT * FROM a_user a LEFT JOIN b_class b ON a.class_id = b.user_id</code><br>left&#x2F;right<br>join左边的是左表,右边的是右表,左连接返回左表中所有记录,右连接同理</p>
+<h3 id="5-跨库查询-information-schema和sql注入"><a href="#5-跨库查询-information-schema和sql注入" class="headerlink" title="5.跨库查询(information schema和sql注入)"></a>5.跨库查询(information schema和sql注入)</h3><h4 id="1-查询库"><a href="#1-查询库" class="headerlink" title="1.查询库"></a>1.查询库</h4><p><code>select schema_name from information_schema.schemata limit 1,1</code><br>LIMIT 1,1 指定了返回结果的起始位置和数量。第一个数字 1 表示起始位置，第二个数字 1 表示返回的结果数量。<br>类似于show databases;但是show databases是mysql特有的语法,而以上的查询库的方法适用于所有sql语法</p>
+<h4 id="2-查询表"><a href="#2-查询表" class="headerlink" title="2.查询表"></a>2.查询表</h4><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> information_schema.<span class="hljs-keyword">TABLES</span> <span class="hljs-keyword">where</span> TABLE_SCHEMA=<span class="hljs-string">&#x27;test&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="3-查询表的信息"><a href="#3-查询表的信息" class="headerlink" title="3.查询表的信息"></a>3.查询表的信息</h4><p><code>select * from information_schema.TABLES where (TABLE_SCHEMA=&#39;test&#39; and )table_name=&#39;a_user&#39;</code><br>括号内可删除<br>类似于desc a_user;<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230417192136.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h1 id="Day4"><a href="#Day4" class="headerlink" title="Day4"></a>Day4</h1><h2 id="1-sqlmap"><a href="#1-sqlmap" class="headerlink" title="1.sqlmap"></a>1.sqlmap</h2><p>1.<code>https://github.com/sqlmapproject/sqlmap</code>官网下载<br>2.新建文件夹sqlmap<code>git clone https://github.com/sqlmapproject/sqlmap.git</code><br>3.安装python2.x版本,配置环境<br>4.在sqlmap的文件夹下打开命令行,<code>sqlmap.py</code> <code>sqlmap.py -h</code>出现图标即为成功(视频演示的是<code>sqlmap -h</code>不知道为什么我的必须加上.py)</p>
+<h2 id="2-burp-suite"><a href="#2-burp-suite" class="headerlink" title="2.burp suite"></a>2.burp suite</h2><p>1.安装java,配置环境<br>2.一路next</p>
+<h2 id="3-端口"><a href="#3-端口" class="headerlink" title="3.端口"></a>3.端口</h2><ol>
+<li>tcp端口<br>传输控制协议端口,要在客户端和服务端建立连接(安全性好)</li>
+<li>udp端口<br>用户数据包协议端口,不用建立连接(安全不好)</li>
+</ol>
+<p>常见端口1024-49151(1023及之前是预留端口)</p>
+<h3 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h3><ol>
+<li><code>netstat -ano</code> 查看所有端口</li>
+<li><code>netstat -ano | findstr &quot;8080&quot;</code>查询8080端口是否被占用(445是永恒之蓝)</li>
+</ol>
+<h3 id="状态"><a href="#状态" class="headerlink" title="状态"></a>状态</h3><ol>
+<li>listening 端口已激活,等待外部请求</li>
+<li>established 三次握手完后,建立连接,此时主机端口是established状态</li>
+<li>close_wait 对方(服务端)切断连接</li>
+<li>time_wait 我方使用close()主动断开连接,服务器会等待一段时间,等待再次连接,直到再次连接或者超过一定时间时再释放被占用的资源,而syn攻击就是利用这点,不断向服务器发起tcp连接,占用服务器资源</li>
+</ol>
+<h2 id="4-tcp协议"><a href="#4-tcp协议" class="headerlink" title="4.tcp协议"></a>4.tcp协议</h2><p><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230505143713.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs">客户端              <br>             发送syn报文                         <br>                            服务端<br>            发送syn+ack<br>客户端<br>            发送ack<br>                            服务端<br></code></pre></td></tr></table></figure>
+
+<h3 id="wireshark抓包"><a href="#wireshark抓包" class="headerlink" title="wireshark抓包"></a>wireshark抓包</h3><p><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230418201237.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230418201237.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>三次握手与四次挥手<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230505144059.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230505144059.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>Fin finish<br>Ack acknowledge<br>Win window 表示接收窗口的大小,用来控制传输方的数据发送量<br>Seq Sequence Number 序列号<br>Len 数据字段的长度</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%AE%89%E5%85%A8/" class="category-chain-item">安全</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>安全笔记2</div>
+      <div>https://blog.yblue.top/2023/08/20/安全笔记2/</div>
+    </div>
+    <div class="license-meta">
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>August 20, 2023</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/08/20/%E8%99%9A%E6%8B%9F%E6%9C%BA/" title="虚拟机">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">虚拟机</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/20/%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B01/" title="安全笔记1">
+                        <span class="hidden-mobile">安全笔记1</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

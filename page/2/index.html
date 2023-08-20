@@ -21,7 +21,7 @@
     <meta name="description" content="FATA">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Taosu&#96;Home">
-<meta property="og:url" content="https://blog.yblue.top/index.html">
+<meta property="og:url" content="https://blog.yblue.top/page/2/index.html">
 <meta property="og:site_name" content="Taosu&#96;Home">
 <meta property="og:description" content="FATA">
 <meta property="og:locale" content="en_US">
@@ -204,15 +204,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2023/08/20/earth/" target="_self">
-          earth
+        <a href="/2023/08/20/%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B01/" target="_self">
+          安全笔记1
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/earth/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B01/" target="_self">
         <div>
-          earthip发现(攻击机和靶机都使用nat模式,保证处于同一ip段) ifconfig  发现攻击机ip段为192.168.22 使用nmap -sP 192.168.22.1&#x2F;24 -sP  scan ping使用ping扫描网段,仅查看哪些网段内哪些主机在线,不查看端口,速度更快 192.168.22.1&#x2F;24192.168.22是网段,129代表着攻击机,而靶机也处于同
+          web安全方面其实学了挺久的了,但太乱太杂没咋记笔记,现在想想还是得写点东西的,要不然真记不住,比如html(能看懂最简单的代码),css(几乎没学),js(学了点请求的语法),sql(能看懂一点?),还有各种乱七八糟的工具,sqlmap,ssms,docker啥的,学了但是都不精,还是得系统的学,但愿我能忍受小迪的口音,但愿小迪的课我能听懂(各种意义上) Day 1 基础入门 -概念名词1.ur
         </div>
       </a>
 
@@ -220,7 +220,7 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-08-20 20:34" pubdate>
+            <time datetime="2023-08-20 20:24" pubdate>
               2023-08-20
             </time>
           </div>
@@ -258,15 +258,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2023/08/20/go%E8%BF%9B%E9%98%B6/" target="_self">
-          go进阶
+        <a href="/2023/08/20/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" target="_self">
+          渗透测试
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/go%E8%BF%9B%E9%98%B6/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" target="_self">
         <div>
-          go进阶time包12345678time.Now()  //当前时间  2023-08-08 11:15:02.0855663 +0800 CST m=+0.001233401//打印选定时间,年月日时分秒纳秒时区t2:=time.Date(2004,1,15,8,26,22,0,time.Local)fmt.Println(t2)//2023-08-08 11:17:30.3234989 +0
+          note信息收集ip信息     ifconfig(查看攻击机ip)192.168.22.129     nmap -sP 192.168.22.129/24 寻找靶机ip(192.168.1.2)     nmap -A 192.168.1.2查找靶机开放的端口,DNS服务,版本信息    分析     看端口是否有22,80,443,8080,8080端口可以直接192.168.1.2:808
         </div>
       </a>
 
@@ -274,223 +274,7 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-08-20 20:33" pubdate>
-              2023-08-20
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/lang/" class="category-chain-item">lang</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2023/08/20/go%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" target="_self">
-          go基础语法
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/go%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" target="_self">
-        <div>
-          go语法基础初始化在需要编写go的目录(假设是go_code),在go_code下 1go mod init go_code(目录名)  会在go_code目录下生成一个go.mod的初始化文件,在go_code目录下再创建一个目录.在该目录里编写代码 位与进制1234二进制    BIN 0 , 1, 10八进制    OCT 0,1,2,3,4,5,6,7,10(一零,不是十)十进制    D
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-08-20 20:33" pubdate>
-              2023-08-20
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/lang/" class="category-chain-item">lang</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2023/08/20/python/" target="_self">
-          python
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/python/" target="_self">
-        <div>
-          Python学sql学麻了,换点别的学学来源:https://github.com/jackfrued/Python-100-Days.githttps://linklearner.com/#/learn/detail/60学习计划安排是100天,感觉能学完一半就不错了 4.27Day 1安装https://www.python.org/downloads/ 下载windows installer
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-08-20 20:32" pubdate>
-              2023-08-20
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/lang/" class="category-chain-item">lang</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2023/08/20/php/" target="_self">
-          php
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/php/" target="_self">
-        <div>
-          php基础语法构成123&lt;?php?&gt;  php代码要被&lt;?php ?&gt;包裹起来 输出echo可以输出多个内容(用,分隔开),结尾必须加; 123&lt;?php	echo 1,2,3;?&gt;  print只能输出单个内容 123&lt;?php	print 1;?&gt;  变量123$a=1;$b=&#x27;phpstudy&#x27;;echo $a,$b;
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-08-20 20:32" pubdate>
-              2023-08-20
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/lang/" class="category-chain-item">lang</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2023/08/20/sql-labs/" target="_self">
-          sql-labs
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/sql-labs/" target="_self">
-        <div>
-          sqlilabs安装下载1.下载phpstudy2.在www文件夹下https://github.com/Audi-1/sqli-labs.git3.在sql-connections文件夹下,打开db-creds.inc文件(用notepad++方便),更改密码为root,复制security 配置1.phpstudy面板,打开mysql工具,mysql命令行2.create database s
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-08-20 20:31" pubdate>
+            <time datetime="2023-08-20 20:23" pubdate>
               2023-08-20
             </time>
           </div>
@@ -528,15 +312,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2023/08/20/vps/" target="_self">
-          vps
+        <a href="/2023/08/20/%E7%B3%BB%E7%BB%9F/" target="_self">
+          系统
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/vps/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/%E7%B3%BB%E7%BB%9F/" target="_self">
         <div>
-          初始配置连接前的问题1ssh-keygen -R ip  进入后基础更新12apt update apt upgrade -y  ssh改端口1234vim /etc/ssh/sshd_config找到port 更改sudo service sshd restart   重启ssh root@ip -p 端口号  改密码,加用户12passwdadduser taosu  其他配置12345678
+          重装系统微pe辅助安装1wepe.com.cn  下载工具箱,打开.exe,选择安装到u盘&#x2F;移动硬盘 (这一步会对u盘格式化,注意备份u盘信息)  勾选DOS工具箱,个性化盘符可选 win11镜像msdn i tell you12https://msdn.itellyou.cn/              //这里只有win10及以下https://next.itellyou.cn/Or
         </div>
       </a>
 
@@ -544,115 +328,7 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-08-20 20:29" pubdate>
-              2023-08-20
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E6%9D%82%E9%A1%B9/" class="category-chain-item">杂项</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2023/08/20/thm/" target="_self">
-          thm
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/thm/" target="_self">
-        <div>
-          Linux命令 whoami:查看当前用户信息(比如kali或者root)2 .history:查看输入过的命令  ls:(list)查看文件,但是不能查看隐藏的文件,如果要查看隐藏的文件可以ls -a  cat (文件名):cat的全拼是concatenate,作用是查看文件内容  ssh (name)@(ip地址):比如 ssh taosu@1.1.1.1  su - (name):切换同一i
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-08-20 20:26" pubdate>
-              2023-08-20
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%AE%89%E5%85%A8/" class="category-chain-item">安全</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h2 class="index-header">
-        
-        <a href="/2023/08/20/%E8%99%9A%E6%8B%9F%E6%9C%BA/" target="_self">
-          虚拟机
-        </a>
-      </h2>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/%E8%99%9A%E6%8B%9F%E6%9C%BA/" target="_self">
-        <div>
-          虚拟机及系统虚拟机及扩展虚拟机工作原理 虚拟化层:在物理主机之上添加一层软件抽象层,虚拟出一套计算机硬件平台,包括CPU、内存、存储、网络等组件。 Guest OS:在虚拟的硬件平台上安装客户操作系统(Guest OS),对客户操作系统来说,它认为自己在运行于一台独立的物理计算机上。 虚拟机监控器(Hypervisor):负责创建、运行和管理虚拟机,它通过软件模拟物理硬件来运行和控制虚拟机。常见的
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-08-20 20:25" pubdate>
+            <time datetime="2023-08-20 20:22" pubdate>
               2023-08-20
             </time>
           </div>
@@ -690,15 +366,15 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
-        <a href="/2023/08/20/%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B02/" target="_self">
-          安全笔记2
+        <a href="/2023/08/20/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" target="_self">
+          文件上传
         </a>
       </h2>
 
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B02/" target="_self">
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" target="_self">
         <div>
-          Day11.html(结合vscode和typora) 1. 基础架构12345678910&lt;!DOCTYPE html&gt;&lt;html&gt;	&lt;head&gt;		&lt;meta charset=&quot;utf-8&quot;&gt;		&lt;title&gt;还是得记笔记&lt;/title&gt;	&lt;/head&gt;	&lt;body&gt;			&lt
+          文件上传靶场:upload-labs 1git clone https://github.com/Tj1ngwe1/upload-labs.git  在upload-labs目录下创建新目录upload 一上传1.jpg,bp抓包,把1.jpg改成1.php,在content-type下另起一行 12&lt;?php @eval($_POST[x]);?&gt;//@ 加在函数前是取消报错强制执行
         </div>
       </a>
 
@@ -706,7 +382,7 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2023-08-20 20:25" pubdate>
+            <time datetime="2023-08-20 20:20" pubdate>
               2023-08-20
             </time>
           </div>
@@ -738,11 +414,335 @@
     </article>
   </div>
 
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/08/20/%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" target="_self">
+          常用指令
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" target="_self">
+        <div>
+          实用命令注入pwd打印当前文件路径 whoami打印当前用户名称 ps -ef展示当前系统进程 cat &#x2F;etc&#x2F;passwd查看用户列表及基本信息 locate namename是要查找的文件名称,比如要查找123.txt,可以使用locate 1  来定位文件名字中包含1的文件的路径 lsb_release -alinux standard base_release -al
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-20 20:19" pubdate>
+              2023-08-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%AE%89%E5%85%A8/" class="category-chain-item">安全</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/08/20/%E5%B8%B8%E8%A7%81%E7%AB%AF%E5%8F%A3/" target="_self">
+          常见端口
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/%E5%B8%B8%E8%A7%81%E7%AB%AF%E5%8F%A3/" target="_self">
+        <div>
+          端口TCP-21  FTP文件传输协议 -22 SSH远程登陆 -23 Telent远程登陆端口 -80 HTTP传输协议 -443 HTTPS  UDP-53 DNS域名解析服务 常见其他端口-8080 http代理端口 -8888 公共ssh端口
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-20 20:18" pubdate>
+              2023-08-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CS%E5%9F%BA%E7%A1%80/" class="category-chain-item">CS基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/08/20/kali/" target="_self">
+          kali
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/kali/" target="_self">
+        <div>
+          kali学习语言终端输入 1dpkg-reconfigure locales      #dpkg -- debian package  空格选择cn，一路yes 安装中文输入法apt-get install ibus ibus-pinyin重启 root1sudo passwd root  换源终端输入 12sudo su    #进入root模式vim /etc/apt/sources.lis
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-20 20:17" pubdate>
+              2023-08-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%AE%89%E5%85%A8/" class="category-chain-item">安全</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/08/20/OS/" target="_self">
+          OS
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/OS/" target="_self">
+        <div>
+          Linuxlinux room基础命令echo打印 whoami展示用户名 lslisting 列表  列出我们当前目录中的文件 cdchange directory进入文件      12cd /homecd tryhackme      catconcatenate（连接）输出文件的内容 1cat 1.txt   pwdprint working directory   展示当前文件路径 fi
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-20 20:16" pubdate>
+              2023-08-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/CS%E5%9F%BA%E7%A1%80/" class="category-chain-item">CS基础</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/08/20/pandora/" target="_self">
+          pandora
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/pandora/" target="_self">
+        <div>
+          123456789docker pull pengzhile/pandoradocker run  -e PANDORA_CLOUD=cloud -e PANDORA_SERVER=0.0.0.0:8899 -p 8899:8899 -d pengzhile/pandora删除docker stop 580a935ff25adocker rm 580a935ff25adocker rmi peng
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-20 20:13" pubdate>
+              2023-08-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%9D%82%E9%A1%B9/" class="category-chain-item">杂项</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/08/20/Ubuntu-docker-op/" target="_self">
+          Ubuntu+docker+op
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/Ubuntu-docker-op/" target="_self">
+        <div>
+          利用ubuntu地linux环境模拟迷你主机运行docker跑openwrt镜像,实现软路由&#x2F;旁路由功能ubuntu启动ubuntu系统创建经典–&gt;稍后安装操作系统–&gt;linux Ubuntu64位–&gt;自定义硬件 硬件显示器取消勾选加速3D图形 新CD&#x2F;DVD(SATA)选择使用ISO 映像文件 Ubuntu 22的镜像 基础配置try or install
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-08-20 19:51" pubdate>
+              2023-08-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%9D%82%E9%A1%B9/" class="category-chain-item">杂项</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+      </div>
+    </article>
+  </div>
+
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </span>
   </nav>
 

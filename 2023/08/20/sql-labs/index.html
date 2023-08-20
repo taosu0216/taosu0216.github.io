@@ -1,0 +1,778 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/coffee.svg">
+  <link rel="icon" href="/img/coffee.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="sqlilabs安装下载1.下载phpstudy2.在www文件夹下https:&#x2F;&#x2F;github.com&#x2F;Audi-1&#x2F;sqli-labs.git3.在sql-connections文件夹下,打开db-creds.inc文件(用notepad++方便),更改密码为root,复制security 配置1.phpstudy面板,打开mysql工具,mysql命令行2.create database s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sql-labs">
+<meta property="og:url" content="https://blog.yblue.top/2023/08/20/sql-labs/index.html">
+<meta property="og:site_name" content="Taosu&#96;Home">
+<meta property="og:description" content="sqlilabs安装下载1.下载phpstudy2.在www文件夹下https:&#x2F;&#x2F;github.com&#x2F;Audi-1&#x2F;sqli-labs.git3.在sql-connections文件夹下,打开db-creds.inc文件(用notepad++方便),更改密码为root,复制security 配置1.phpstudy面板,打开mysql工具,mysql命令行2.create database s">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230629123719.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230419212646.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230419213507.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420171058.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420171334.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420171459.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420171822.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420170754.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420200757.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230421184833.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230421184743.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230421201502.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230421201837.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230421203644.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422125419.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422125453.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422125757.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422130007.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422130034.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422133730.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230423211017.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230423215539.png">
+<meta property="og:image" content="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230425201641.png">
+<meta property="article:published_time" content="2023-08-20T12:31:07.000Z">
+<meta property="article:modified_time" content="2023-08-20T12:31:22.751Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230629123719.png">
+  
+  
+  
+  <title>sql-labs - Taosu`Home</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"blog.yblue.top","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":true,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Taosu ` Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230820163416.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="sql-labs"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-08-20 20:31" pubdate>
+          August 20, 2023 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.2k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          52 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">sql-labs</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="sqlilabs安装"><a href="#sqlilabs安装" class="headerlink" title="sqlilabs安装"></a>sqlilabs安装</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>1.下载phpstudy<br>2.在www文件夹下<code>https://github.com/Audi-1/sqli-labs.git</code><br>3.在sql-connections文件夹下,打开db-creds.inc文件(用notepad++方便),更改密码为root,复制security</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>1.phpstudy面板,打开mysql工具,mysql命令行<br>2.<code>create database security;</code><br>3.<code>use security</code><br>4.sql文件导入数据库，此处需要用到sql-lab.sql文件,<code>source (C:\software\phpstudy\WWW\sqli-labs\sql-lab.sql)(sql-lab.sql的文件路径)</code></p>
+<h2 id="打开"><a href="#打开" class="headerlink" title="打开"></a>打开</h2><p><a target="_blank" rel="noopener" href="http://localhost/sqli-labs">http://localhost/sqli-labs</a><br>点开第一个set up,再返回即可</p>
+<h1 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h1><h2 id="information-schmea"><a href="#information-schmea" class="headerlink" title="information_schmea"></a>information_schmea</h2><p>这个是自带的数据库,从这里可以查询建立的数据库名及表名</p>
+<h3 id="查表名"><a href="#查表名" class="headerlink" title="查表名"></a>查表名</h3><p><code>select table_name from information_schema.tables where table_schema=database()</code></p>
+<p>(table_name存储所有表名,table_schema存储所有数据库名)</p>
+<p>(这里的顺序是先用database()得到数据库名,用数据库名赋值给table_schema,从而限定information_schema.tables的查找范围限定在当前数据库,再查询对应的表名)</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">select</span> group_concat(<span class="hljs-built_in">table_name</span>) <span class="hljs-keyword">from</span> information_schema.<span class="hljs-keyword">tables</span> <span class="hljs-keyword">where</span> table_schema=<span class="hljs-keyword">database</span>()<br></code></pre></td></tr></table></figure>
+
+<p>前面的查询可能会只查询出一条结果,但是实际要查的表名可能很多,比如passwd和key,这样用group_concat就可以联合查询,让所有内容一起输出</p>
+<p>假设查出的表名为stu</p>
+<h3 id="查列名"><a href="#查列名" class="headerlink" title="查列名"></a>查列名</h3><p><code>select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name = &#39;stu&#39;</code></p>
+<p>(加where table_schema&#x3D;database()是为了防止有不同数据库内有重复表名的存在)</p>
+<p>查信息 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs select">union select 1,group_concat(username),group_concat(passwd) from information_schema=database() and table_name= &#x27;stu&#x27; <br>也可以 <br>union select 1,group_concat(username),group_concat(passwd) from stu <br></code></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230629123719.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="常见函数"><a href="#常见函数" class="headerlink" title="常见函数"></a>常见函数</h2><table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>例子</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>group_concat()</td>
+<td>group_concat(id,name,passwd)  &#x2F; group_concat(version(),database())</td>
+<td>将()内的内容聚合到一行输出</td>
+</tr>
+<tr>
+<td>database()</td>
+<td></td>
+<td>查询数据库名</td>
+</tr>
+<tr>
+<td>version()</td>
+<td></td>
+<td>查询版本信息</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="union查询"><a href="#union查询" class="headerlink" title="union查询"></a>union查询</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><h4 id="正常使用"><a href="#正常使用" class="headerlink" title="正常使用:"></a>正常使用:</h4><p><code>select * from stu where id = 1 union select * from coach where id = 1</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">表单stu<br></code></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>age</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>xiaoming</td>
+<td>12</td>
+</tr>
+</tbody></table>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">表单coach<br></code></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>dk</td>
+</tr>
+</tbody></table>
+<p>结果会回显stu的id,name,age的内容和coach的id和name的内容,但是coach少了一列,而union查询必须要前后列一致,所以需要补齐查询</p>
+<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs n1ql"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> stu <span class="hljs-keyword">where</span> id = <span class="hljs-number">1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> *,<span class="hljs-number">123</span> <span class="hljs-keyword">from</span> coach <span class="hljs-keyword">where</span> id = <span class="hljs-number">1</span> <br></code></pre></td></tr></table></figure>
+
+<p>这样查询的结果就都是三列了</p>
+<h4 id="注入查询"><a href="#注入查询" class="headerlink" title="注入查询:"></a>注入查询:</h4><p>通常在页面内的回显只会是返回查询stu的内容而不是coach的内容,所以可以查询stu中空的内容来显示coach的内容,比如查询stu的id为-1,在查询时使用union 查询,通常会查询数据库名或者服务器版本信息等</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> stu <span class="hljs-keyword">where</span> id = <span class="hljs-number">1</span> <span class="hljs-keyword">union</span> <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,passwd,<span class="hljs-keyword">version</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h2><p>如果输入的变量是字符类型(string),那么查询之后要加上单引号或者双引号,id&#x3D;’1’这样的</p>
+<p>如果输入的变量是整型(int),那么不需要加上引号或各种括号进行闭合,比如id&#x3D;1</p>
+<h2 id="列的数量"><a href="#列的数量" class="headerlink" title="列的数量"></a>列的数量</h2><p>order by或者group by都可以,group by可能会出现一些奇怪的东西,但是order by会被waf记录,而group by则不会</p>
+<h3 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h3><h4 id="order-by"><a href="#order-by" class="headerlink" title="order by"></a>order by</h4><h5 id="正常使用-1"><a href="#正常使用-1" class="headerlink" title="正常使用"></a>正常使用</h5><p>比如一个数据表有每个人的成绩,第一列是学号,第二列是姓名,第三列是成绩(score),那么<code>order by 3</code>跟<code>order by score</code>就是等效的,是按照学生的成绩对表单进行排序</p>
+<h5 id="注入查询-1"><a href="#注入查询-1" class="headerlink" title="注入查询"></a>注入查询</h5><p>这个表单只有三列,到order by 3还可以正常显示,order by 4就会报错,所以表明表单只有3列</p>
+<h4 id="group-by"><a href="#group-by" class="headerlink" title="group by"></a>group by</h4><h5 id="正常使用-2"><a href="#正常使用-2" class="headerlink" title="正常使用"></a>正常使用</h5><p>表单有三列,第一列是名字,第二列是性别(gender),第三列是成绩(score),通常group by会和其它查询函数联合使用,比如avg() average平均值,联合查询后,就会只有两列,group将按照gender将表单的所有行分成男女两组,并分别求平均值</p>
+<h5 id="注入查询-2"><a href="#注入查询-2" class="headerlink" title="注入查询"></a>注入查询</h5><p>同上</p>
+<h2 id="报错查询"><a href="#报错查询" class="headerlink" title="报错查询"></a>报错查询</h2><h3 id="extractvalue"><a href="#extractvalue" class="headerlink" title="extractvalue()"></a>extractvalue()</h3><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ada">?id=<span class="hljs-number">100</span>&#x27; union <span class="hljs-keyword">select</span> <span class="hljs-number">1</span>,<br>extractvalue(<span class="hljs-number">1</span>,concat(<span class="hljs-number">0</span>x7e,(<span class="hljs-keyword">select</span> database())))<br>,<span class="hljs-number">3</span> <span class="hljs-comment">--+                                         </span><br></code></pre></td></tr></table></figure>
+
+<p>用于查询xml数据,正确用法是extractvalue(数据类型,数据路径)</p>
+<p>这里只能用concat而不能用group_concat(),concat是单纯将两个及以上字符连接起来,而group_concat是将查询的结果连接起来,而且group_concat()后要跟上group by才能正常使用,而<code>select group_concat(table_name) from information_schema.tables where table_schema=database()</code>可以不跟group by就直接使用是因为information_schema.tables本身就是一个group(理解成隐式群组)</p>
+<p>必须要用concat()进行联合查询是因为extractvalue()必须是数据类型和数据路径,在数据类型这里可以选择错误的内容,而数据路径要更改为需要查询的内容,直接select是进行一个查询,而这里需要一个字符串(用括号将select查询包裹起来也不可以,不知道为什么)</p>
+<h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><h2 id="Lession1"><a href="#Lession1" class="headerlink" title="Lession1"></a>Lession1</h2><p><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230419212646.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230419212646.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>1.先判断是否有sql注入<br><code>?id=1</code><br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230419213507.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230419213507.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<p>2.用sqlmap跑一下试试(主要是没看懂教程网课说的是什么意思)<br><code>sqlmap.py -u http://localhost/sqli-labs/Less-1/?id=1</code><br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420171058.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420171058.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>返回给我四个类型的注入</p>
+<h3 id="基于布尔型盲注"><a href="#基于布尔型盲注" class="headerlink" title="基于布尔型盲注"></a>基于布尔型盲注</h3><p>1.概念:构造可以判断为真或假的SQL逻辑语句,根据页面返回的结果是否正常来判断语句结果是真或假。典型的构造方式是使用“AND 1&#x3D;1”(真)或“AND 1&#x3D;2”(假)。(源自claude)<br>就是在url界面输入值后,是否会在页面进行显示内容,比如本题,进行注入<code>&#39;and 1=1 --+</code>此时结果为真,可以返回id&#x3D;1的值<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420171334.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420171334.png" srcset="/img/loading.gif" lazyload alt="img"></a>,如果结果为假,例如1&#x3D;2,由于是and语句,前后都为真才可执行,id&#x3D;1为真,1&#x3D;2为假,所以语句不执行,则返回空值<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420171459.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420171459.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>2.步骤:确认注入点、信息收集和利用(同样来源于claude)<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420171822.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420171822.png" srcset="/img/loading.gif" lazyload alt="img"></a>现在应该还学不到那种程度,现在可以利用简单的函数来判断一些数据,比如length(database())这个函数,可以判断数据库名称的长度是多少,比如现在的数据库(database)的名称是security,那么length(database())返回值就是8(应该可以配合burpsuite的爆破使用,爆破出正确的值,然后根据这个正确的值注入,后面的ascii同理)<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420170754.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420170754.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>ascii判断:?id&#x3D;1’ and ascii(substr(database(),1,1))&#x3D;33 –+ 比如security这个数据库第一个字母为s,ascii码值为115,所以<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420200757.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230420200757.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>(剩下的还没学明白)</p>
+<h3 id="注释符号"><a href="#注释符号" class="headerlink" title="注释符号"></a>注释符号</h3><p>单引号报错<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230421184833.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230421184833.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>两个单引号可以<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230421184743.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230421184743.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>原语句<code>select * from table where id = &#39;$id&#39; </code>假设现有的两个’分别记为1号,2号<br>注入语句为<code>?id=1&#39;</code> 这里的’记为3号,注入后<code>select * from table where id = &#39;$id&#39;&#39;</code>,此时’分别为1,3,2号,那么拼接后的语句1,2号为引号但是3号没有与之配对的,所以会报错,但注入双引号之后,就是1332,12正常配对,33配对引起的内容为空,但是不会报错(传入参数的分号配对优先级低于原来的’’,所以前面可以用3号分号跟原来的1号配对,而2号则被注释掉了)<br><code>select * from table where id = &#39;1&#39;and 1=2&#39;&#39;</code></p>
+<h2 id="Lession2"><a href="#Lession2" class="headerlink" title="Lession2"></a>Lession2</h2><table>
+<thead>
+<tr>
+<th>注入语句</th>
+<th>y&#x2F;n</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>?id=1 and 1=1--+</code></td>
+<td>y</td>
+</tr>
+<tr>
+<td><code>?id=1&#39; and 1=1--+</code></td>
+<td>n</td>
+</tr>
+<tr>
+<td><code>?id=1&#39; and 1=1</code></td>
+<td>n</td>
+</tr>
+<tr>
+<td><code>?id=1 and 1=1</code></td>
+<td>y</td>
+</tr>
+</tbody></table>
+<p>所以后台语句为select * from table where id &#x3D; $id</p>
+<h2 id="Lession3"><a href="#Lession3" class="headerlink" title="Lession3"></a>Lession3</h2><p>单引号起手尝试<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230421201502.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230421201502.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>报错,但是看到报错里有),推测原查询语句为<code>select * from table where id = (&#39;1&#39;)</code>或<code>select * from table where id = &#39;(1)&#39;</code></p>
+<p>先尝试<code>?id=1)&#39; and 1=2 --+</code>,这里猜测原语句为<code>select * from table where id = &#39;(1)&#39;</code> 如果是这个则注入之后就是<code>select * from table where id = &#39;(1)&#39;and 1=2--+)&#39;</code>如果是这个,则原来的括号和引号被注释掉<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230421201837.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230421201837.png" srcset="/img/loading.gif" lazyload alt="img"></a>报错,所以这个不对,那么猜测原语句为<code>select * from table where id = (&#39;1&#39;)</code><br>然后再尝试注入<code>?id=1&#39;) and 1=2 --+</code>,如果是这个则注入后为&#96;&#96;&#96;select * from table where id &#x3D; (‘1’)and 1&#x3D;2–+)’</p>
+<h2 id="Lession4"><a href="#Lession4" class="headerlink" title="Lession4"></a>Lession4</h2><p><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230421203644.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230421203644.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>原语句是id&#x3D;($id)</p>
+<h2 id="Lession5"><a href="#Lession5" class="headerlink" title="Lession5"></a>Lession5</h2><p>找原语句还是没什么太大问题,但是看着不少教程从这一关开始搞爆破了,所以跟着走一遍<br>注入代码<code>?id=1&#39; and 1=2--+</code>不报错,但是不显示内容,所以原语句是<code>select * from table where id = &#39;$id&#39;</code><br>爆破数据库名称 <code>substr(database(),1,1)</code><br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422125419.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422125419.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>不是s的情况<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422125453.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422125453.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>但是bp还没搞明白怎么逐个字母爆破,所以改成ascii码值,a-z的ascii码值分别是97-122,所以注入语句改为<code>?id=1&#39; and ascii(substr(database(),1,1))=115</code><br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422125722.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a><br>以及非115的情况<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422125757.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422125757.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<p>现在用bp爆破一遍<br>1.代理抓包<br>2.右键,发送到intruder<br>3.清除原有payload,选定115为新的payload<br>4.<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422130007.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422130007.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>5.爆破<a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422130034.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422130034.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<p>捯饬了一下找到怎么用字母爆破了<br>前三步一样,但要用ascii()包起来原来的参数,payload集还是1,类型由数值改为简单列表,点击payload设置&gt;&gt;从列表添加<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422133730.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230422133730.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h2 id="Lession6"><a href="#Lession6" class="headerlink" title="Lession6"></a>Lession6</h2><p>一开始傻了,以为双引号就是两个单引号,一直找不到语法报错提示,改成shift+”就有正常报错提示了,跟第五关差不多</p>
+<h2 id="Lession7-GET-Dump-into-outfile"><a href="#Lession7-GET-Dump-into-outfile" class="headerlink" title="Lession7 GET-Dump into outfile"></a>Lession7 GET-Dump into outfile</h2><p>这个可以注入文件 dump是临时存储的数据,outfile是上传文件,就是通过url框向服务器传入一个文件,文件的内容就是在url框里查询出来的内容<br>注入语句<code>?id=1&#39;)) union select 1,3,4 into outfile &quot;E:\\phpstudy\\PhpStudy2018\\PHPTutorial\\WWW\\sqli-labs\\Less-7\\a.php&quot;--+</code><br>union必须带 后面只能穿3个参数,可能是因为源文件就这么设置的 into outfile是固定语句<br>踩得一些坑:<br><code>SHOW VARIABLES LIKE &quot;secure_file_priv&quot;;</code>查看状态 ,如果是空值就可以成功注入,如果是null则不行<br>如果是null的话需要打开mysql.ini文件(claude说的是mysql.cnf),添加<code>secure_file_priv = &#39;&#39;</code><br>一开始添加在文件的最下面,但是不行,然后加在[mysqld]的下面,重新重启phpstudy可以注入了</p>
+<h2 id="Lession8"><a href="#Lession8" class="headerlink" title="Lession8"></a>Lession8</h2><p>又是布尔盲注,但看攻略也没发现跟前面的基于错误报错有什么区别,试一下爆出版本号<br>mid()函数<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230423193845.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a><br><code>?id=1&#39; and mid(version(),1,1)=5 --+</code><br><code>?id=1&#39; and mid(version(),1,2)=5.0 --+</code></p>
+<h2 id="Lession9"><a href="#Lession9" class="headerlink" title="Lession9"></a>Lession9</h2><p><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230423211017.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230423211017.png" srcset="/img/loading.gif" lazyload alt="img"></a><br>不知道为什么0 1都是一样的you are in…,再用sqlmap跑一次<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230423213626.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a><br>用时间注入,从29秒开始可以注入,应该是<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230423213606.png"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" srcset="/img/loading.gif" lazyload alt="img"></a><br><code>?id=1&#39;and if(length(database())=7,sleep(3),1) --+</code><br>if(判断,如果对则,错则) 错的返回值(结果集)填什么都可以,但必须要填,就比如<code>select * from table where id = 1</code>返回值就是id&#x3D;1的所有字段,所有字段就是结果集<br><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230423215539.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230423215539.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<h2 id="Lession10"><a href="#Lession10" class="headerlink" title="Lession10"></a>Lession10</h2><p>跟9差不多,但是双引号</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">?<span class="hljs-attribute">id</span>=1&quot;and <span class="hljs-keyword">if</span>(<span class="hljs-attribute">1</span>=2,sleep(50),1) --+<br></code></pre></td></tr></table></figure>
+
+<h2 id="Lession11-Post"><a href="#Lession11-Post" class="headerlink" title="Lession11 Post"></a>Lession11 Post</h2><p><a target="_blank" rel="noopener" href="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230425201641.png"><img src="https://taosu0216-1314485098.cos.ap-beijing.myqcloud.com/20230425201641.png" srcset="/img/loading.gif" lazyload alt="img"></a></p>
+<p>一上来界面就不一样了,变成一个输入账密的代码框,一开始各种乱试瞎猜都没成功,唯一一次有点沾边的想法是username框不能给注释掉,要不然password就输入不进去了,搜了教程才想明白</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">where</span> <span class="hljs-type">name</span>=<span class="hljs-string">&#x27;$username&#x27;</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">password</span> = <span class="hljs-string">&#x27;$password&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>所以想要注入应该是在username框输入 <code>admin&#39; and 1=&#39;1</code> 这样admin左边原来有一个分号,右边在代码框输入了一个分号,而’1 右边有原来属于’$username’的右边的分号,这样就齐活了<br><code>select * from table where uname=&#39;$username&#39; or 1=1 and passwd = &#39;$password&#39;</code>这个语句包括了三个判断条件,$username存在,1&#x3D;1,$password存在,但是因为1&#x3D;1为永真,所以剩下两个只要一个有就能查出来</p>
+<h2 id="Lession12"><a href="#Lession12" class="headerlink" title="Lession12"></a>Lession12</h2><p>单引号边双引号</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%AE%89%E5%85%A8/" class="category-chain-item">安全</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>sql-labs</div>
+      <div>https://blog.yblue.top/2023/08/20/sql-labs/</div>
+    </div>
+    <div class="license-meta">
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>August 20, 2023</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/08/20/php/" title="php">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">php</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/20/vps/" title="vps">
+                        <span class="hidden-mobile">vps</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
