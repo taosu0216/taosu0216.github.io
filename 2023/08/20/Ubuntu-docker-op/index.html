@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230717105354.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230717162259.png">
 <meta property="article:published_time" content="2023-08-20T11:51:40.000Z">
-<meta property="article:modified_time" content="2023-08-20T12:46:42.167Z">
+<meta property="article:modified_time" content="2023-08-21T10:51:43.991Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230717094853.png">
@@ -213,7 +213,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k words
+          2.3k words
         
       </span>
     
@@ -224,7 +224,7 @@
         
         
         
-          19 mins
+          20 mins
         
       </span>
     
@@ -282,8 +282,8 @@
 <p>软件和更新–&gt;下载自–&gt;其它–&gt;aliyun镜像</p>
 <h2 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h2><h3 id="各种基础"><a href="#各种基础" class="headerlink" title="各种基础"></a>各种基础</h3><p>更新<code>sudo apt-get update</code></p>
 <p>允许apt安装</p>
-<figure class="highlight plaintext"><figcaption><span>apt-get install \</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sudo">apt-transport-https \<br>ca-certificates \<br>curl \<br>gnupg-agent \<br>software-properties-common<br></code></pre></td></tr></table></figure>
-
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs livescript">sudo apt-get install <span class="hljs-string">\</span><br>apt-transport-https <span class="hljs-string">\</span><br>ca-certificates <span class="hljs-string">\</span><br>curl <span class="hljs-string">\</span><br>gnupg-agent <span class="hljs-string">\</span><br>software-properties-common<br></code></pre></td></tr></table></figure>
+<p>或者这样也可以<code>apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common</code></p>
 <p>添加docker的gpg key</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">curl -fsSL https:<span class="hljs-regexp">//mi</span>rrors.aliyun.com<span class="hljs-regexp">/docker-ce/</span>linux<span class="hljs-regexp">/ubuntu/g</span>pg | apt-key add -<br></code></pre></td></tr></table></figure>
 
