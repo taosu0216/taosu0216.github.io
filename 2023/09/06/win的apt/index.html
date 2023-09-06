@@ -18,21 +18,21 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="RCEremote command execution,远程命令执行 介绍没大看明白,感觉举的例子像IDOR,感觉这些个漏洞的本质都是对用户的输入没有校验,然后利用相关的函数来获取需要的东西 分类   blind verbose    没有回显? 有效负载,可能就是有回显">
+    <meta name="description" content="scoop如题,win系统的软件安装神器–scoop apt在Ubuntu操作系统中，apt 是 Advanced Package Tool（高级软件包工具）的缩写，它是用于管理软件包的命令行工具。apt 可以帮助您搜索、安装、更新和卸载软件包，以及管理软件包仓库。它是Ubuntu中常用的软件包管理工具之一。用人话翻译一下,就是以ubuntu为代表的debian系的软件包管理工具,比如在ubunt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="thm.RCE">
-<meta property="og:url" content="https://blog.yblue.top/2023/08/29/thm-RCE/index.html">
+<meta property="og:title" content="win系统中好用的东西--wsl和scoop">
+<meta property="og:url" content="https://blog.yblue.top/2023/09/06/win%E7%9A%84apt/index.html">
 <meta property="og:site_name" content="Taosu&#96;Home">
-<meta property="og:description" content="RCEremote command execution,远程命令执行 介绍没大看明白,感觉举的例子像IDOR,感觉这些个漏洞的本质都是对用户的输入没有校验,然后利用相关的函数来获取需要的东西 分类   blind verbose    没有回显? 有效负载,可能就是有回显">
+<meta property="og:description" content="scoop如题,win系统的软件安装神器–scoop apt在Ubuntu操作系统中，apt 是 Advanced Package Tool（高级软件包工具）的缩写，它是用于管理软件包的命令行工具。apt 可以帮助您搜索、安装、更新和卸载软件包，以及管理软件包仓库。它是Ubuntu中常用的软件包管理工具之一。用人话翻译一下,就是以ubuntu为代表的debian系的软件包管理工具,比如在ubunt">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-08-29T11:28:10.000Z">
-<meta property="article:modified_time" content="2023-08-29T12:13:48.047Z">
+<meta property="article:published_time" content="2023-09-06T02:38:00.000Z">
+<meta property="article:modified_time" content="2023-09-06T04:14:32.211Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>thm.RCE - Taosu`Home</title>
+  <title>win系统中好用的东西--wsl和scoop - Taosu`Home</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -186,7 +186,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="thm.RCE"></span>
+            <span id="subtitle" data-typed-text="win系统中好用的东西--wsl和scoop"></span>
           
         </div>
 
@@ -197,8 +197,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-29 19:28" pubdate>
-          August 29, 2023 pm
+        <time datetime="2023-09-06 10:38" pubdate>
+          September 6, 2023 am
         </time>
       </span>
     
@@ -209,7 +209,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          123 words
+          2.2k words
         
       </span>
     
@@ -220,7 +220,7 @@
         
         
         
-          2 mins
+          19 mins
         
       </span>
     
@@ -257,26 +257,20 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">thm.RCE</h1>
+            <h1 id="seo-header">win系统中好用的东西--wsl和scoop</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="RCE"><a href="#RCE" class="headerlink" title="RCE"></a>RCE</h1><p>remote command execution,远程命令执行</p>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>没大看明白,感觉举的例子像IDOR,感觉这些个漏洞的本质都是对用户的输入没有校验,然后利用相关的函数来获取需要的东西</p>
-<h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><table>
-<thead>
-<tr>
-<th>blind</th>
-<th>verbose</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>没有回显?</td>
-<td>有效负载,可能就是有回显</td>
-</tr>
-</tbody></table>
-
+                <h1 id="scoop"><a href="#scoop" class="headerlink" title="scoop"></a>scoop</h1><p>如题,win系统的软件安装神器–scoop</p>
+<h2 id="apt"><a href="#apt" class="headerlink" title="apt"></a>apt</h2><p>在Ubuntu操作系统中，apt 是 Advanced Package Tool（高级软件包工具）的缩写，它是用于管理软件包的命令行工具。apt 可以帮助您搜索、安装、更新和卸载软件包，以及管理软件包仓库。它是Ubuntu中常用的软件包管理工具之一。<br>用人话翻译一下,就是以ubuntu为代表的debian系的软件包管理工具,比如在ubuntu下想安装python,只需要<code>apt install python</code>一句命令即可完成安装,而在win系统下,需要去官网下载,操作失误还需要自己额外配置环境,所以scoop的便捷性就体现出来了,在win下,只要安装配置好了scoop,只需要打开powershell,一句<code>apt install python</code>即可完成安装</p>
+<h2 id="scoop的安装下载及使用"><a href="#scoop的安装下载及使用" class="headerlink" title="scoop的安装下载及使用"></a>scoop的安装下载及使用</h2><h3 id="安装下载"><a href="#安装下载" class="headerlink" title="安装下载"></a>安装下载</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">https://gitee.com/glsnames/scoop-installer<br>本文教程均来自于该仓库<br></code></pre></td></tr></table></figure>
+<p>打开powershell</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs bash">//允许powershell中安装脚本的使用<br>Set-ExecutionPolicy RemoteSigned -scope CurrentUser  //输入Y<br>//安装scoop<br>iwr -useb scoop.201704.xyz | iex<br>//安装git,scoop很多操作都需要git<br>scoop install git<br>//配置国内源<br>scoop config SCOOP_REPO <span class="hljs-string">&quot;https://gitee.com/glsnames/scoop-installer&quot;</span><br>//切换分支<br>scoop config scoop_branch develop<br>//添加bucket(存储桶,类似软件市场?)<br>scoop bucket add extras<br>//添加第三方bucket<br>scoop bucket add dorado https://github.com/chawyehsu/dorado.git<br>scoop bucket add scoopet https://github.com/ivaquero/scoopet.git<br>scoop bucket add iszy https://github.com/ZvonimirSun/scoop-iszy.git<br>scoop bucket add <span class="hljs-built_in">echo</span> https://github.com/echoiron/echo-scoop.git<br>scoop bucket add zapps https://github.com/kkzzhizhou/scoop-zapps.git<br>scoop bucket add tomato https://github.com/zhoujin7/tomato.git<br>scoop bucket add MorFans-apt https://github.com/Paxxs/Cluttered-bucket.git<br>scoop bucket add sushi https://github.com/kidonng/sushi.git<br>scoop bucket add aki https://github.com/akirco/aki-apps.git<br>scoop bucket add lemon https://github.com/hoilc/scoop-lemon.git<br>//更新<br>scoop update<br>//查询软件列表<br>scoop search<br>//软件列表非常多,终端看着很不方便,可以输入到一个文本文档中,记得在你想存放文本文档的目录中重新打开powershell<br>scoop search &gt;&gt; soft_list.txt<br>//安装想要的软件<br>scoop install QQ<br>scoop install wechat<br>scoop install python<br>scoop install oraclejdk  //java<br>scoop install clash-for-windows<br>scoop install docker<br></code></pre></td></tr></table></figure>
+<h1 id="wsl"><a href="#wsl" class="headerlink" title="wsl"></a>wsl</h1><p>子系统,用处就是可以打开cmd或者powershell,输入ubuntu之后即可直接使用ubuntu系统(无gui界面,想要的需要自己下载),不需要等vm笨重的开机</p>
+<h2 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">本文来源于<br>https://www.yuque.com/gulujili/su7zwm/lhk7xgu2fqa3p035<br></code></pre></td></tr></table></figure>
+<p>控制面板 –&gt; 程序 –&gt; 开启或关闭 Windows 功能<br>将以下三条勾选,确定后会重启电脑<br>  a. Windows 虚拟机监控程序平台<br>  b. 适用于 Linux 的 WIndows 子系统<br>  c. 虚拟机平台</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><br>//打开powershell,可以先去微软商店中下载想要的wsl系统,比如kali或者ubuntu,直接点击下载就可以<br>wsl --set-default-version 2  //设置默认wsl2版本<br>wsl --install //选择想安装的即可,如果在应用商店下的话,这里就不用下了<br>//打开ubuntu可能会报错,在这里重新安装一下wsl   https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi<br><br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -294,7 +288,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/thm/" class="category-chain-item">thm</a>
+  <a href="/categories/CS%E5%9F%BA%E7%A1%80/" class="category-chain-item">CS基础</a>
   
   
 
@@ -314,15 +308,15 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>thm.RCE</div>
-      <div>https://blog.yblue.top/2023/08/29/thm-RCE/</div>
+      <div>win系统中好用的东西--wsl和scoop</div>
+      <div>https://blog.yblue.top/2023/09/06/win的apt/</div>
     </div>
     <div class="license-meta">
       
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>August 29, 2023</div>
+          <div>September 6, 2023</div>
         </div>
       
       
@@ -354,18 +348,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/09/06/win%E7%9A%84apt/" title="win系统中好用的东西--wsl和scoop">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">win系统中好用的东西--wsl和scoop</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/25/Arch/" title="Arch">
-                        <span class="hidden-mobile">Arch</span>
+                      <a href="/2023/08/29/thm-RCE/" title="thm.RCE">
+                        <span class="hidden-mobile">thm.RCE</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
