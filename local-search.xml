@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>路由器基础</title>
+    <link href="/2023/09/08/%E8%B7%AF%E7%94%B1%E5%99%A8/"/>
+    <url>/2023/09/08/%E8%B7%AF%E7%94%B1%E5%99%A8/</url>
+    
+    <content type="html"><![CDATA[<p>起因是学校工作室的路由器出问题(原因不明,可能上联被人改动了),qq微信及部分网站(例如b站)可以正常使用,但是浏览器搜索会显示无法连接服务器,很奇怪的问题.总之在老吴的帮助下,最后用DHCP解决了问题.在排查问题的过程中,第一次听到了多个路由器mesh组网的概念,故此记录一下</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>CS基础</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>win系统中好用的东西--wsl和scoop</title>
     <link href="/2023/09/06/win%E7%9A%84apt/"/>
     <url>/2023/09/06/win%E7%9A%84apt/</url>
