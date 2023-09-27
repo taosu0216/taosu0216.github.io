@@ -18,21 +18,21 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="起因是学校工作室的路由器出问题(原因不明,可能上联被人改动了),qq微信及部分网站(例如b站)可以正常使用,但是浏览器搜索会显示无法连接服务器,很奇怪的问题.总之在老吴的帮助下,最后用DHCP解决了问题.在排查问题的过程中,第一次听到了多个路由器mesh组网的概念,故此记录一下 mesh组网最大的优点就是无线漫游,如果是传统的主路由桥接子路由的模式,在从主路由覆盖的地方走到子路由覆盖的地方,不会进">
+    <meta name="description" content="基础篇变量类型rune  uint8 123456789101112&#x2F;&#x2F; 遍历字符串func traversalString() &amp;#123;    s :&#x3D; &quot;pprof.cn博客&quot;    for i :&#x3D; 0; i &lt; len(s); i++ &amp;#123; &#x2F;&#x2F;byte        fmt.Printf(&quot;%v(%c) &quot;, s[i], s[i]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="路由器基础">
-<meta property="og:url" content="https://blog.yblue.top/2023/09/08/%E8%B7%AF%E7%94%B1%E5%99%A8/index.html">
+<meta property="og:title" content="go查漏补缺">
+<meta property="og:url" content="https://blog.yblue.top/2023/09/26/go%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA/index.html">
 <meta property="og:site_name" content="Taosu&#96;Home">
-<meta property="og:description" content="起因是学校工作室的路由器出问题(原因不明,可能上联被人改动了),qq微信及部分网站(例如b站)可以正常使用,但是浏览器搜索会显示无法连接服务器,很奇怪的问题.总之在老吴的帮助下,最后用DHCP解决了问题.在排查问题的过程中,第一次听到了多个路由器mesh组网的概念,故此记录一下 mesh组网最大的优点就是无线漫游,如果是传统的主路由桥接子路由的模式,在从主路由覆盖的地方走到子路由覆盖的地方,不会进">
+<meta property="og:description" content="基础篇变量类型rune  uint8 123456789101112&#x2F;&#x2F; 遍历字符串func traversalString() &amp;#123;    s :&#x3D; &quot;pprof.cn博客&quot;    for i :&#x3D; 0; i &lt; len(s); i++ &amp;#123; &#x2F;&#x2F;byte        fmt.Printf(&quot;%v(%c) &quot;, s[i], s[i]">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-09-08T00:05:36.000Z">
-<meta property="article:modified_time" content="2023-09-08T01:09:48.251Z">
+<meta property="article:published_time" content="2023-09-26T05:19:38.000Z">
+<meta property="article:modified_time" content="2023-09-27T03:47:59.494Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>路由器基础 - Taosu`Home</title>
+  <title>go查漏补缺 - Taosu`Home</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -186,7 +186,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="路由器基础"></span>
+            <span id="subtitle" data-typed-text="go查漏补缺"></span>
           
         </div>
 
@@ -197,8 +197,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-08 08:05" pubdate>
-          September 8, 2023 am
+        <time datetime="2023-09-26 13:19" pubdate>
+          September 26, 2023 pm
         </time>
       </span>
     
@@ -209,7 +209,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          443 words
+          2.2k words
         
       </span>
     
@@ -220,7 +220,7 @@
         
         
         
-          4 mins
+          18 mins
         
       </span>
     
@@ -257,14 +257,26 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">路由器基础</h1>
+            <h1 id="seo-header">go查漏补缺</h1>
             
             
               <div class="markdown-body">
                 
-                <p>起因是学校工作室的路由器出问题(原因不明,可能上联被人改动了),qq微信及部分网站(例如b站)可以正常使用,但是浏览器搜索会显示无法连接服务器,很奇怪的问题.总之在老吴的帮助下,最后用DHCP解决了问题.在排查问题的过程中,第一次听到了多个路由器mesh组网的概念,故此记录一下</p>
-<h1 id="mesh组网"><a href="#mesh组网" class="headerlink" title="mesh组网"></a>mesh组网</h1><p>最大的优点就是无线漫游,如果是传统的主路由桥接子路由的模式,在从主路由覆盖的地方走到子路由覆盖的地方,不会进行自动切换节点,就算切换了也不是无感切换(通俗点说WiFi名字会变,信号较弱处会断连),而使用mesh组网,所有子路由器都跟主路由是一个ssid,并且是所有子路由器是类似星型拓扑的结构,假如一个出问题不会互相影响,WiFi可以无线漫游,无感自动切换(wifi名字相同)<br>设置方法就是手机下个米家wifi的app,讲主路由设置好之后,手机连接主路由,讲要进行mesh的子路由恢复默认状态(不需要连网线),直接在手机操作,进行mesh组网即可,完成后既可进行有线mesh,也可以进行无线mesh</p>
+                <h1 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h1><h2 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h2><p>rune  uint8</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// 遍历字符串</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">traversalString</span><span class="hljs-params">()</span></span> &#123;<br>    s := <span class="hljs-string">&quot;pprof.cn博客&quot;</span><br>    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(s); i++ &#123; <span class="hljs-comment">//byte</span><br>        fmt.Printf(<span class="hljs-string">&quot;%v(%c) &quot;</span>, s[i], s[i])<br>    &#125;<br>    fmt.Println()<br>    <span class="hljs-keyword">for</span> _, r := <span class="hljs-keyword">range</span> s &#123; <span class="hljs-comment">//rune</span><br>        fmt.Printf(<span class="hljs-string">&quot;%v(%c) &quot;</span>, r, r)<br>    &#125;<br>    fmt.Println()<br>&#125;<br></code></pre></td></tr></table></figure>
 
+<p>结果是</p>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs clojure"><span class="hljs-number">112</span>(<span class="hljs-name">p</span>) <span class="hljs-number">112</span>(<span class="hljs-name">p</span>) <span class="hljs-number">114</span>(<span class="hljs-name">r</span>) <span class="hljs-number">111</span>(<span class="hljs-name">o</span>) <span class="hljs-number">102</span>(<span class="hljs-name">f</span>) <span class="hljs-number">46</span>(<span class="hljs-name"><span class="hljs-built_in">.</span></span>) <span class="hljs-number">99</span>(<span class="hljs-name">c</span>) <span class="hljs-number">110</span>(<span class="hljs-name">n</span>) <span class="hljs-number">229</span>(å) <span class="hljs-number">141</span>() <span class="hljs-number">154</span>() <span class="hljs-number">229</span>(å) <span class="hljs-number">174</span>(®) <span class="hljs-number">162</span>(¢)<br><span class="hljs-number">112</span>(<span class="hljs-name">p</span>) <span class="hljs-number">112</span>(<span class="hljs-name">p</span>) <span class="hljs-number">114</span>(<span class="hljs-name">r</span>) <span class="hljs-number">111</span>(<span class="hljs-name">o</span>) <span class="hljs-number">102</span>(<span class="hljs-name">f</span>) <span class="hljs-number">46</span>(<span class="hljs-name"><span class="hljs-built_in">.</span></span>) <span class="hljs-number">99</span>(<span class="hljs-name">c</span>) <span class="hljs-number">110</span>(<span class="hljs-name">n</span>) <span class="hljs-number">21338</span>(博) <span class="hljs-number">23458</span>(客)<br></code></pre></td></tr></table></figure>
+<p>可以uint8是单独取出字符串中每个元素的ascii码进行处理,超出ascii码的范围就做不到了,像这种中文的就打印不出来</p>
+<h2 id="修改字符串"><a href="#修改字符串" class="headerlink" title="修改字符串"></a>修改字符串</h2><p>要修改一个字符串,首先需要把字符串转换成数组类型,然后再进行修改</p>
+<h2 id="数组赋值"><a href="#数组赋值" class="headerlink" title="数组赋值"></a>数组赋值</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">var</span> c [<span class="hljs-number">5</span>]<span class="hljs-type">int</span>&#123;<span class="hljs-number">2</span>:<span class="hljs-number">40</span>,<span class="hljs-number">4</span>:<span class="hljs-number">50</span>&#125;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">c[0] = 0</span><br><span class="hljs-comment">c[1] = 0</span><br><span class="hljs-comment">c[2] = 100</span><br><span class="hljs-comment">c[3] = 0</span><br><span class="hljs-comment">c[4] = 200</span><br><span class="hljs-comment">*/</span><br><span class="hljs-keyword">for</span> _,i := <span class="hljs-keyword">range</span> c&#123;<br>    fmt.<span class="hljs-built_in">println</span>(i)<br>&#125;<br><span class="hljs-comment">//for range 会返回索引和值,要用大括号</span><br></code></pre></td></tr></table></figure>
+<p>%p是打印地址<br>%v是检测变量类型自动打印<br>%#v是检测变量类型并详细的自动打印</p>
+<h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>var s1 []int<br>s2:&#x3D;[]int{}<br>这个准确来说是</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs go">s2:=[]<span class="hljs-type">int</span>&#123;<br><br>&#125;<br><span class="hljs-comment">//&#123;&#125;内可写内容,比如s2:=[]int&#123;1,2,3&#125;,不写的话就是[]int&#123;&#125;,代表建立了一个空切片</span><br></code></pre></td></tr></table></figure>
+<p>s3:&#x3D;make([]int,0)</p>
+<h2 id="结构体"><a href="#结构体" class="headerlink" title="结构体"></a>结构体</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main <br><span class="hljs-keyword">import</span>(<br>    <span class="hljs-string">&quot;fmt&quot;</span><br>)<br><span class="hljs-keyword">type</span> student <span class="hljs-keyword">struct</span>&#123;<br>    name <span class="hljs-type">string</span><br>    age <span class="hljs-type">int</span><br>&#125;<br><span class="hljs-comment">//创建对象方式1</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-keyword">var</span> p1 student<br>    p1.name=<span class="hljs-string">&quot;yblue&quot;</span><br>    p1.age=<span class="hljs-number">18</span><br>	fmt.Printf(<span class="hljs-string">&quot;%#v\n%v\n&quot;</span>, p1, p1)<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">main.student&#123;name:&quot;yblue&quot;, age:18&#125;</span><br><span class="hljs-comment">&#123;yblue 18&#125;</span><br><span class="hljs-comment">*/</span><br><span class="hljs-comment">//创建对象方式2</span><br>    p2:=student&#123;&#125;<br>    <span class="hljs-comment">/*这里准确的写法是</span><br><span class="hljs-comment">    p2:=student&#123;</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">    &#125;</span><br><span class="hljs-comment">    也可以这样</span><br><span class="hljs-comment">    p2:=student&#123;</span><br><span class="hljs-comment">        name: &quot;usr0&quot;,</span><br><span class="hljs-comment">    &#125;</span><br><span class="hljs-comment">    后面必须要跟逗号,   即使是最后一个键值对也要加 </span><br><span class="hljs-comment">    */</span><br>    p2.name=<span class="hljs-string">&quot;usr0&quot;</span><br>	fmt.Printf(<span class="hljs-string">&quot;%#v\n%v\n&quot;</span>, p2, p2)<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">main.student&#123;name:&quot;usr0&quot;, age:0&#125;</span><br><span class="hljs-comment">&#123;usr0 0&#125;</span><br><span class="hljs-comment">*/</span><br><span class="hljs-comment">//创建对象方式3</span><br>    p3:=&amp;student&#123;<br>        name: <span class="hljs-string">&quot;root&quot;</span>,<br>    &#125;<br>	fmt.Printf(<span class="hljs-string">&quot;%#v\n%v\n&quot;</span>, p3, p3)    <br>&#125;<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">&amp;main.student&#123;name:&quot;root&quot;, age:0&#125;</span><br><span class="hljs-comment">&amp;&#123;root 0&#125;</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
+<p>还有可能有别的创建结构体的方法</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">type</span> student <span class="hljs-keyword">struct</span> &#123;<br>    name <span class="hljs-type">string</span><br>    age  <span class="hljs-type">int</span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>    m := <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-type">string</span>]*student)     <br>    stus := []student&#123;         <span class="hljs-comment">//这里是创建了一个student类型的切片  切片创建是 var s1 []int  这里的student&#123;...&#125;就跟int等价</span><br>        &#123;name: <span class="hljs-string">&quot;pprof.cn&quot;</span>, age: <span class="hljs-number">18</span>&#125;,<br>        &#123;name: <span class="hljs-string">&quot;测试&quot;</span>, age: <span class="hljs-number">23</span>&#125;,<br>        &#123;name: <span class="hljs-string">&quot;博客&quot;</span>, age: <span class="hljs-number">28</span>&#125;,<br>    &#125;<br><br>    <span class="hljs-keyword">for</span> _, stu := <span class="hljs-keyword">range</span> stus &#123;<br>        m[stu.name] = &amp;stu<br>    &#125;<br>    <span class="hljs-keyword">for</span> k, v := <span class="hljs-keyword">range</span> m &#123;<br>        fmt.Println(k, <span class="hljs-string">&quot;=&gt;&quot;</span>, v.name)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
                 
               </div>
             
@@ -282,7 +294,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/CS%E5%9F%BA%E7%A1%80/" class="category-chain-item">CS基础</a>
+  <a href="/categories/lang/" class="category-chain-item">lang</a>
   
   
 
@@ -302,15 +314,15 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>路由器基础</div>
-      <div>https://blog.yblue.top/2023/09/08/路由器/</div>
+      <div>go查漏补缺</div>
+      <div>https://blog.yblue.top/2023/09/26/go查漏补缺/</div>
     </div>
     <div class="license-meta">
       
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>September 8, 2023</div>
+          <div>September 26, 2023</div>
         </div>
       
       
@@ -342,18 +354,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/09/26/go%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA/" title="go查漏补缺">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">go查漏补缺</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/09/06/win%E7%9A%84apt/" title="win系统中好用的东西--wsl和scoop">
-                        <span class="hidden-mobile">win系统中好用的东西--wsl和scoop</span>
+                      <a href="/2023/09/08/%E8%B7%AF%E7%94%B1%E5%99%A8/" title="路由器基础">
+                        <span class="hidden-mobile">路由器基础</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
