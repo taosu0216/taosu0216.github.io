@@ -226,7 +226,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/08/22/thm-%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" target="_self">
         <div>
-          本地文件包含 (LFI)(local file inclusion)看报错,找路径,算上当前目录前面还有四层目录,回退四次找到根目录,进入etc&#x2F;passwd,直接访问会有权限限制,可以%00绕过(本质是截断后续内容),也可以&#x2F;etc&#x2F;passwd&#x2F;.绕过,&#x2F;.就是再次访问当前路径(cd .)因为整个url最后的路径不是passwd,所以绕过了检测
+          
         </div>
       </a>
 
@@ -280,7 +280,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/08/22/thm-IDOR/" target="_self">
         <div>
-          我推的IDOROWASP TOP 10 中的越权漏洞 感觉这个实例很有用的样子 本质算是路径暴露?比如id&#x3D;1是admin用户,1以后的是普通用户,但在url里直接把id改成1就算idor了 实例创建一个账户,点击my account,打开F12然后刷新,可以看到 看到暴露路径了,&#x2F;api&#x2F;v1&#x2F;customer?id&#x3D;,把id依次改成别的再打开,
+          
         </div>
       </a>
 
@@ -334,7 +334,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/08/21/thm-%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81%E7%BB%95%E8%BF%87/" target="_self">
         <div>
-          用户名枚举感觉这个用burp可能会更好理解一点,thm给的还是ffuf(真强啊这工具) 1ffuf -w /usr/share/wordlists/SecLists/Usernames/Names/names.txt -X POST -d &quot;username=FUZZ&amp;email=x&amp;password=x&amp;cpassword=x&quot; -H &quot;Co
+          
         </div>
       </a>
 
@@ -388,7 +388,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/08/21/thm-%E7%BD%91%E7%AB%99%E8%B5%84%E6%BA%90%E5%8F%91%E7%8E%B0/" target="_self">
         <div>
-          robots.txt域名&#x2F;robots.txt 会写明允许允许访问&#x2F;爬取的内容和不允许的,不允许的就是需要重点看的 Favicon就是网站导航栏上的小图标,我的favicon是个咖啡 curl https://static-labs.tryhackme.cloud/sites/favicon/images/favicon.ico | md5sum 根据哈希值查询favicon信
+          
         </div>
       </a>
 
@@ -442,7 +442,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/%E8%B5%84%E6%BA%90/" target="_self">
         <div>
-          123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798052破解www.52pojie.cnjavahttps://www.oracle.com/cn/j
+          
         </div>
       </a>
 
@@ -496,7 +496,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/earth/" target="_self">
         <div>
-          earthip发现(攻击机和靶机都使用nat模式,保证处于同一ip段) ifconfig  发现攻击机ip段为192.168.22 使用nmap -sP 192.168.22.1&#x2F;24 -sP  scan ping使用ping扫描网段,仅查看哪些网段内哪些主机在线,不查看端口,速度更快 192.168.22.1&#x2F;24192.168.22是网段,129代表着攻击机,而靶机也处于同
+          
         </div>
       </a>
 
@@ -550,7 +550,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/go%E8%BF%9B%E9%98%B6/" target="_self">
         <div>
-          go进阶time包12345678time.Now()  //当前时间  2023-08-08 11:15:02.0855663 +0800 CST m=+0.001233401//打印选定时间,年月日时分秒纳秒时区t2:=time.Date(2004,1,15,8,26,22,0,time.Local)fmt.Println(t2)//2023-08-08 11:17:30.3234989 +0
+          
         </div>
       </a>
 
@@ -604,7 +604,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/go%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" target="_self">
         <div>
-          go语法基础初始化在需要编写go的目录(假设是go_code),在go_code下 1go mod init go_code(目录名)  会在go_code目录下生成一个go.mod的初始化文件,在go_code目录下再创建一个目录.在该目录里编写代码 位与进制1234二进制    BIN 0 , 1, 10八进制    OCT 0,1,2,3,4,5,6,7,10(一零,不是十)十进制    D
+          
         </div>
       </a>
 
@@ -658,7 +658,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/python/" target="_self">
         <div>
-          Python学sql学麻了,换点别的学学来源:https://github.com/jackfrued/Python-100-Days.githttps://linklearner.com/#/learn/detail/60学习计划安排是100天,感觉能学完一半就不错了 4.27Day 1安装https://www.python.org/downloads/ 下载windows installer
+          
         </div>
       </a>
 
@@ -712,7 +712,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/08/20/php/" target="_self">
         <div>
-          php基础语法构成123&lt;?php?&gt;  php代码要被&lt;?php ?&gt;包裹起来 输出echo可以输出多个内容(用,分隔开),结尾必须加; 123&lt;?php	echo 1,2,3;?&gt;  print只能输出单个内容 123&lt;?php	print 1;?&gt;  变量123$a=1;$b=&#x27;phpstudy&#x27;;echo $a,$b;
+          
         </div>
       </a>
 
