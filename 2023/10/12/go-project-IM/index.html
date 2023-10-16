@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20231015123045.png">
 <meta property="article:published_time" content="2023-10-12T13:32:18.000Z">
-<meta property="article:modified_time" content="2023-10-16T10:46:53.718Z">
+<meta property="article:modified_time" content="2023-10-16T14:51:07.687Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/taosu0216/picgo/20231015123045.png">
@@ -213,7 +213,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          12k words
+          13k words
         
       </span>
     
@@ -274,7 +274,7 @@
               <p class="note note-info">
                 
                   
-                    Last updated on 35 minutes ago
+                    Last updated on 2 minutes ago
                   
                 
               </p>
@@ -401,6 +401,9 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell">go install github.com/swaggo/swag/cmd/swag@latest<br>//然后使用时会自动导包<br>//app.go<br>//前面的是别名<br>	&quot;IM_project/docs&quot;<br>	&quot;IM_project/service&quot;<br><br>	&quot;github.com/gin-gonic/gin&quot;<br>	swaggerfiles &quot;github.com/swaggo/files&quot;<br>	ginSwagger &quot;github.com/swaggo/gin-swagger&quot;<br></code></pre></td></tr></table></figure>
 <p>剩下的现用现查吧,主要东西都在注释里了</p>
 <h2 id="new"><a href="#new" class="headerlink" title="new"></a>new</h2><p>增删改查(CRUD)正式收工<br>Create<br>Read<br>Update<br>Delete</p>
+<h2 id="对U的信息校验"><a href="#对U的信息校验" class="headerlink" title="对U的信息校验"></a>对U的信息校验</h2><p>比如说在手机号那里输字母,进行这种校验</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">go get github.com/asaskevich/govalidator<br></code></pre></td></tr></table></figure>
+<h2 id="新加修改手机号和邮箱"><a href="#新加修改手机号和邮箱" class="headerlink" title="新加修改手机号和邮箱"></a>新加修改手机号和邮箱</h2><h2 id="防止已注册的手机号-名字-邮箱重复注册"><a href="#防止已注册的手机号-名字-邮箱重复注册" class="headerlink" title="防止已注册的手机号&#x2F;名字&#x2F;邮箱重复注册"></a>防止已注册的手机号&#x2F;名字&#x2F;邮箱重复注册</h2><p>魔改了不少,终于有点自己的想法了</p>
 <h1 id="新学的东西"><a href="#新学的东西" class="headerlink" title="新学的东西"></a>新学的东西</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>对请求分批处理,分成很多小份,交给不同的程序处理</p>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="gin相关"><a href="#gin相关" class="headerlink" title="gin相关"></a>gin相关</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">//返回值是*gin.Engine</span><br>r:=gin.Default()<br><span class="hljs-comment">//类似http.HandleFunc(&quot;/&quot;, indexHandler),用当请求index时,调用service.GetIndex函数处理</span><br>r.Get(<span class="hljs-string">&quot;index&quot;</span>,service.GetIndex)<br></code></pre></td></tr></table></figure>
 
