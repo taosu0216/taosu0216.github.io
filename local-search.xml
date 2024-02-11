@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>DouFlick</title>
+    <link href="/2024/02/12/DouFlick/"/>
+    <url>/2024/02/12/DouFlick/</url>
+    
+    <content type="html"><![CDATA[<h1 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h1><p>字节青训营第六届的后端方向项目</p><h1 id="目标与评估"><a href="#目标与评估" class="headerlink" title="目标与评估"></a>目标与评估</h1><p>目标: 基于<strong>Go</strong>语言实现青训营提供的app的各种消息接口,并自主拓<strong>展服务器监控</strong>,<strong>CI&#x2F;CD</strong>,<strong>接入飞书告警</strong>等功能,尽可能向<strong>实际生产化</strong>的项目完善</p><p>项目地址: <a href="https://github.com/taosu0216/DouFlick">github仓库</a></p><p>完整文档: <a href="https://nfn0n9sa0v.feishu.cn/wiki/BJuiw5SL4ijgI6kiKVZcEVURnud?from=from_copylink">飞书文档</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>lang</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2023年度总结</title>
     <link href="/2024/02/10/2023%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
     <url>/2024/02/10/2023%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</url>
